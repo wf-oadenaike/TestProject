@@ -1,0 +1,57 @@
+﻿CREATE VIEW Core.CalendarVw
+	AS
+	SELECT [CalendarId]
+		  ,[CalendarDate]
+		  ,[FullDateUK]
+		  ,[FullDateUSA]
+		  ,[CalDayOfMonth]
+		  ,[CalDaySuffix]
+		  ,[CalDayName]
+		  ,[DayOfWeekUSA]
+		  ,[DayOfWeekUK]
+		  ,[DayOfWeekInMonth]
+		  ,[DayOfWeekInYear]
+		  ,[DayOfQuarter]
+		  ,[CalDayOfYear]
+		  ,[CalWeekOfMonth]
+		  ,[CalWeekOfQuarter]
+		  ,[CalWeekOfYear]
+		  ,[CalMonth]
+		  ,[CalMonthName]
+		  ,[CalMonthOfQuarter]
+		  ,[CalQuarter]
+		  ,[CalQuarterName]
+		  ,[CalYear]
+		  ,[CalYearName]
+		  ,[CalMonthYear]
+		  ,[CalMMYYYY]
+		  ,[FirstDayOfMonth]
+		  ,[LastDayOfMonth]
+		  ,[FirstDayOfQuarter]
+		  ,[LastDayOfQuarter]
+		  ,[FirstDayOfYear]
+		  ,[LastDayOfYear]
+		  ,[IsHolidayUSA]
+		  ,[IsWeekday]
+		  ,[HolidayUSA]
+		  ,[IsHolidayUK]
+		  ,[HolidayUK]
+		  , FiscalDayOfYear
+		,FiscalWeekOfYear
+		,FiscalMonth
+		,FiscalQuarter
+		,FiscalQuarterName
+		,FiscalYear
+		,FiscalYearName
+		,FiscalMonthYear
+		,FiscalMMYYYY
+		,FiscalFirstDayOfMonth
+		,FiscalLastDayOfMonth
+		,FiscalFirstDayOfQuarter
+		,FiscalLastDayOfQuarter
+		,FiscalFirstDayOfYear
+		,FiscalLastDayOfYear
+		,FiscalYYYYMM
+		,CalYYYYMM
+	  FROM Core.Calendar
+	;

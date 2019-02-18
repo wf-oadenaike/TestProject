@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION255_RESULTS" AS 
+SELECT ET."SignatoryOwnerId",ET."ProcDocumentId",ET."PolicyId",ET."RoleId",ET."PersonId",ET."IsOwner",ET."IsSignatory",ET."IsActive",ET."JoinGUID",ET."SignatoryOwnerCreationDatetime",ET."SignatoryOwnerLastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "PolicyProc"."SignatoryOwner" ET WITH (NOLOCK)

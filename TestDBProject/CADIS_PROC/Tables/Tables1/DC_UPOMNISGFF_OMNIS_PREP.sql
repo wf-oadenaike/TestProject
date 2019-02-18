@@ -1,0 +1,16 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPOMNISGFF_OMNIS_PREP] (
+    [ROW_NUMBER]                INT             NOT NULL,
+    [TYPE]                      VARCHAR (20)    NOT NULL,
+    [FUND]                      VARCHAR (50)    NULL,
+    [TRANSACTION_DATE]          DATETIME        NULL,
+    [FUND_FLOW_TYPE]            VARCHAR (20)    NULL,
+    [FLOW_TYPE]                 VARCHAR (100)   NULL,
+    [MARKET_VALUE]              DECIMAL (18, 2) NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME        NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME        NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50)   NULL,
+    [CADIS_SYSTEM_PRIORITY]     INT             NULL,
+    [CADIS_SYSTEM_LASTMODIFIED] DATETIME        NULL,
+    PRIMARY KEY CLUSTERED ([ROW_NUMBER] ASC, [TYPE] ASC) WITH (FILLFACTOR = 80)
+);
+

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION259_RESULTS" AS 
+SELECT ET."EventTypeId",ET."EventType" FROM "PolicyProc"."EventTypes" ET WITH (NOLOCK)

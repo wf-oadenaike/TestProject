@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION27_RESULTS" AS 
+SELECT ET."ProjectAspectId",ET."ProjectRegisterId",ET."ProjectAspectTypeId",ET."Costs",ET."PersonId",ET."RoleId",ET."DepartmentId",ET."AspectDetails",ET."AspectDate",ET."AspectTrueFalse",ET."DocumentationFolderLink",ET."WorkflowVersionGUID",ET."JoinGUID",ET."ProjectAspectCreationDatetime",ET."ProjectAspectLastModifiedDatetime" FROM "Organisation"."ProjectAspects" ET WITH (NOLOCK)

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [joseftapper]
+    WITH PASSWORD = N'pvBy^bLyxE{.l{oPzrmhuq|6msFT7_&#$!~<Heplsokqb9{s', SID = 0xC9ACFDCEC2B6434BA58AC003A669EEA9, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+

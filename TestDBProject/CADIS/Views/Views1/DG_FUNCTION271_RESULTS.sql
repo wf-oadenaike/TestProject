@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION271_RESULTS" AS 
+SELECT ET."EBIImpactTypeId",ET."EBIImpactName" FROM "Access.ManyWho"."EBIImpactTypesVw" ET WITH (NOLOCK)

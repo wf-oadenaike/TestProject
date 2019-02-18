@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [API_WebSite_User]
+    WITH PASSWORD = N'pcvybMK;ynr{oz0mh4Jqm$|UmsFT7_&#$!~<Jepsoq{sfavz', SID = 0xBB51A1DE92F1D14E868496A75095C392, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+

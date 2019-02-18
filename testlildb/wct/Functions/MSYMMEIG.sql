@@ -1,0 +1,9 @@
+﻿CREATE FUNCTION [wct].[MSYMMEIG]
+(@A NVARCHAR (MAX) NULL)
+RETURNS 
+     TABLE (
+        [D] NVARCHAR (MAX) NULL,
+        [V] NVARCHAR (MAX) NULL)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[MSYMMEIG]
+

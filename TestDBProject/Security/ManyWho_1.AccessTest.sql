@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [ManyWho.AccessTest]
+    WITH PASSWORD = N'{ukN!~kxBdxRwkruplhxveb=msFT7_&#$!~<eiWshf$kLbck', SID = 0x1A5553A4D8D115459FD093B22DDB53C8, DEFAULT_DATABASE = [EDM_DEV], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

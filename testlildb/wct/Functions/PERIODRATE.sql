@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[PERIODRATE]
+(@Nominal FLOAT (53) NULL, @ComPeriod FLOAT (53) NULL, @PayPeriod FLOAT (53) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[PERIODRATE]
+

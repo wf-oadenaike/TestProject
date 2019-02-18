@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION393_RESULTS" AS 
+SELECT ET."BCPTestPlanEventId",ET."BCPTestPlanRegisterId",ET."TestPlanStatus",ET."RecordedByPersonId",ET."EventDetails",ET."EventDate",ET."TestPlanResult",ET."CalendarYear",ET."IsReTest",ET."DocumentationFolderLink",ET."JoinGUID",ET."BCPTestPlanEventCreationDate",ET."BCPTestPlanEventLastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "BAU"."BCPTestPlanEvents" ET WITH (NOLOCK)

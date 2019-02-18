@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[T_MASTER_PRC] (
+    [EDM_SEC_ID]                INT              NOT NULL,
+    [PRICE_TYPE]                VARCHAR (50)     NOT NULL,
+    [PRICE_SOURCE]              VARCHAR (50)     NULL,
+    [PRICE_DATE]                DATETIME         NOT NULL,
+    [PRICE_TIME]                VARCHAR (50)     NULL,
+    [AVERAGE_COST]              VARCHAR (20)     NULL,
+    [PRICE_SOURCE_RANKING]      INT              NULL,
+    [PRICE_ISO_CCY]             VARCHAR (3)      NULL,
+    [MASTER_PRICE]              DECIMAL (24, 10) NULL,
+    [ASK_PRICE]                 DECIMAL (24, 10) NULL,
+    [MID_PRICE]                 DECIMAL (24, 10) NULL,
+    [BID_PRICE]                 DECIMAL (24, 10) NULL,
+    [LAST_UPDATE_DATE]          DATETIME         NULL,
+    [FX_RATE]                   DECIMAL (18, 4)  NULL,
+    [MARKET_VALUE]              DECIMAL (18, 2)  NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50)    DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]     INT              DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]    ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED] DATETIME         DEFAULT (getdate()) NULL,
+    [TICKER]                    VARCHAR (26)     NULL,
+    PRIMARY KEY CLUSTERED ([EDM_SEC_ID] ASC, [PRICE_TYPE] ASC, [PRICE_DATE] ASC) WITH (FILLFACTOR = 90)
+);
+

@@ -1,0 +1,15 @@
+﻿CREATE TABLE [dbo].[T_REF_USER] (
+    [USER_ID]                INT           NOT NULL,
+    [USER]                   VARCHAR (50)  NOT NULL,
+    [USER_NAME]              VARCHAR (200) NULL,
+    [EMAIL]                  VARCHAR (200) NOT NULL,
+    [ACTIVE]                 VARCHAR (1)   DEFAULT ('Y') NOT NULL,
+    [VISIBLE]                VARCHAR (1)   DEFAULT ('Y') NOT NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]  INT           DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP] ROWVERSION    NOT NULL,
+    PRIMARY KEY CLUSTERED ([EMAIL] ASC) WITH (FILLFACTOR = 90)
+);
+

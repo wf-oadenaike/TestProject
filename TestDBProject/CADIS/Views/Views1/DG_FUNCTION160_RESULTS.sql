@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION160_RESULTS" AS 
+SELECT ET."ShareClassWaiverEventId",ET."ShareClassWaiverId",ET."ShareClassWaiverEventTypeId",ET."ShareClassWaiverEventType",ET."SubmittedByPersonId",ET."SubmittedBy",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."DocumentationFolderLink",ET."JoinGUID",ET."ShareClassWaiverEventCreationDatetime",ET."ShareClassWaiverEventLastModifiedDatetime" FROM "Access.ManyWho"."ShareClassWaiverEventsReadOnlyVw" ET WITH (NOLOCK)

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Organisation_Meeting_Occurrence_JIRA_Issue" AS 
+SELECT V."MeetingOccurrenceId" AS "Meeting Occurrence ID", J1.DF AS "Meeting Agenda Item ID",V."MeetingOccurrenceCreationDatetime" AS "Meeting Occurrence Creation Date",V."MeetingOccurrenceLastModifiedDatetime" AS "Meeting Occurrence Last Modified Date" FROM "Organisation"."MeetingOccurrenceJiraIssueCreationLog" V LEFT OUTER JOIN (SELECT DISTINCT "MeetingAgendaItemId" AS JF,"AgendaItemNameBK" AS DF FROM "Organisation"."MeetingAgendaItems")  J1 ON  J1.JF=V."MeetingAgendaItemId"

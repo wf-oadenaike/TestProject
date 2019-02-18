@@ -1,0 +1,5 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_EXSFAO_CBUF] (
+    [SfAccountId] VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([SfAccountId] ASC)
+);
+

@@ -1,0 +1,13 @@
+﻿CREATE VIEW [Access.ManyWho].[UnquotedCompanyInvestmentCategorisationsVw]
+AS
+SELECT [UnquotedCompanyId]
+      ,[InvestmentCategorisationMeetingDate]
+      ,[InvestmentCategory]
+      ,[AnnualConfluenceChecklistUrl]
+      ,[WorkflowVersionGUID]
+      ,[JoinGUID]
+      ,[InvestmentCategorisationCreationDate]
+      ,[InvestmentCategorisationCreatedByPersonId]
+      ,[InvestmentCategorisationModifiedDate]
+      ,[InvestmentCategorisationLastModifiedByPersonId]
+  FROM [Organisation].[UnquotedCompanyInvestmentCategorisations]

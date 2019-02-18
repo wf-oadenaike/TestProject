@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION80_RESULTS" AS 
+SELECT ET."MandateId",ET."ClientTakeOnId",ET."MandateName",ET."MandateDescription",ET."IsWoodfordMandate",ET."RecordedByPersonId",ET."DocumentationFolderLink",ET."JoinGUID",ET."ClientTakeOnMandateCreationDatetime",ET."ClientTakeOnMandateLastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Sales"."ClientTakeOnMandates" ET WITH (NOLOCK)

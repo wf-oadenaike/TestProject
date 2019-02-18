@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Audit_Control_Log_Categories" AS 
+SELECT  J0.DF AS "Control Log Category ID",V."CategoryName" AS "Category Name",V."CategoryDescription" AS "Category Description",V."CADIS_SYSTEM_INSERTED",V."CADIS_SYSTEM_UPDATED",V."CADIS_SYSTEM_CHANGEDBY",V."CADIS_SYSTEM_PRIORITY",V."CADIS_SYSTEM_TIMESTAMP",V."CADIS_SYSTEM_LASTMODIFIED" FROM "Audit"."ControlLogCategories" V LEFT OUTER JOIN (SELECT DISTINCT "ControlLogCategoryId" AS JF,"CategoryName" AS DF FROM "Audit"."ControlLogCategories")  J0 ON  J0.JF=V."ControlLogCategoryId"

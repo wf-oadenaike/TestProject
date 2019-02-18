@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION613_RESULTS" AS 
+SELECT ET."ID",ET."Name",ET."Order",ET."ISO2Code",ET."ISO3Code",ET."ISONumericCode",ET."SalesforceID" FROM "Core"."T_REF_Countries" ET WITH (NOLOCK)

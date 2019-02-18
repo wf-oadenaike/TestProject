@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[T_REF_SF_URL] (
+    [ENV]                    VARCHAR (10)  NOT NULL,
+    [URL]                    VARCHAR (50)  NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    PRIMARY KEY CLUSTERED ([ENV] ASC)
+);
+

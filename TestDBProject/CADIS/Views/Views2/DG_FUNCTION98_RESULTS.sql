@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION98_RESULTS" AS 
+SELECT ET."BudgetChangeId",ET."ResearchBrokerId",ET."PerformanceChange",ET."ResourceChange",ET."SectorChange",ET."BudgetChangeComments",ET."ChangeAmount",ET."BudgetAmendmentDate",ET."AmendedByPersonId",ET."DocumentationFolderLink",ET."JoinGUID",ET."BudgetChangeCreationDatetime",ET."BudgetChangeLastModifiedDatetime" FROM "Investment"."ResearchBrokerBudgetChanges" ET WITH (NOLOCK)

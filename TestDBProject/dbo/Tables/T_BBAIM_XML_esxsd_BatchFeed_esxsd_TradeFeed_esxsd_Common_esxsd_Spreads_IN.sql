@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[T_BBAIM_XML_esxsd_BatchFeed_esxsd_TradeFeed_esxsd_Common_esxsd_Spreads_IN] (
+    [CADIS_BATCH_ID]                INT            NOT NULL,
+    [CADIS_MSG_ID]                  INT            CONSTRAINT [DF__T_BBAIM_X__CADIS__0ACAE069] DEFAULT ((1)) NOT NULL,
+    [CADIS_PARENT_ID]               INT            NOT NULL,
+    [CADIS_ROW_ID]                  INT            NOT NULL,
+    [esxsd:YASCalculationIndicator] NVARCHAR (MAX) NULL,
+    [esxsd:Benchmark]               NVARCHAR (MAX) NULL,
+    [esxsd:BenchmarkYield]          NVARCHAR (MAX) NULL,
+    [esxsd:BenchmarkPrice]          NVARCHAR (MAX) NULL,
+    [esxsd:BenchmarkSpread]         NVARCHAR (MAX) NULL,
+    [esxsd:AssetSwapSpread]         NVARCHAR (MAX) NULL,
+    [esxsd:ISpread]                 NVARCHAR (MAX) NULL,
+    [esxsd:ZSpread]                 NVARCHAR (MAX) NULL,
+    [esxsd:DSpread]                 NVARCHAR (MAX) NULL,
+    [esxsd:OASSpread]               NVARCHAR (MAX) NULL,
+    [esxsd:OASVolatility]           NVARCHAR (MAX) NULL,
+    [esxsd:Duration]                NVARCHAR (MAX) NULL,
+    [esxsd:Curve]                   NVARCHAR (MAX) NULL,
+    [esxsd:YieldConvention]         NVARCHAR (MAX) NULL,
+    [CADIS_SYSTEM_INSERTED]         DATETIME       CONSTRAINT [DF__T_BBAIM_X__CADIS__0BBF04A2] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]          DATETIME       CONSTRAINT [DF__T_BBAIM_X__CADIS__0CB328DB] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]        NVARCHAR (50)  CONSTRAINT [DF__T_BBAIM_X__CADIS__0DA74D14] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]         INT            CONSTRAINT [DF__T_BBAIM_X__CADIS__0E9B714D] DEFAULT ((1)) NULL,
+    CONSTRAINT [PK_T_BBAIM_XML_esxsd_BatchFeed_esxsd_TradeFeed_esxsd_Common_esxsd_Spreads_IN] PRIMARY KEY CLUSTERED ([CADIS_BATCH_ID] ASC, [CADIS_MSG_ID] ASC, [CADIS_PARENT_ID] ASC, [CADIS_ROW_ID] ASC) WITH (FILLFACTOR = 90)
+);
+

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION74_RESULTS" AS 
+SELECT ET."ProjectEventId",ET."ProjectId",ET."ProjectName",ET."SubmittedByPersonId",ET."SubmittedBy",ET."EventType",ET."EventStatus",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."ItemNumber",ET."Cost",ET."JiraIssueKey",ET."DocumentationFolderLink",ET."JoinGUID",ET."NewProjectEventCreationDatetime",ET."NewProjectEventLastModifiedDatetime" FROM "Access.ManyWho"."NewProjectEventsReadOnlyVw" ET WITH (NOLOCK)

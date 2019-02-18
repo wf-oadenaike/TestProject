@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION307_RESULTS" AS 
+SELECT ET."AssetId",ET."AssetTypeId",ET."AssetType",ET."AssetCode",ET."Supplier",ET."Reference",ET."TransactionNo",ET."Description",ET."AssetCost",ET."PurchaseDate",ET."WrittenOffDate",ET."Status",ET."DepreciationType",ET."WritedownPeriod",ET."SubmittedByPersonId",ET."SubmittedBy",ET."DocumentationFolderLink",ET."JoinGUID",ET."AssetRegisterCreationDatetime",ET."AssetRegisterLastModifiedDatetime" FROM "Access.ManyWho"."AssetRegisterReadOnlyVw" ET WITH (NOLOCK)

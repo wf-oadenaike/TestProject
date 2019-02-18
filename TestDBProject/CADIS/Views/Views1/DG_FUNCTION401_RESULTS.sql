@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION401_RESULTS" AS 
+SELECT ET."ComplaintsRegisterEventId",ET."ComplaintRegisterId",ET."ComplaintEventTypeId",ET."RecordedByPersonId",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."DocumentationFolderLink",ET."JoinGUID",ET."ComplaintEventCreationDate",ET."ComplaintEventLastModifiedDate",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Compliance"."ComplaintsRegisterEvents" ET WITH (NOLOCK)

@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE CADIS_SYS.SPAUTH_USERGROUPS
+	@UserName nvarchar(1000)
+AS
+SELECT G.name
+FROM SYSUSERS U 
+JOIN sys.database_role_members M ON M.MEMBER_PRINCIPAL_ID=U.uid
+JOIN SYSUSERS G ON G.uid=M.ROLE_PRINCIPAL_ID
+WHERE U.name=@UserName AND U.issqluser = 1

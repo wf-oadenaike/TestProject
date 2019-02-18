@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION556_RESULTS" AS 
+SELECT ET."RiskAppetiteRegisterId",ET."RiskOwnerId",ET."RiskOwner",ET."CategoryId",ET."Category",ET."SubCategoryID",ET."SubCategory",ET."CurrentRiskAppetite",ET."ProposedRiskAppetite",ET."StatusID",ET."FlowStatusName",ET."SubmittedByPersonId",ET."SubmittedBy",ET."CreatedDate",ET."LastModifiedDate",ET."JiraIssueKey",ET."JoinGUID",ET."IsActive",ET."IndividualReview" FROM "Access.ManyWho"."RiskAppetiteRegisterReadOnlyVw" ET WITH (NOLOCK)

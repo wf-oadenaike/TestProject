@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION414_RESULTS" AS 
+SELECT ET."AnnualBudgetReviewId",ET."AnnualBudgetId",ET."ReviewTypeId",ET."ReviewComments",ET."ReviewDate",ET."BudgetApproved",ET."ReviewedByPersonId",ET."DocumentationFolderLink",ET."JoinGUID",ET."ReviewCreationDatetime",ET."ReviewLastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Organisation"."AnnualBudgetReviews" ET WITH (NOLOCK)

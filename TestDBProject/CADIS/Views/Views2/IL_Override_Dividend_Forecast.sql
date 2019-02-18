@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Override_Dividend_Forecast" AS 
+SELECT V."FundShortName" AS "FundShortName",V."EDM_SEC_ID" AS "EDM_SEC_ID",V."CalendarYear" AS "CalendarYear",V."Q1ExDate" AS "Q1ExDate",V."Q1Rate" AS "Q1Rate",V."Q2ExDate" AS "Q2ExDate",V."Q2Rate" AS "Q2Rate",V."Q3ExDate" AS "Q3ExDate",V."Q3Rate" AS "Q3Rate",V."Q4ExDate" AS "Q4ExDate",V."Q4Rate" AS "Q4Rate",V."CADIS_SYSTEM_INSERTED",V."CADIS_SYSTEM_UPDATED",V."CADIS_SYSTEM_CHANGEDBY",V."CADIS_SYSTEM_TIMESTAMP" FROM "dbo"."T_OVERRIDE_DIVIDEND_FORECAST" V

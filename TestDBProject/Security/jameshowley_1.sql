@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [jameshowley]
+    WITH PASSWORD = N'@ypvyb0yn{ozCmhq}|3epxspmsFT7_&#$!~<oq{sc`favzpy' MUST_CHANGE, SID = 0x7CAC6E9780AEB44889DFCDFC7CB1AD08, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+

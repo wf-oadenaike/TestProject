@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION13_RESULTS" AS 
+SELECT ET."PADealingRequestRegisterId",ET."PADealingRequestEventType",ET."PADealingRequestEventId",ET."EventPersonId",ET."EventRoleId",ET."EventTrueFalse",ET."EventDetails",ET."EventDate",ET."DocumentationFolderLink",ET."WorkflowVersionGUID",ET."JoinGUID",ET."PADealingRequestEventCreationDate",ET."PADealingRequestEventLastModifiedDate" FROM "Compliance"."PADealingRequestEvents" ET WITH (NOLOCK)

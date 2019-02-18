@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION396_RESULTS" AS 
+SELECT ET."BCPCriticalProcessId",ET."CriticalProcess",ET."Summary",ET."RecoveryTimeFrame",ET."Status",ET."IsActive",ET."OwnerPersonId",ET."CriticalProcessOwner",ET."RecordedByPersonId",ET."RecordedBy",ET."DepartmentId",ET."DepartmentName",ET."DocumentationFolderLink",ET."JoinGUID",ET."BCPCriticalProcessCreationDatetime",ET."BCPCriticalProcessLastModifiedDatetime" FROM "Access.ManyWho"."BCPCriticalProcessRegisterReadOnlyVw" ET WITH (NOLOCK)

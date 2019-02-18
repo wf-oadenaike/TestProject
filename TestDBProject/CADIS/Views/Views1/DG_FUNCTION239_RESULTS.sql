@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION239_RESULTS" AS 
+SELECT ET."UnquotedCompanyCommentaryId",ET."UnquotedCompanyStage",ET."UnquotedCompanyId",ET."Commentary",ET."CommentaryByPersonId",ET."CommentaryBySalesforceUserId",ET."CommentaryBy",ET."CommentaryByRoleId",ET."JoinGUID",ET."CommentaryCreatedDate",ET."CommentaryLastModifiedDate" FROM "Access.ManyWho"."UnquotedCompanyCommentariesReadOnlyVw" ET WITH (NOLOCK)

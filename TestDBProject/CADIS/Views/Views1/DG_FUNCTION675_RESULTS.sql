@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION675_RESULTS" AS 
+SELECT ET."UBOControllersID",ET."SubmittedByPersonID",ET."ChecklistID",ET."Name",ET."PersonType",ET."Details",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."Controller",ET."IsActive" FROM "dbo"."Compliance_KYCUBOControllers" ET WITH (NOLOCK)

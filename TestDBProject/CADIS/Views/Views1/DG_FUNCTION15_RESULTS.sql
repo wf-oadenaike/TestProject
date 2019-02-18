@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION15_RESULTS" AS 
+SELECT ET."FinPromRegisterId",ET."FinPromEventType",ET."EventDate",ET."FinPromEventId",ET."EventPersonId",ET."EventRoleId",ET."EventTrueFalse",ET."EventComments",ET."WorkflowVersionGUID",ET."JoinGUID",ET."FinPromEventCreationDate",ET."FinPromEventLastModifiedDate",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Investment"."FinPromEvents" ET WITH (NOLOCK)

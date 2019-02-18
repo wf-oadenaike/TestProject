@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [Staging.BBG]
+    AUTHORIZATION [dbo];
+

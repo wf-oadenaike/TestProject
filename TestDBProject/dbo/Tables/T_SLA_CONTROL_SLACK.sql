@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[T_SLA_CONTROL_SLACK] (
+    [PLATFORM]               VARCHAR (50)  NOT NULL,
+    [SOURCE]                 VARCHAR (50)  NOT NULL,
+    [ENTITY]                 VARCHAR (50)  NOT NULL,
+    [SUB_ENTITY]             VARCHAR (50)  NOT NULL,
+    [DESCRIPTION]            VARCHAR (200) NULL,
+    [DIRECTION]              VARCHAR (200) NULL,
+    [PROCESS_STATUS]         VARCHAR (30)  NULL,
+    [RUN_STATUS]             VARCHAR (30)  NULL,
+    [TIME_STATUS]            VARCHAR (30)  NULL,
+    [RECIPIENT]              VARCHAR (512) NULL,
+    [RUN_DATE]               VARCHAR (20)  NULL,
+    [ROW_COUNT]              INT           NULL,
+    [PREVIOUS_ROW_COUNT]     INT           NULL,
+    [RECORDS]                INT           NULL,
+    [TABLE_NAME]             VARCHAR (200) NULL,
+    [SOLUTION]               VARCHAR (200) NULL,
+    [EXPECTED_TIME_GMT]      TIME (7)      NULL,
+    [EMAIL_RECIPIENT]        VARCHAR (200) NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    PRIMARY KEY CLUSTERED ([PLATFORM] ASC, [SOURCE] ASC, [ENTITY] ASC, [SUB_ENTITY] ASC) WITH (FILLFACTOR = 80)
+);
+

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION691_RESULTS" AS 
+SELECT ET."TradeYear",ET."TradeMonth",ET."Broker",ET."NetMoney",ET."RAG",ET."TradeYearMonth",ET."BrokerUniqueRef",ET."Isin",ET."Security",ET."TradeDate",ET."Side",ET."AssetType",ET."Currency",ET."Comment1",ET."Comment2",ET."LastUpdatedDate",ET."Settlement_Date",ET."ASD",ET."Days_delayed",ET."Category" FROM "Access.WebDev"."FailedTradesByBrokerDetailVw" ET WITH (NOLOCK)

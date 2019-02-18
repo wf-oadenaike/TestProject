@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Compliance_Conflicts_Register_Mitigation" AS 
+SELECT V."ConflictId" AS "Conflict ID",V."MitigationDetails" AS "Mitigation Details", J2.DF AS "Created By Persion ID",V."CreationDate" AS "Creation Date",V."ConflictsRegisterMitigationID" FROM "Compliance"."ConflictsRegisterMitigation" V LEFT OUTER JOIN (SELECT DISTINCT "PersonId" AS JF,"PersonsName" AS DF FROM "Core"."Persons")  J2 ON  J2.JF=V."CreatedByPersionId"

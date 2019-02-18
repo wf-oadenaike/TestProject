@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION638_RESULTS" AS 
+SELECT ET."WatchlistEventId",ET."WatchlistRegisterId",ET."EventTypeid",ET."EventType",ET."EventDetails",ET."SubmittedBy",ET."SubmittedByPersonId",ET."EventDate",ET."EventTrueFalse",ET."JIRAIssueKey",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Access.ManyWho"."WatchListEventsVw" ET WITH (NOLOCK)

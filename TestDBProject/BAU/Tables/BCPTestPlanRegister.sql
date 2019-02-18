@@ -1,0 +1,27 @@
+﻿CREATE TABLE [BAU].[BCPTestPlanRegister] (
+    [BCPTestPlanRegisterId]                   INT              IDENTITY (1, 1) NOT NULL,
+    [DepartmentId]                            SMALLINT         NOT NULL,
+    [TestRequirement]                         VARCHAR (MAX)    NOT NULL,
+    [TestSuccessCriteria]                     VARCHAR (MAX)    NOT NULL,
+    [TestStartTime]                           VARCHAR (25)     NOT NULL,
+    [TestEndTime]                             VARCHAR (25)     NULL,
+    [TestStatus]                              VARCHAR (25)     NULL,
+    [RecordedByPersonId]                      SMALLINT         CONSTRAINT [DF_BCPTPR_BCPTPRRP] DEFAULT ((-1)) NOT NULL,
+    [IsActive]                                BIT              CONSTRAINT [DF_BCPTPR_BCPTPRIA] DEFAULT ((1)) NOT NULL,
+    [TestPlanOwnerPersonId]                   SMALLINT         NOT NULL,
+    [DocumentationFolderLink]                 VARCHAR (2000)   NULL,
+    [JoinGUID]                                UNIQUEIDENTIFIER NOT NULL,
+    [BCPTestPlanRegisterCreationDatetime]     DATETIME         CONSTRAINT [DF_BCPTPR_BCPTPRCDT] DEFAULT (getdate()) NOT NULL,
+    [BCPTestPlanRegisterLastModifiedDatetime] DATETIME         CONSTRAINT [DF_BCPTPR_BCPTPRLMDT] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]                   DATETIME         CONSTRAINT [DF_BCPTPR_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                    DATETIME         CONSTRAINT [DF_BCPTPR_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]                  NVARCHAR (50)    CONSTRAINT [DF_BCPTPR_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                   INT              CONSTRAINT [DF_BCPTPR_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]                  ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]               DATETIME         CONSTRAINT [DF_ABR_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKBCPTestPlanRegister] PRIMARY KEY CLUSTERED ([BCPTestPlanRegisterId] ASC),
+    CONSTRAINT [BCPTestPlanRegisterDepartmentId] FOREIGN KEY ([DepartmentId]) REFERENCES [Core].[Departments] ([DepartmentId]),
+    CONSTRAINT [BCPTestPlanRegisterRecordedByPersonId] FOREIGN KEY ([RecordedByPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [BCPTestPlanRegisterTestPlanOwnerPersonId] FOREIGN KEY ([RecordedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

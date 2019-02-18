@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION138_RESULTS" AS 
+SELECT ET."BrokerReviewEventId",ET."BloombergId",ET."BrokerName",ET."BrokerReviewEventTypeId",ET."BrokerReviewEventType",ET."SubmittedByPersonId",ET."SubmittedBy",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."DocumentationFolderLink",ET."JoinGUID",ET."BrokerReviewEventCreationDatetime",ET."BrokerReviewEventLastModifiedDatetime" FROM "Access.ManyWho"."BrokerReviewEventsReadOnlyVw" ET WITH (NOLOCK)

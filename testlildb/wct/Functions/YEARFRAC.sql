@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[YEARFRAC]
+(@Start_date DATETIME NULL, @End_date DATETIME NULL, @Basis NVARCHAR (4000) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[YEARFRAC]
+

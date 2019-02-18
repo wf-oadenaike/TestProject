@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[T_HW_POSITIONS_STAGE] (
+    [ROW_NUMBER]                INT              IDENTITY (1, 1) NOT NULL,
+    [FILE_NAME]                 VARCHAR (50)     NOT NULL,
+    [FILE_TYPE]                 VARCHAR (12)     NOT NULL,
+    [FILE_DATE]                 DATETIME         NOT NULL,
+    [CUSTOMER_CODE]             VARCHAR (20)     NOT NULL,
+    [MODEL_CODE]                VARCHAR (20)     NOT NULL,
+    [MODEL_DATE]                DATETIME         NOT NULL,
+    [MODEL_DESCRIPTION]         VARCHAR (80)     NOT NULL,
+    [INSTRUMENT_UII]            VARCHAR (12)     NULL,
+    [STOCK_SHORT_NAME]          VARCHAR (80)     NOT NULL,
+    [SECTOR_CODE]               VARCHAR (50)     NULL,
+    [UII_ALLOCATION_PCT]        DECIMAL (38, 12) NULL,
+    [CURRENT_PERCENTAGE]        DECIMAL (10, 4)  NOT NULL,
+    [CHANGE_PERCENTAGE]         DECIMAL (10, 4)  NOT NULL,
+    [START_PRICE]               DECIMAL (24, 10) NOT NULL,
+    [START_PRICE_DATE]          DATETIME         NOT NULL,
+    [CURRENT_PRICE]             DECIMAL (24, 10) NOT NULL,
+    [CURRENT_DATE]              DATETIME         NOT NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50)    DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]     INT              DEFAULT ((1)) NOT NULL,
+    [CADIS_SYSTEM_TIMESTAMP]    ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED] DATETIME         DEFAULT (getdate()) NULL,
+    PRIMARY KEY CLUSTERED ([ROW_NUMBER] ASC) WITH (FILLFACTOR = 90)
+);
+

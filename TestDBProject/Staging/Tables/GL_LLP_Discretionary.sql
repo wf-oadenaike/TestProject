@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Staging].[GL_LLP_Discretionary] (
+    [TRAN_NUMBER]       NVARCHAR (255) NOT NULL,
+    [TYPE]              NVARCHAR (255) NULL,
+    [DATE]              VARCHAR (255)  NULL,
+    [ACCOUNT_REF]       NVARCHAR (255) NULL,
+    [NOMINAL_CODE]      NVARCHAR (255) NULL,
+    [BANK_CODE]         NVARCHAR (255) NULL,
+    [INV_REF]           NVARCHAR (255) NULL,
+    [DETAILS]           NVARCHAR (255) NULL,
+    [DEPT_NUMBER]       NVARCHAR (255) NULL,
+    [DEPT_NAME]         NVARCHAR (255) NULL,
+    [TAX_CODE]          NVARCHAR (255) NULL,
+    [AMOUNT]            NVARCHAR (255) NULL,
+    [EXTRA_REF]         NVARCHAR (255) NULL,
+    [Month]             NVARCHAR (255) NULL,
+    [Year]              NVARCHAR (255) NULL,
+    [Period]            NVARCHAR (255) NULL,
+    [Supplier/Customer] NVARCHAR (255) NULL,
+    [PnL/BS]            NVARCHAR (255) NULL,
+    [Account Category]  NVARCHAR (255) NULL,
+    [Account Name]      NVARCHAR (255) NULL,
+    [PROJECT_ID]        NVARCHAR (255) NULL,
+    [Project_Name]      NVARCHAR (255) NULL,
+    [JournalLineID]     VARCHAR (100)  NOT NULL
+);
+

@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[BONDINT]
+(@Settlement DATETIME NULL, @Maturity DATETIME NULL, @Rate FLOAT (53) NULL, @Par FLOAT (53) NULL, @Frequency FLOAT (53) NULL, @Basis NVARCHAR (4000) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[BONDINT]
+

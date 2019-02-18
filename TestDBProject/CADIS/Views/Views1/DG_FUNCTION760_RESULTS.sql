@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION760_RESULTS" AS 
+SELECT ET."Sector",ET."EndWeight",ET."Fund",ET."SOURCE_CODE",ET."AS_AT_DATE" FROM "Access.WebSite"."ufn_GetFundSummaryByFund"(NULL, NULL) ET

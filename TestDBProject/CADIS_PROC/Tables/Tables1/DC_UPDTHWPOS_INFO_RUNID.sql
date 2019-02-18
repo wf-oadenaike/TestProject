@@ -1,0 +1,24 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPDTHWPOS_INFO_RUNID] (
+    [EDM_SEC_ID__RUNID]         INT          NOT NULL,
+    [FILE_NAME__RUNID]          INT          NOT NULL,
+    [FILE_TYPE__RUNID]          INT          NOT NULL,
+    [FILE_DATE__RUNID]          INT          NOT NULL,
+    [CUSTOMER_CODE__RUNID]      INT          NOT NULL,
+    [MODEL_CODE]                VARCHAR (20) NOT NULL,
+    [MODEL_DATE__RUNID]         INT          NOT NULL,
+    [MODEL_DESCRIPTION__RUNID]  INT          NOT NULL,
+    [INSTRUMENT_UII]            VARCHAR (12) NOT NULL,
+    [SEDOL__RUNID]              INT          NOT NULL,
+    [CURRENCY__RUNID]           INT          NOT NULL,
+    [STOCK_SHORT_NAME__RUNID]   INT          NOT NULL,
+    [SECTOR_CODE__RUNID]        INT          NOT NULL,
+    [UII_ALLOCATION_PCT__RUNID] INT          NOT NULL,
+    [CURRENT_PERCENTAGE__RUNID] INT          NOT NULL,
+    [CHANGE_PERCENTAGE__RUNID]  INT          NOT NULL,
+    [START_PRICE__RUNID]        INT          NOT NULL,
+    [START_PRICE_DATE__RUNID]   INT          NOT NULL,
+    [CURRENT_PRICE__RUNID]      INT          NOT NULL,
+    [CURRENT_DATE]              DATETIME     NOT NULL,
+    PRIMARY KEY CLUSTERED ([MODEL_CODE] ASC, [INSTRUMENT_UII] ASC, [CURRENT_DATE] ASC) WITH (FILLFACTOR = 80)
+);
+

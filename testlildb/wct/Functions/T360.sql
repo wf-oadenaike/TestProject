@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[T360]
+(@Maturity DATETIME NULL, @Settlement DATETIME NULL, @CFdate DATETIME NULL, @Freq INT NULL, @Method30360 INT NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[T360]
+

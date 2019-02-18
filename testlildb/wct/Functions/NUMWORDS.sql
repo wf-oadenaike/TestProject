@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[NUMWORDS]
+(@Text NVARCHAR (MAX) NULL, @Delimiters NVARCHAR (4000) NULL)
+RETURNS INT
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[NUMWORDS]
+

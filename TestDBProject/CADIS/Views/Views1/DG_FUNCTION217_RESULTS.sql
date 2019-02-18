@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION217_RESULTS" AS 
+SELECT ET."MeetingOccurrenceId",ET."MeetingRegisterId",ET."MeetingNameBK",ET."MeetingDateTime",ET."MeetingNotes",ET."JIRAEpicKey",ET."DocumentationFolderLink",ET."ActiveFlag",ET."NextMeetingOccurrence",ET."ExpiredMeetingOccurrence",ET."WorkflowVersionGUID",ET."JoinGUID",ET."MeetingOccurrenceCreationDatetime",ET."MeetingOccurrenceLastModifiedDatetime" FROM "Access.ManyWho"."MeetingOccurrenceVw" ET WITH (NOLOCK)

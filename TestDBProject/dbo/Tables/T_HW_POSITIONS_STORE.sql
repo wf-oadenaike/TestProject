@@ -1,0 +1,24 @@
+﻿CREATE TABLE [dbo].[T_HW_POSITIONS_STORE] (
+    [ROW_NUMBER]             INT              IDENTITY (1, 1) NOT NULL,
+    [RUN_ID]                 BIGINT           NOT NULL,
+    [FILE_NAME]              VARCHAR (50)     NULL,
+    [CUSTOMER_CODE]          VARCHAR (255)    NULL,
+    [MODEL_CODE]             VARCHAR (255)    NULL,
+    [MODEL_DATE]             VARCHAR (255)    NULL,
+    [MODEL_DESCRIPTION]      VARCHAR (255)    NULL,
+    [INSTRUMENT_UII]         VARCHAR (255)    NULL,
+    [STOCK_SHORT_NAME]       VARCHAR (255)    NULL,
+    [SECTOR_CODE]            VARCHAR (255)    NULL,
+    [UII_ALLOCATION_PCT]     DECIMAL (38, 12) NULL,
+    [CURRENT_PERCENTAGE]     VARCHAR (255)    NULL,
+    [CHANGE_PERCENTAGE]      VARCHAR (255)    NULL,
+    [START_PRICE]            VARCHAR (255)    NULL,
+    [START_PRICE_DATE]       VARCHAR (255)    NULL,
+    [CURRENT_PRICE]          VARCHAR (255)    NULL,
+    [CURRENT_DATE]           VARCHAR (255)    NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME         DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME         DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50)    DEFAULT ('UNKNOWN') NOT NULL,
+    [CADIS_SYSTEM_PRIORITY]  INT              DEFAULT ((1)) NOT NULL
+);
+

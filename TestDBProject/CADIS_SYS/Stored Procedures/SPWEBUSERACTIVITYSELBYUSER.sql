@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_SYS].[SPWEBUSERACTIVITYSELBYUSER]
+@USERNAME NVARCHAR (100), @ATTEMPTS INT
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

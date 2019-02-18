@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION288_RESULTS" AS 
+SELECT ET."ChangeManagementEventID",ET."ChangeManagementID",ET."ChangeManagementEventType",ET."SubmittedBy",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."DocumentationFolderLink",ET."JoinGUID",ET."ChangeManagementEventCreationDatetime",ET."ChangeManagementEventLastModifiedDatetime" FROM "Access.ManyWho"."ChangeManagementEventsReadOnlyVw" ET WITH (NOLOCK)

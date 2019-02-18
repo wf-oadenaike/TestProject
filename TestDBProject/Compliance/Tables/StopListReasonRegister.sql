@@ -1,0 +1,28 @@
+﻿CREATE TABLE [Compliance].[StopListReasonRegister] (
+    [StopListReasonId]       INT              IDENTITY (1, 1) NOT NULL,
+    [StopListId]             INT              NOT NULL,
+    [ReasonTypeId]           SMALLINT         CONSTRAINT [DF_StopListReasonRegisterReasonId] DEFAULT ((10)) NOT NULL,
+    [StopListStatusId]       SMALLINT         NOT NULL,
+    [ReasonOwnerId]          SMALLINT         NOT NULL,
+    [RequesterPersonId]      SMALLINT         NOT NULL,
+    [ReviewerPersonId]       SMALLINT         NULL,
+    [InteractionId]          VARCHAR (20)     NULL,
+    [ComplianceJiraIssueKey] VARCHAR (255)    NULL,
+    [JIRAIssueKey]           VARCHAR (255)    NULL,
+    [AnticipatedCleanseDate] DATETIME         NULL,
+    [StoppedDate]            DATETIME         NULL,
+    [AdvisedDate]            DATETIME         NOT NULL,
+    [CleansedDate]           DATETIME         NULL,
+    [JoinGUID]               UNIQUEIDENTIFIER NOT NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME         CONSTRAINT [DF_SLRR_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME         CONSTRAINT [DF_SLRR_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50)    CONSTRAINT [DF_SLRR_CSC] DEFAULT ('UNKNOWN') NULL,
+    CONSTRAINT [PKStopListReasonRegister] PRIMARY KEY CLUSTERED ([StopListReasonId] ASC) WITH (FILLFACTOR = 80),
+    CONSTRAINT [StopListReasonRegisterReasonId] FOREIGN KEY ([ReasonTypeId]) REFERENCES [Compliance].[StopListReasonType] ([ReasonTypeId]),
+    CONSTRAINT [StopListReasonRegisterReasonOwnerId] FOREIGN KEY ([ReasonOwnerId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [StopListReasonRegisterRequesterPersonId] FOREIGN KEY ([RequesterPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [StopListReasonRegisterReviewerPersonId] FOREIGN KEY ([ReviewerPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [StopListReasonRegisterStatusId] FOREIGN KEY ([StopListStatusId]) REFERENCES [Compliance].[StopListStatuses] ([StopListStatusId]),
+    CONSTRAINT [StopListReasonRegisterStopListId] FOREIGN KEY ([StopListId]) REFERENCES [Compliance].[StopListRegister] ([StopListId])
+);
+

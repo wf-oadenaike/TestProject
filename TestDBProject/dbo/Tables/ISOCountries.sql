@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[ISOCountries] (
+    [NumericCode]            SMALLINT      NOT NULL,
+    [Alpha2Code]             VARCHAR (2)   NOT NULL,
+    [Alpha3Code]             VARCHAR (3)   NOT NULL,
+    [FullName]               VARCHAR (255) NOT NULL,
+    [ShortName]              VARCHAR (255) NOT NULL,
+    [ShortNameLowerCase]     VARCHAR (255) NOT NULL,
+    [ShortNameWoodford]      VARCHAR (255) NOT NULL,
+    [CurrencyNumericCode]    SMALLINT      DEFAULT ((-1)) NOT NULL,
+    [SalesforceId]           VARCHAR (18)  NOT NULL,
+    [WoodfordOrder]          SMALLINT      NOT NULL,
+    [IsActive]               BIT           DEFAULT ((1)) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    PRIMARY KEY CLUSTERED ([NumericCode] ASC) WITH (FILLFACTOR = 80),
+    CONSTRAINT [FK_ISOCountriesToCurrencies] FOREIGN KEY ([CurrencyNumericCode]) REFERENCES [dbo].[ISOCurrencies] ([NumericCode]),
+    UNIQUE NONCLUSTERED ([Alpha2Code] ASC) WITH (FILLFACTOR = 80),
+    UNIQUE NONCLUSTERED ([Alpha3Code] ASC) WITH (FILLFACTOR = 80),
+    UNIQUE NONCLUSTERED ([FullName] ASC) WITH (FILLFACTOR = 80),
+    UNIQUE NONCLUSTERED ([SalesforceId] ASC) WITH (FILLFACTOR = 80),
+    UNIQUE NONCLUSTERED ([ShortName] ASC) WITH (FILLFACTOR = 80),
+    UNIQUE NONCLUSTERED ([ShortNameLowerCase] ASC) WITH (FILLFACTOR = 80),
+    UNIQUE NONCLUSTERED ([ShortNameWoodford] ASC) WITH (FILLFACTOR = 80),
+    UNIQUE NONCLUSTERED ([WoodfordOrder] ASC) WITH (FILLFACTOR = 80)
+);
+

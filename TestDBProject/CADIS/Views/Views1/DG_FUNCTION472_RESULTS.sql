@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION472_RESULTS" AS 
+SELECT ET."TransactionNo",ET."FinancialLineCode",ET."FinancialFactId",ET."FiscalYear",ET."FiscalFirstDayOfYear",ET."FiscalLastDayOfYear",ET."DepartmentNumber",ET."DepartmentName",ET."TransactionDate",ET."Details",ET."Amount",ET."Forecast",ET."AccountName",ET."AccountCategory",ET."TransactionTypeBK",ET."Supplier",ET."NominalCode",ET."ProjectName",ET."IsDiscretionary",ET."IsNonDiscretionary",ET."AmountRaw",ET."ControlDate",ET."LastUpdatedDate" FROM "Access.WebDev"."ufn_NJRFinancialDashboardAll"(NULL) ET

@@ -1,0 +1,26 @@
+﻿CREATE TABLE [BAU].[BCPCriticalProcessRegister] (
+    [BCPCriticalProcessId]                   INT              IDENTITY (1, 1) NOT NULL,
+    [CriticalProcess]                        VARCHAR (MAX)    NOT NULL,
+    [Summary]                                VARCHAR (MAX)    NOT NULL,
+    [RecoveryTimeFrame]                      VARCHAR (255)    NOT NULL,
+    [Status]                                 VARCHAR (50)     NOT NULL,
+    [IsActive]                               BIT              CONSTRAINT [DF_BCPCPR_BCPCPRIA] DEFAULT ((1)) NOT NULL,
+    [OwnerPersonId]                          SMALLINT         NOT NULL,
+    [RecordedByPersonId]                     SMALLINT         CONSTRAINT [DF_BCPCPR_BCPCPRRP] DEFAULT ((-1)) NOT NULL,
+    [DepartmentId]                           SMALLINT         NULL,
+    [DocumentationFolderLink]                VARCHAR (2000)   NULL,
+    [JoinGUID]                               UNIQUEIDENTIFIER NOT NULL,
+    [BCPCriticalProcessCreationDatetime]     DATETIME         CONSTRAINT [DF_BCCPR_BCPCPRCDT] DEFAULT (getdate()) NOT NULL,
+    [BCPCriticalProcessLastModifiedDatetime] DATETIME         CONSTRAINT [DF_BCPCPR_BCPCPLMDT] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]                  DATETIME         CONSTRAINT [DF_BCPCPR_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                   DATETIME         CONSTRAINT [DF_BCPCPR_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]                 NVARCHAR (50)    CONSTRAINT [DF_BCPCPR_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                  INT              CONSTRAINT [DF_BCPCPR_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]                 ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]              DATETIME         CONSTRAINT [DF_BCPCPR_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKBCPCriticalProcessRegister] PRIMARY KEY CLUSTERED ([BCPCriticalProcessId] ASC),
+    CONSTRAINT [BCPCriticalProcessRegisterDepartmentId] FOREIGN KEY ([DepartmentId]) REFERENCES [Core].[Departments] ([DepartmentId]),
+    CONSTRAINT [BCPCriticalProcessRegisterOwnerPersonId] FOREIGN KEY ([OwnerPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [BCPCriticalProcessRegisterRecordedByPersonId] FOREIGN KEY ([RecordedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

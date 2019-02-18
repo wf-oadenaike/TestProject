@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION99_RESULTS" AS 
+SELECT ET."MonitoringThemeId",ET."MonitoringCategoryId",ET."ThemeName",ET."ThemeSummary",ET."SubmittedByPersonId",ET."JoinGUID",ET."MonitoringThemeCreationDate",ET."MonitoringThemeLastModifiedDate",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Compliance"."MonitoringThemes" ET WITH (NOLOCK)

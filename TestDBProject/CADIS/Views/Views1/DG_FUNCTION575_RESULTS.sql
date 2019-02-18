@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION575_RESULTS" AS 
+SELECT ET."ID",ET."Name",ET."Status",ET."Industry",ET."Supersector",ET."Sector",ET."Subsector",ET."FundManagerPersonID",ET."FundManagerName",ET."InvestmentAnalystPersonID",ET."InvestmentAnalystName",ET."Description",ET."InternalNotes",ET."SFAccountID",ET."ReferrerSFContactID",ET."BoxFolderID",ET."SubmittedBy" FROM "Investment"."V_CompanyReferral" ET WITH (NOLOCK)

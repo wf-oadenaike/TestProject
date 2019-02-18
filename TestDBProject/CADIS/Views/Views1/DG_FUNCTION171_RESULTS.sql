@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION171_RESULTS" AS 
+SELECT ET."FinanceRequestEventId",ET."FinanceRequestId",ET."FinanceRequestEventType",ET."RecordedByPersonId",ET."RecordedBy",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."DocumentationFolderLink",ET."JoinGUID",ET."FinanceRequestEventCreationDatetime",ET."FinanceRequestEventLastModifiedDatetime" FROM "Access.ManyWho"."FinanceRequestEventsReadOnlyVw" ET WITH (NOLOCK)

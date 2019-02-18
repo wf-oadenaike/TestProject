@@ -1,0 +1,6 @@
+﻿CREATE VIEW "CADIS"."VW_Reference_Security_Type"
+AS
+SELECT 
+T1.* 
+FROM "dbo"."T_REF_SECURITY_TYPE" T1
+WHERE T1.[ACTIVE] = 'Y'

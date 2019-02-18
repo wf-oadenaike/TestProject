@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Organisation].[UnquotedCompanyDecisions] (
+    [UnquotedCompanyDecisionId] INT              IDENTITY (1, 1) NOT NULL,
+    [UnquotedCompanyStage]      VARCHAR (5)      NOT NULL,
+    [InvestmentDecisionType]    CHAR (3)         NOT NULL,
+    [UnquotedCompanyId]         INT              NOT NULL,
+    [DecisionByPersonId]        SMALLINT         NOT NULL,
+    [DecisionByRoleId]          SMALLINT         NOT NULL,
+    [DecisionCreatedDate]       DATETIME         CONSTRAINT [DF_UCD_DDT] DEFAULT (getdate()) NOT NULL,
+    [DecisionLastModifiedDate]  DATETIME         CONSTRAINT [DF_UCD_DLMD] DEFAULT (getdate()) NOT NULL,
+    [DeferDecisionDate]         DATETIME         NULL,
+    [JoinGUID]                  UNIQUEIDENTIFIER NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME         CONSTRAINT [DF_UCD_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME         CONSTRAINT [DF_UCD_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50)    CONSTRAINT [DF_UCD_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]     INT              CONSTRAINT [DF_UCD_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]    ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED] DATETIME         CONSTRAINT [DF_UCD_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [XPKUnquotedCompanyDecisions] PRIMARY KEY CLUSTERED ([UnquotedCompanyDecisionId] ASC),
+    CONSTRAINT [UnquotedCompanyDecisionsDecisionByPersonId] FOREIGN KEY ([DecisionByPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [UnquotedCompanyDecisionsDecisionByRoleIdUnquotedCompanyStage] FOREIGN KEY ([UnquotedCompanyStage], [DecisionByRoleId]) REFERENCES [Organisation].[UnquotedCompanyStageRoles] ([UnquotedCompanyStage], [RoleId]),
+    CONSTRAINT [UnquotedCompanyDecisionsDecisionByRoleNameId] FOREIGN KEY ([DecisionByRoleId]) REFERENCES [Core].[Roles] ([RoleId]),
+    CONSTRAINT [UnquotedCompanyDecisionsInvestmentDecisionType] FOREIGN KEY ([InvestmentDecisionType]) REFERENCES [Organisation].[InvestmentDecisionTypes] ([InvestmentDecisionType]),
+    CONSTRAINT [UnquotedCompanyDecisionsUnquotedCompanyId] FOREIGN KEY ([UnquotedCompanyId]) REFERENCES [Organisation].[UnquotedCompanies] ([UnquotedCompanyId]),
+    CONSTRAINT [UnquotedCompanyDecisionsUnquotedCompanyStageId] FOREIGN KEY ([UnquotedCompanyStage]) REFERENCES [Organisation].[UnquotedCompanyStages] ([UnquotedCompanyStage])
+);
+

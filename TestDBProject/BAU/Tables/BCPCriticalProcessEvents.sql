@@ -1,0 +1,27 @@
+﻿CREATE TABLE [BAU].[BCPCriticalProcessEvents] (
+    [BCPCriticalProcessEventId]                   INT              IDENTITY (1, 1) NOT NULL,
+    [BCPCriticalProcessId]                        INT              NOT NULL,
+    [RecordedByPersonId]                          SMALLINT         CONSTRAINT [DF_BCPCPE_BCPCPERP] DEFAULT ((-1)) NOT NULL,
+    [EventDetails]                                VARCHAR (MAX)    NULL,
+    [EventType]                                   VARCHAR (50)     NOT NULL,
+    [EventDate]                                   DATETIME         CONSTRAINT [DF_BCPCPE_BCPCPEED] DEFAULT (getdate()) NOT NULL,
+    [Status]                                      VARCHAR (50)     NULL,
+    [TechnologyDetails]                           VARCHAR (128)    NULL,
+    [ProcessPersonId]                             SMALLINT         NULL,
+    [Supplier]                                    NVARCHAR (127)   NULL,
+    [DocumentationFolderLink]                     VARCHAR (2000)   NULL,
+    [JoinGUID]                                    UNIQUEIDENTIFIER NOT NULL,
+    [BCPCriticalProcessEventCreationDate]         DATETIME         CONSTRAINT [DF_BCPCPE_BCPCPECD] DEFAULT (getdate()) NOT NULL,
+    [BCPCriticalProcessEventLastModifiedDatetime] DATETIME         CONSTRAINT [DF_BCPCPE_BCPCPELMD] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]                       DATETIME         CONSTRAINT [DF_BCPCPE_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                        DATETIME         CONSTRAINT [DF_BCPCPE_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]                      NVARCHAR (50)    CONSTRAINT [DF_BCPCPE_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                       INT              CONSTRAINT [DF_BCPCPE_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]                      ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]                   DATETIME         CONSTRAINT [DF_BCPCPE_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKBCPCriticalProcessEvents] PRIMARY KEY CLUSTERED ([BCPCriticalProcessEventId] ASC),
+    CONSTRAINT [BCPCriticalProcessEventsBCPCriticalProcessId] FOREIGN KEY ([BCPCriticalProcessId]) REFERENCES [BAU].[BCPCriticalProcessRegister] ([BCPCriticalProcessId]),
+    CONSTRAINT [BCPCriticalProcessEventsProcessPersonId] FOREIGN KEY ([ProcessPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [BCPCriticalProcessEventsRecordedByPersonId] FOREIGN KEY ([RecordedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

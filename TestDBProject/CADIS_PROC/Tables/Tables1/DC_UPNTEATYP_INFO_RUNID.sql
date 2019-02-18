@@ -1,0 +1,28 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPNTEATYP_INFO_RUNID] (
+    [ACCOUNT_NUMBER]                    VARCHAR (255) NOT NULL,
+    [SECURITY_NUMBER]                   VARCHAR (255) NOT NULL,
+    [SECURITY_DESCRIPTION__RUNID]       INT           NOT NULL,
+    [SEDOL__RUNID]                      INT           NOT NULL,
+    [CUSIP__RUNID]                      INT           NOT NULL,
+    [COUNTRY_OF_TAXATION__RUNID]        INT           NOT NULL,
+    [STATE_CODE__RUNID]                 INT           NOT NULL,
+    [ASSET_GROUP__RUNID]                INT           NOT NULL,
+    [EX_DATE_SHARES__RUNID]             INT           NOT NULL,
+    [EX_DATE__RUNID]                    INT           NOT NULL,
+    [ACCRUED_INCOME__RUNID]             INT           NOT NULL,
+    [INCOME_RECEIVED__RUNID]            INT           NOT NULL,
+    [PRIOR_INC_ACCRUED__RUNID]          INT           NOT NULL,
+    [INCOME_EARNED__RUNID]              INT           NOT NULL,
+    [AMORT_ACCRUED__RUNID]              INT           NOT NULL,
+    [AMORT_SOLD__RUNID]                 INT           NOT NULL,
+    [PRIOR_AMORT_ACCRUED__RUNID]        INT           NOT NULL,
+    [AMORT_EARNED__RUNID]               INT           NOT NULL,
+    [TOTAL_INC_AND_AMORT_EARNED__RUNID] INT           NOT NULL,
+    [UNITS__RUNID]                      INT           NOT NULL,
+    [FUND_NET_INCOME__RUNID]            INT           NOT NULL,
+    [RATE__RUNID]                       INT           NOT NULL,
+    [FUND_FISCAL_YEAR__RUNID]           INT           NOT NULL,
+    [FUND_FISCAL_QUARTER__RUNID]        INT           NOT NULL,
+    PRIMARY KEY CLUSTERED ([ACCOUNT_NUMBER] ASC, [SECURITY_NUMBER] ASC) WITH (FILLFACTOR = 80)
+);
+

@@ -1,0 +1,14 @@
+﻿CREATE TABLE [dbo].[T_USER_DETAILS] (
+    [CLIENT]                 VARCHAR (50)  NOT NULL,
+    [SamAccountName]         VARCHAR (150) NOT NULL,
+    [PasswordExpires]        VARCHAR (50)  NULL,
+    [enabled]                VARCHAR (20)  NULL,
+    [passwordexpired]        VARCHAR (20)  NULL,
+    [lockedout]              VARCHAR (20)  NULL,
+    [PasswordNeverExpires]   VARCHAR (20)  NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME      CONSTRAINT [DF__T_USER_DE__CADIS__733B712A] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME      CONSTRAINT [DF__T_USER_DE__CADIS__742F9563] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50) CONSTRAINT [DF__T_USER_DE__CADIS__7523B99C] DEFAULT ('UNKNOWN') NULL,
+    CONSTRAINT [PK__T_USER_D__6AEEFEA349C3253E] PRIMARY KEY CLUSTERED ([CLIENT] ASC, [SamAccountName] ASC) WITH (FILLFACTOR = 80)
+);
+

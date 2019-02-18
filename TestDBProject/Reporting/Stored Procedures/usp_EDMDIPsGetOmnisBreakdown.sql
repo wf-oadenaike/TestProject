@@ -1,0 +1,30 @@
+﻿CREATE PROCEDURE [Reporting].[usp_EDMDIPsGetOmnisBreakdown]
+	@RunDate date = NULL
+AS
+Set NoCount on
+	
+IF @RunDate IS NULL
+BEGIN
+	SET @RunDate = CONVERT(DATE, GETDATE())
+END
+
+;WITH CTE_Data AS (
+	SELECT
+	  [FUND_LONG_NAME] AS Shareclass
+      ,[DECISION_VALUE] AS NetFlow
+  FROM [dbo].[T_MASTER_FND_SHARE_CLASS_FLOW]
+  WHERE CONVERT(DATE, VALUATION_POINT_DATE) = @RunDate
+UNION
+	SELECT
+	  'Total'
+      ,SUM([DECISION_VALUE])
+  FROM [dbo].[T_MASTER_FND_SHARE_CLASS_FLOW]
+  WHERE CONVERT(DATE, VALUATION_POINT_DATE) = @RunDate
+ 
+)
+SELECT 
+	Shareclass
+	,@RunDate AS [Date]
+	, ISNULL(NetFlow,0) AS NetFlow
+	, PARSENAME(CONVERT(varchar, CONVERT(MONEY, ISNULL(NetFlow,0)), 1),2) AS NetFlowDisplay
+FROM CTE_Data a

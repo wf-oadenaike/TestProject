@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION736_RESULTS" AS 
+SELECT ET."TensionId",ET."TensionSummary",ET."TensionDescription",ET."TensionResolution",ET."ResolutionDate",ET."CircleId",ET."CircleName",ET."RaisedByPersonId",ET."RaisedBy",ET."JIRAKey",ET."JoinGUID",ET."SlackChannel",ET."IsActive",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Access.ManyWho"."TensionRegisterReadOnlyVw" ET WITH (NOLOCK)

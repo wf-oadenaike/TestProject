@@ -1,0 +1,25 @@
+﻿CREATE TABLE [PolicyProc].[SignatoryOwner] (
+    [SignatoryOwnerId]                   INT              IDENTITY (1, 1) NOT NULL,
+    [ProcDocumentId]                     INT              NULL,
+    [PolicyId]                           INT              NULL,
+    [RoleId]                             SMALLINT         NOT NULL,
+    [PersonId]                           SMALLINT         NULL,
+    [IsOwner]                            BIT              NOT NULL,
+    [IsSignatory]                        BIT              NOT NULL,
+    [IsActive]                           BIT              CONSTRAINT [DF_SO_IA] DEFAULT ((1)) NOT NULL,
+    [JoinGUID]                           UNIQUEIDENTIFIER NOT NULL,
+    [SignatoryOwnerCreationDatetime]     DATETIME         CONSTRAINT [DF_SO_SOCDT] DEFAULT (getdate()) NOT NULL,
+    [SignatoryOwnerLastModifiedDatetime] DATETIME         CONSTRAINT [DF_SO_SOLMDT] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]              DATETIME         CONSTRAINT [DF_SO_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]               DATETIME         CONSTRAINT [DF_SO_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]             NVARCHAR (50)    CONSTRAINT [DF_SO_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]              INT              CONSTRAINT [DF_SO_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]             ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]          DATETIME         CONSTRAINT [DF_SO_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKSignatoryOwner] PRIMARY KEY CLUSTERED ([SignatoryOwnerId] ASC),
+    CONSTRAINT [SignatoryOwnerPersonId] FOREIGN KEY ([PersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [SignatoryOwnerPolicyId] FOREIGN KEY ([PolicyId]) REFERENCES [PolicyProc].[PolicyRegister] ([PolicyId]),
+    CONSTRAINT [SignatoryOwnerProcDocumentId] FOREIGN KEY ([ProcDocumentId]) REFERENCES [PolicyProc].[ProceduresDocument] ([ProcDocumentId]),
+    CONSTRAINT [SignatoryOwnerRoleId] FOREIGN KEY ([RoleId]) REFERENCES [Core].[Roles] ([RoleId])
+);
+

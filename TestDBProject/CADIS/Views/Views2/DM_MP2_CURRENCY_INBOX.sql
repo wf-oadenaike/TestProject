@@ -1,0 +1,16 @@
+﻿CREATE VIEW "CADIS"."DM_MP2_CURRENCY_INBOX" AS 
+SELECT convert(tinyint,1) as "DM__Status",
+	'CURRENCY' as "DM__Source",
+	'CCY_CODE: '+CONVERT(VARCHAR(8000),SR."CCY_CODE") as "DM__Source Key",
+	RS.CADISID as "Proposed Cadis Id",
+	SR."CADIS Id" as "Assigned Cadis Id",
+	CONVERT(TINYINT,RS.PRIORITY) as "DM__Priority",
+	RS.INSERTED as "Matched Date",
+	RS.CHANGEDBY as "Matched By",
+	RS.SOURCEROWID as "Source Row Id",
+	SR.*,
+	21 as "DM__Source Id"
+	FROM "CADIS_PROC"."DM_MP2_RESULT" RS
+	INNER JOIN "CADIS"."DM_SECURITY_CURRENCY_INFO" SR ON SR."CADIS Row Id" = RS.SOURCEROWID
+	WHERE RS.SOURCEID = 21
+	AND RS.PROVISIONAL = 1

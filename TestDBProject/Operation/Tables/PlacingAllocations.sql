@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Operation].[PlacingAllocations] (
+    [PlacingAllocationId]                   SMALLINT         IDENTITY (1, 1) NOT NULL,
+    [PlacingRegisterId]                     INT              NOT NULL,
+    [PortfolioCode]                         VARCHAR (20)     NOT NULL,
+    [PortfolioName]                         VARCHAR (128)    NOT NULL,
+    [AllocationAmount]                      DECIMAL (19, 2)  NULL,
+    [AllocationPercent]                     DECIMAL (19, 2)  NULL,
+    [AllocationDescription]                 VARCHAR (2048)   NULL,
+    [AllocationBasisPoints]                 DECIMAL (19, 2)  NULL,
+    [NumberOfShares]                        DECIMAL (19, 2)  NULL,
+    [CurrencyCode]                          CHAR (3)         NULL,
+    [VotingRights]                          DECIMAL (19, 2)  NULL,
+    [JoinGUID]                              UNIQUEIDENTIFIER NOT NULL,
+    [PlacingAllocationCreationDatetime]     DATETIME         CONSTRAINT [DF_PA_PACDT] DEFAULT (getdate()) NOT NULL,
+    [PlacingAllocationLastModifiedDatetime] DATETIME         CONSTRAINT [DF_PA_PALMDT] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]                 DATETIME         CONSTRAINT [DF_PA_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                  DATETIME         CONSTRAINT [DF_PA_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]                NVARCHAR (50)    CONSTRAINT [DF_PA_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                 INT              CONSTRAINT [DF_PA_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]                ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]             DATETIME         CONSTRAINT [DF_PA_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKPlacingAllocations] PRIMARY KEY CLUSTERED ([PlacingAllocationId] ASC),
+    CONSTRAINT [PlacingAllocationsPortfolioCode] FOREIGN KEY ([PortfolioCode]) REFERENCES [dbo].[T_MASTER_FND] ([SHORT_NAME]),
+    CONSTRAINT [PlacingAllocationsRegisterId] FOREIGN KEY ([PlacingRegisterId]) REFERENCES [Operation].[PlacingsRegister] ([PlacingRegisterId])
+);
+

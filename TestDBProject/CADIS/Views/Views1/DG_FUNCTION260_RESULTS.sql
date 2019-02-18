@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION260_RESULTS" AS 
+SELECT ET."EventId",ET."PolicyId",ET."ProcDocumentId",ET."EventTypeId",ET."EventType",ET."SubmittedByPersonId",ET."SubmittedBy",ET."EventDetails",ET."EventDate",ET."EventStatus",ET."EventTrueFalse",ET."JiraTaskKey",ET."IsLegalStatusChange",ET."IsRebrand",ET."IsContentChange",ET."BoxFileId",ET."BoxFilename",ET."DocumentationFolderLink",ET."JoinGUID",ET."EventCreationDatetime",ET."EventLastModifiedDatetime" FROM "Access.ManyWho"."PolicyProcEventsReadOnlyVw" ET WITH (NOLOCK)

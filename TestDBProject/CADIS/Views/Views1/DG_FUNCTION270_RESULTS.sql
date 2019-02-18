@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION270_RESULTS" AS 
+SELECT ET."EBIBreachTypeId",ET."EBIBreachName" FROM "Access.ManyWho"."EBIBreachTypesVw" ET WITH (NOLOCK)

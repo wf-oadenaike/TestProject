@@ -1,0 +1,28 @@
+﻿CREATE TABLE [PolicyProc].[PolicyRegister] (
+    [PolicyId]                           INT              IDENTITY (1, 1) NOT NULL,
+    [PolicyName]                         VARCHAR (255)    NOT NULL,
+    [Version]                            VARCHAR (20)     NULL,
+    [Status]                             VARCHAR (128)    NULL,
+    [SummaryDescription]                 VARCHAR (MAX)    NULL,
+    [ReviewFrequencyId]                  INT              CONSTRAINT [DF_POR_RF] DEFAULT ((1)) NOT NULL,
+    [LastReviewDate]                     DATE             NULL,
+    [NextReviewDate]                     DATE             NULL,
+    [IsActive]                           BIT              CONSTRAINT [DF_POR_IA] DEFAULT ((1)) NULL,
+    [ModifiedByPersonId]                 SMALLINT         NULL,
+    [DocumentCategoryId]                 INT              NULL,
+    [DocumentationFolderLink]            VARCHAR (2000)   NULL,
+    [JoinGUID]                           UNIQUEIDENTIFIER NOT NULL,
+    [PolicyRegisterCreationDatetime]     DATETIME         CONSTRAINT [DF_POR_PORCDT] DEFAULT (getdate()) NOT NULL,
+    [PolicyRegisterLastModifiedDatetime] DATETIME         CONSTRAINT [DF_POR_PORLMDT] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]              DATETIME         CONSTRAINT [DF_POR_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]               DATETIME         CONSTRAINT [DF_POR_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]             NVARCHAR (50)    CONSTRAINT [DF_POR_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]              INT              CONSTRAINT [DF_POR_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]             ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]          DATETIME         CONSTRAINT [DF_POR_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKPolicyRegister] PRIMARY KEY CLUSTERED ([PolicyId] ASC),
+    CONSTRAINT [PolicyRegisterDocumentCategoryId] FOREIGN KEY ([DocumentCategoryId]) REFERENCES [PolicyProc].[DocumentCategories] ([CategoryId]),
+    CONSTRAINT [PolicyRegisterModifiedByPersonId] FOREIGN KEY ([ModifiedByPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [PolicyRegisterReviewFrequencyId] FOREIGN KEY ([ReviewFrequencyId]) REFERENCES [PolicyProc].[ReviewFrequency] ([ReviewFrequencyId])
+);
+

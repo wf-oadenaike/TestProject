@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION46_RESULTS" AS 
+SELECT ET."PolicyThemeNameBK",ET."PolicyThemeRegisterId",ET."PTPCategoryId",ET."PolicyThemeVersionNo",ET."PolicyThemeExpiryDate",ET."PolicyThemeDocumentStatus",ET."ActiveFlag",ET."ChangeStatus",ET."ChangeReason",ET."PolicyThemeSummary",ET."PolicyThemeReviewFrequencyId",ET."DocumentationFolderLink",ET."DocumentationFolderId",ET."WorkflowVersionGUID",ET."JoinGUID",ET."PolicyThemeCreationDatetime",ET."PolicyThemeLastModifiedDatetime" FROM "Organisation"."PolicyThemeRegister" ET WITH (NOLOCK)

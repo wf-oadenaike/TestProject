@@ -1,0 +1,46 @@
+﻿CREATE VIEW [dbo].[T_BPS_SECURITY_DERIVATIVE_VIEW]
+AS
+SELECT [FILE_NAME], [DATE], [IDENTIFIER]
+,CAST(NULL AS [varchar](10)) AS    [OPTION_ROOT_TICKER] 
+	,CAST(NULL AS [varchar](8)) AS    [PUT_CALL_INDICATOR] 
+	,CAST(NULL AS [datetime]) AS     [EXPIRY_DATE] 
+	,CAST(NULL AS [varchar](10)) AS    [FUTURE_EXPIRY_MONTH_YEAR]  
+	,CAST(NULL AS [varchar](8)) AS    [EXERCISE_TYPE] 
+	,CAST(NULL AS [decimal](26, 6)) AS    [CONTRACT_SIZE] 
+	,CAST(NULL AS  [decimal](26, 6)) AS     [CONTRACT_VALUE]
+	,CAST(NULL AS [varchar](30)) AS    [FUTURE_TYPE] 
+	,CAST(NULL AS [datetime]) AS    [LAST_TRADE_DATE] 
+	,CAST(NULL AS [varchar](30)) AS    [LONG_EXCHANGE_NAME] 
+	,CAST(NULL AS [decimal](26, 6)) AS    [DELTA] 
+	,CAST(NULL AS [decimal](26, 6)) AS    [GAMMA] 
+	,CAST(NULL AS [decimal](26, 6)) AS    [THETA]
+	,CAST(NULL AS [decimal](26, 6)) AS    [VEGA] 
+	,CAST(NULL AS [varchar](1)) AS    [EURO_FUTURE_INDICATOR] 
+	,CAST(NULL AS [decimal](26, 6)) AS    [CONVERSION_FACTOR] 
+	,CAST(NULL AS [decimal](26, 6)) AS    [CTD_CONVERSION_DURATION] 
+	,CAST(NULL AS [varchar](12)) AS    [CTD_ISIN] 
+	,CAST(NULL AS [varchar](7)) AS    [CTD_SEDOL] 
+	,CAST(NULL AS [varchar](20)) AS    [CTD_RISK_TYPE] 
+	,CAST(NULL AS [int]) AS    [FUTURE_DAYS_TO_EXPIRY] 
+	,CAST(NULL AS [varchar](30)) AS    [FUTURE_LONGNAME] 
+	,CAST(NULL AS [decimal](26, 6)) AS    [STRIKE_PRICE] 
+	,CAST(NULL AS [decimal](26, 6)) AS    [TICK_SIZE]
+	,pvt.[CADIS_SYSTEM_UPDATED]
+FROM 
+(SELECT [FILE_NAME]
+      ,[DATE]
+      ,[IDENTIFIER]
+      ,[FIELD]
+	  ,[VALUE]
+	  ,[CADIS_SYSTEM_UPDATED]
+FROM [dbo].[T_BPS_SECURITY]) p
+PIVOT
+(
+	MIN([VALUE])
+FOR [FIELD] IN
+( 
+	[ABCDE],
+	[EFGHI]
+ )
+) AS pvt
+

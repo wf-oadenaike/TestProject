@@ -1,0 +1,3 @@
+﻿CREATE VIEW vRandom
+AS
+SELECT randval = CRYPT_GEN_RANDOM (8)

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION72_RESULTS" AS 
+SELECT ET."ClientReportingId",ET."MandateId",ET."ReportName",ET."ReportType",ET."ReportingFrequency",ET."FrequencyStartDay",ET."FrequencyStartMonth",ET."DeadlineDaysOffset",ET."Notes",ET."SubmittedByPersonId",ET."DocumentationFolderLink",ET."JoinGUID",ET."ClientReportingCreationDatetime",ET."ClientReportingLastModifiedDatetime",ET."IsActive" FROM "Sales"."ClientReporting" ET WITH (NOLOCK)

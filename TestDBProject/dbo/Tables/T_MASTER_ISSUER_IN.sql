@@ -1,0 +1,22 @@
+﻿CREATE TABLE [dbo].[T_MASTER_ISSUER_IN] (
+    [EDM_SEC_ID]                      BIGINT        NULL,
+    [SECURITY_NAME]                   VARCHAR (250) NULL,
+    [SECURITY_DESCRIPTION]            VARCHAR (500) NULL,
+    [SECURITY_SHORTNAME]              VARCHAR (250) NULL,
+    [ASSET_TYPE]                      VARCHAR (250) NULL,
+    [SECURITY_TYPE]                   VARCHAR (250) NULL,
+    [CUSIP]                           VARCHAR (250) NULL,
+    [ISIN]                            VARCHAR (250) NULL,
+    [SEDOL]                           VARCHAR (250) NULL,
+    [TICKER]                          VARCHAR (250) NULL,
+    [PARSEKEYABLE_DESCRIPTION]        VARCHAR (250) NULL,
+    [ID_BB_ULTIMATE_PARENT_CO_NAME]   VARCHAR (250) NULL,
+    [ULT_PARENT_TICKER_EXCHANGE]      VARCHAR (250) NULL,
+    [ULT_PARENT_CNTRY_OF_RISK]        VARCHAR (250) NULL,
+    [ULT_PARENT_CNTRY_DOMICILE]       VARCHAR (250) NULL,
+    [LEI_ULTIMATE_PARENT_COMPANY]     VARCHAR (250) NULL,
+    [ID_BB_GLOBAL_ULTIMATE_PARENT_CO] VARCHAR (250) NULL,
+    [ULT_PARENT_CNTRY_INCORPORATION]  VARCHAR (250) NULL,
+    [FILE_NAME]                       VARCHAR (250) NULL
+);
+

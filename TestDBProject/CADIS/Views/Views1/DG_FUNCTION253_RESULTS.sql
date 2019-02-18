@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION253_RESULTS" AS 
+SELECT ET."ProcedureId",ET."ProcedureName",ET."Version",ET."Status",ET."SummaryDescription",ET."ProcDocumentId",ET."IsActive",ET."ModifiedByPersonId",ET."DocumentationFolderLink",ET."JoinGUID",ET."ProcedureRegisterCreationDatetime",ET."ProcedureRegisterLastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "PolicyProc"."ProcedureRegister" ET WITH (NOLOCK)

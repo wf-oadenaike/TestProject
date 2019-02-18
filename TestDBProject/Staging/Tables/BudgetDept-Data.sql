@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Staging].[BudgetDept-Data] (
+    [Rowid]             INT            IDENTITY (1, 1) NOT NULL,
+    [DepartmentNumber]  NVARCHAR (255) NULL,
+    [FiscalYear]        NVARCHAR (255) NULL,
+    [Heading1]          NVARCHAR (255) NULL,
+    [Heading2]          NVARCHAR (255) NULL,
+    [Heading3]          NVARCHAR (255) NULL,
+    [NominalCode]       NVARCHAR (255) NULL,
+    [Total1]            NVARCHAR (255) NULL,
+    [Total2]            NVARCHAR (255) NULL,
+    [AprilCol]          NVARCHAR (255) NULL,
+    [MayCol]            NVARCHAR (255) NULL,
+    [JunCol]            NVARCHAR (255) NULL,
+    [JulCol]            NVARCHAR (255) NULL,
+    [AugCol]            NVARCHAR (255) NULL,
+    [SepCol]            NVARCHAR (255) NULL,
+    [OctCol]            NVARCHAR (255) NULL,
+    [NovCol]            NVARCHAR (255) NULL,
+    [DecCol]            NVARCHAR (255) NULL,
+    [JanCol]            NVARCHAR (255) NULL,
+    [FebCol]            NVARCHAR (255) NULL,
+    [MarCol]            NVARCHAR (255) NULL,
+    [FileName]          NVARCHAR (255) NULL,
+    [FinancialLineCode] NVARCHAR (10)  NULL,
+    [IsExpense]         BIT            CONSTRAINT [DF_BDD_IE] DEFAULT ((1)) NULL
+);
+

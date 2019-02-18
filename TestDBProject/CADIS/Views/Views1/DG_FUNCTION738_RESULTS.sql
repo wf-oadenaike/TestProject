@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION738_RESULTS" AS 
+SELECT ET."Id",ET."CircleProcessId",ET."Frequency",ET."FrequencyDay",ET."FrequencyStart",ET."ProjectKey",ET."EpicKey",ET."IssueType",ET."ReporterPersonId",ET."AssigneePersonId",ET."DueDateOffset",ET."Summary",ET."Purpose",ET."Outcome",ET."Description",ET."IsActive",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "dbo"."CircleProcessScheduledTasks" ET WITH (NOLOCK)

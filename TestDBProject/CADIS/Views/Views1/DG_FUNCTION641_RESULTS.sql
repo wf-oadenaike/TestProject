@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION641_RESULTS" AS 
+SELECT ET."ID",ET."IssuerID",ET."TypeID",ET."SubtypeID",ET."StatusID",ET."TradeDate",ET."SettlementDate",ET."IsLegalCommitment",ET."IsReputationalCommitment",ET."FlexBackUnit",ET."FlexBackMagnitude",ET."FlexForwardUnit",ET."FlexForwardMagnitude",ET."JiraIssueKey",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."FullAllocationsProvided" FROM "Investment"."T_UnquotedFundings" ET WITH (NOLOCK)

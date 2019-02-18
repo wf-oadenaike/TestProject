@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION617_RESULTS" AS 
+SELECT ET."CADIS_RUN_ID",ET."CADIS_ROW_ID",ET."Date",ET."Time",ET."ViolationID",ET."OrderNum",ET."AllocationTkt",ET."GroupID",ET."AcctCode",ET."RuleID",ET."RuleName",ET."TktWriter",ET."ApprLogin",ET."Application",ET."TktType",ET."SecBuySell",ET."SecCurncy",ET."SecDesc",ET."SecIdent",ET."SettleDate",ET."TraderNote",ET."LastNote" FROM "Compliance"."TradeViolations" ET WITH (NOLOCK)

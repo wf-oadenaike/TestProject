@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION121_RESULTS" AS 
+SELECT ET."ClientBillingEventId",ET."ClientBillingId",ET."EventTypeId",ET."ClientBillingEventType",ET."SubmittedByPersonId",ET."SubmittedBy",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."DocumentationFolderLink",ET."JoinGUID",ET."ClientBillingEventCreationDate",ET."ClientBillingEventLastModifiedDatetime" FROM "Access.ManyWho"."ClientBillingEventsReadOnlyVw" ET WITH (NOLOCK)

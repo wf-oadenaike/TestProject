@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION509_RESULTS" AS 
+SELECT ET."ResearchBrokerPaymentEventId",ET."ResearchBrokerPaymentId",ET."EventTypeId",ET."EventDetails",ET."EventDate",ET."SubTaskJiraKey",ET."SubmittedByPersonId",ET."DocumentationFolderLink",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_LASTMODIFIED" FROM "Investment"."ResearchBrokerPaymentEvents" ET WITH (NOLOCK)

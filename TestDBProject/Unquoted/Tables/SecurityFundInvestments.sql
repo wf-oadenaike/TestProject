@@ -1,0 +1,25 @@
+﻿CREATE TABLE [Unquoted].[SecurityFundInvestments] (
+    [SecurityFundInvestmentId]  INT              IDENTITY (1, 1) NOT NULL,
+    [SecurityBloombergId]       VARCHAR (30)     NOT NULL,
+    [Tranche]                   INT              NULL,
+    [FundCode]                  VARCHAR (16)     NOT NULL,
+    [NumberOfShares]            INT              NULL,
+    [FundAllocation]            DECIMAL (18, 6)  NULL,
+    [TotalAmountInvested]       DECIMAL (18, 6)  NULL,
+    [PercentageHeldAtClosing]   DECIMAL (18, 6)  NULL,
+    [StampDuty]                 DECIMAL (18, 6)  NULL,
+    [SubmittedByPersonId]       SMALLINT         CONSTRAINT [DF_SFI_CPI] DEFAULT ((-1)) NOT NULL,
+    [JoinGUID]                  UNIQUEIDENTIFIER NOT NULL,
+    [CreationDatetime]          DATETIME         CONSTRAINT [DF_SFI_CDT] DEFAULT (getdate()) NOT NULL,
+    [LastModifiedDatetime]      DATETIME         CONSTRAINT [DF_SFI_LMDT] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME         CONSTRAINT [DF_SFI_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME         CONSTRAINT [DF_SFI_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50)    CONSTRAINT [DF_SFI_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]     INT              CONSTRAINT [DF_SFI_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]    ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED] DATETIME         CONSTRAINT [DF_SFI_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKSecurityFundInvestments] PRIMARY KEY CLUSTERED ([SecurityFundInvestmentId] ASC),
+    CONSTRAINT [SecurityFundInvestmentsSecurityBloombergId] FOREIGN KEY ([SecurityBloombergId]) REFERENCES [Investment].[CompanySecurities] ([SecurityBloombergId]),
+    CONSTRAINT [SecurityFundInvestmentsSubmittedByPersonId] FOREIGN KEY ([SubmittedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

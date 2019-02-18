@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION559_RESULTS" AS 
+SELECT ET."ClientRequestID",ET."RequestTypeID",ET."ClientName",ET."ClientCompanyName",ET."RelationshipManagerID",ET."ReviewerID",ET."ClientAssessmentID",ET."JiraEpicKey",ET."Status",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CEOSignOffRequired",ET."DueDateOverride",ET."DueDate",ET."SlackChannelName",ET."CoachingRequired",ET."DocumentsRequired" FROM "Sales"."DueDiligenceClientRequest" ET WITH (NOLOCK)

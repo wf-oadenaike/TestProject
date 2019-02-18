@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Operation].[InvestmentOpsDailyTasksRegister] (
+    [InvestmentOpsDailyTasksRegisterId] INT              IDENTITY (1, 1) NOT NULL,
+    [JIRASummary]                       NVARCHAR (MAX)   NOT NULL,
+    [JIRADescription]                   NVARCHAR (MAX)   NOT NULL,
+    [EpicLink]                          NVARCHAR (255)   NOT NULL,
+    [Labels]                            NVARCHAR (255)   NULL,
+    [Type]                              NVARCHAR (10)    NULL,
+    [Frequency]                         NVARCHAR (10)    NULL,
+    [Triggers]                          NVARCHAR (255)   NULL,
+    [DelayBeforeLaunch]                 INT              NOT NULL,
+    [TimeBeforeAlert]                   INT              NOT NULL,
+    [AssignedToPersonID]                SMALLINT         CONSTRAINT [DF_IODTR_IODTRAP] DEFAULT ((-1)) NULL,
+    [SubmittedByPersonID]               SMALLINT         CONSTRAINT [DF_IODTR_IODTRSP] DEFAULT ((-1)) NOT NULL,
+    [DocumentationFolderLink]           VARCHAR (2000)   NULL,
+    [JoinGUID]                          UNIQUEIDENTIFIER NOT NULL,
+    [IsActive]                          BIT              CONSTRAINT [DF_WLL_IA] DEFAULT ((1)) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]             DATETIME         CONSTRAINT [DF_IODTR_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]              DATETIME         CONSTRAINT [DF_IODTR_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]            NVARCHAR (50)    CONSTRAINT [DF_IODTR_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]             INT              CONSTRAINT [DF_IODTR_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]            ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]         DATETIME         CONSTRAINT [DF_IODTR_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKInvestmentOpsDailyTasksRegister] PRIMARY KEY CLUSTERED ([InvestmentOpsDailyTasksRegisterId] ASC),
+    CONSTRAINT [InvestmentOpsDailyTasksRegisterAssignedToPersonID] FOREIGN KEY ([AssignedToPersonID]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [InvestmentOpsDailyTasksRegisterSubmittedByPersonID] FOREIGN KEY ([SubmittedByPersonID]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

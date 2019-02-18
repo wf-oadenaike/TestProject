@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [ZakirHussain]
+    WITH PASSWORD = N'pvyby{ozmhlq|epskoq{sfavmsFT7_&#$!~<zVyy|olt{iij', SID = 0x666E59FF3AA5064FBD684772ABE53837, DEFAULT_DATABASE = [WOODFORD_DEV], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

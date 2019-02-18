@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [DavidFanning]
+    WITH PASSWORD = N'pvyby{oL;zmhqW|epsoq{5sfmsFT7_&#$!~<avUzTy+ayR7o', SID = 0xE6AC709FAFB6B6488CD092B12DDCC55C, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

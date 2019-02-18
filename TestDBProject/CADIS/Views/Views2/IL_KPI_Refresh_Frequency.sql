@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_KPI_Refresh_Frequency" AS 
+SELECT V."RefreshFrequencyId" AS "Refresh Frequency ID",V."FrequencyName" AS "Frequency Name",V."DaysRange" AS "Days Range",V."CADIS_SYSTEM_INSERTED",V."CADIS_SYSTEM_UPDATED",V."CADIS_SYSTEM_CHANGEDBY",V."CADIS_SYSTEM_PRIORITY",V."CADIS_SYSTEM_TIMESTAMP",V."CADIS_SYSTEM_LASTMODIFIED" FROM "KPI"."RefreshFrequency" V

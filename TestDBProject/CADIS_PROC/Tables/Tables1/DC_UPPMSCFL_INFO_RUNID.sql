@@ -1,0 +1,27 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPPMSCFL_INFO_RUNID] (
+    [FUND_SHORT_NAME__RUNID]           INT          NOT NULL,
+    [FLOW_TYPE__RUNID]                 INT          NOT NULL,
+    [MCID__RUNID]                      INT          NOT NULL,
+    [TRUSTEE__RUNID]                   INT          NOT NULL,
+    [VALUATION_POINT_DATE]             DATETIME     NOT NULL,
+    [VALUATION_POINT_TIME__RUNID]      INT          NOT NULL,
+    [FUND_LONG_NAME__RUNID]            INT          NOT NULL,
+    [EXTERNAL_FUND_CODE]               VARCHAR (50) NOT NULL,
+    [FUND_REFERENCE]                   VARCHAR (20) NOT NULL,
+    [BROUGHT_FORWARD_POSITION__RUNID]  INT          NOT NULL,
+    [NET_UNIT_MOVEMENT__RUNID]         INT          NOT NULL,
+    [BOOK_CONVERSION_IN__RUNID]        INT          NOT NULL,
+    [BOOK_CONVERSION_OUT__RUNID]       INT          NOT NULL,
+    [CONVERSION_FACTOR__RUNID]         INT          NOT NULL,
+    [ESTIMATED_CLOSING_BALANCE__RUNID] INT          NOT NULL,
+    [UNIT_DECISION__RUNID]             INT          NOT NULL,
+    [CASH_DECISION__RUNID]             INT          NOT NULL,
+    [CARRIED_FORWARD_BALANCE__RUNID]   INT          NOT NULL,
+    [BOOK_BASIS__RUNID]                INT          NOT NULL,
+    [DECISION_VALUE__RUNID]            INT          NOT NULL,
+    [INSPECIE_FLAG__RUNID]             INT          NOT NULL,
+    [NARRATIVE__RUNID]                 INT          NOT NULL,
+    [SIGNATORY__RUNID]                 INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([VALUATION_POINT_DATE] ASC, [EXTERNAL_FUND_CODE] ASC, [FUND_REFERENCE] ASC)
+);
+

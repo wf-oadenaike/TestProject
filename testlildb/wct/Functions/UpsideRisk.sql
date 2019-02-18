@@ -1,0 +1,4 @@
+﻿CREATE AGGREGATE [wct].[UpsideRisk](@R FLOAT (53) NULL, @MAR FLOAT (53) NULL, @Full BIT NULL, @State NVARCHAR (4000) NULL)
+    RETURNS FLOAT (53)
+    EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UpsideRisk];
+

@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[ODDPV]
+(@Rate FLOAT (53) NULL, @NumPmts INT NULL, @Pmt FLOAT (53) NULL, @FV FLOAT (53) NULL, @Pmtpyr INT NULL, @LoanDate DATETIME NULL, @FirstPayDate DATETIME NULL, @DaysInYr FLOAT (53) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[ODDPV]
+

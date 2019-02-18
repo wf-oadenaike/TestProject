@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION140_RESULTS" AS 
+SELECT ET."DepartmentBudgetId",ET."DepartmentId",ET."DepartmentName",ET."BudgetDate",ET."CalendarMonth",ET."CalendarYear",ET."ActualAmount",ET."ForecastAmount",ET."ActualDiff",ET."ActualDiffCategory",ET."DepartmentalBudgetCreationDatetime",ET."DepartmentalBudgetLastModifiedDatetime" FROM "Access.ManyWho"."DepartmentalBudgetsLastYearReadOnlyVw" ET WITH (NOLOCK)

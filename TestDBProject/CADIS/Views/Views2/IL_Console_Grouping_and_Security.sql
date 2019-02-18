@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Console_Grouping_and_Security" AS 
+SELECT V."GROUPID" AS "Group ID",V."NAME" AS "Console Folder",V."PARENTGROUP" AS "Parent Group",V."PARENTGROUPNAME" AS "Parent Group Name",V."USERNAME" AS "Username",V."GROUPID_GROUP" AS "Group ID Group",V."USERTYPE" AS "User Type",V."PERMISSION" AS "Permission",V."PERMISSIONDESCRIPTION" AS "Permission Description" FROM "CADIS"."VW_Console_Grouping_and_Security" V

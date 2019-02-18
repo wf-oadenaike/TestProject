@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [BOOMI]
+    AUTHORIZATION [dbo];
+

@@ -1,0 +1,25 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPPMSI_BBG_PREP] (
+    [FUND_SHORT_NAME]  VARCHAR (20)     NOT NULL,
+    [EDM_SEC_ID]       INT              NOT NULL,
+    [FUND_FISCAL_YEAR] INT              NOT NULL,
+    [POSITION_DATE]    DATETIME         NULL,
+    [DVD_CCY]          VARCHAR (10)     NULL,
+    [WITHHOLDING_TAX]  DECIMAL (26, 6)  NULL,
+    [SPOT_RATE]        DECIMAL (24, 16) NULL,
+    [POSITION]         DECIMAL (20, 6)  NULL,
+    [DECLARED_DATE]    DATE             NULL,
+    [Q1_EX_DATE]       DATE             NULL,
+    [Q1_RATE]          DECIMAL (20, 6)  NULL,
+    [Q1_NET_INCOME]    DECIMAL (38, 6)  NULL,
+    [Q2_EX_DATE]       DATE             NULL,
+    [Q2_RATE]          DECIMAL (20, 6)  NULL,
+    [Q2_NET_INCOME]    DECIMAL (38, 6)  NULL,
+    [Q3_EX_DATE]       DATE             NULL,
+    [Q3_RATE]          DECIMAL (20, 6)  NULL,
+    [Q3_NET_INCOME]    DECIMAL (38, 6)  NULL,
+    [Q4_EX_DATE]       DATE             NULL,
+    [Q4_RATE]          DECIMAL (20, 6)  NULL,
+    [Q4_NET_INCOME]    DECIMAL (38, 6)  NULL,
+    PRIMARY KEY CLUSTERED ([FUND_SHORT_NAME] ASC, [EDM_SEC_ID] ASC, [FUND_FISCAL_YEAR] ASC) WITH (FILLFACTOR = 80)
+);
+

@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_SYS].[SPGROUPPROCESSUSERPERMDELALL]
+@GUID NVARCHAR (32), @NAME NVARCHAR (200)
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

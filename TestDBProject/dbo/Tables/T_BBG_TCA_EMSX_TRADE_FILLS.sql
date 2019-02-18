@@ -1,0 +1,87 @@
+﻿CREATE TABLE [dbo].[T_BBG_TCA_EMSX_TRADE_FILLS] (
+    [ID]                        INT             IDENTITY (1, 1) NOT NULL,
+    [FILE_DATE]                 DATETIME        NULL,
+    [ORDER_NUMBER]              INT             NULL,
+    [TICKER]                    VARCHAR (7)     NULL,
+    [EXCHANGE]                  VARCHAR (7)     NULL,
+    [SECURITY_NAME]             VARCHAR (127)   NULL,
+    [INSTRUCTIONS]              VARCHAR (511)   NULL,
+    [SIDE]                      VARCHAR (7)     NULL,
+    [TIF]                       VARCHAR (7)     NULL,
+    [GTD_DATE]                  DATETIME        NULL,
+    [CURRENCY]                  VARCHAR (3)     NULL,
+    [ISIN]                      VARCHAR (15)    NULL,
+    [CUSIP]                     VARCHAR (15)    NULL,
+    [SEDOL]                     VARCHAR (15)    NULL,
+    [ORDER_TYPE]                VARCHAR (7)     NULL,
+    [LIMIT_PRICE]               DECIMAL (18, 6) NULL,
+    [STOP_PRICE]                DECIMAL (18, 6) NULL,
+    [FILL_AMOUNT]               DECIMAL (18, 6) NULL,
+    [DAY_FILL_AMOUNT]           DECIMAL (18, 6) NULL,
+    [AMOUNT]                    DECIMAL (18, 6) NULL,
+    [PM_NAME]                   VARCHAR (15)    NULL,
+    [TRADER_NAME]               VARCHAR (15)    NULL,
+    [PM_UUID]                   INT             NULL,
+    [TRADER_UUID]               INT             NULL,
+    [AVERAGE_PRICE]             DECIMAL (18, 6) NULL,
+    [BASKET_NAME]               VARCHAR (511)   NULL,
+    [BASKET_ID]                 INT             NULL,
+    [EXEC_INSTRUCTION]          INT             NULL,
+    [HANDLING_INSTRUCTION]      DECIMAL (18, 6) NULL,
+    [EXEC_FILLED_AMOUNT]        DECIMAL (18, 6) NULL,
+    [EXEC_AVG_PRICE]            DECIMAL (18, 6) NULL,
+    [EXEC_LAST_FILL]            DECIMAL (18, 6) NULL,
+    [EXEC_LAST_FILL_PX]         DECIMAL (18, 6) NULL,
+    [EXEC_AS_OF_DATE]           DATETIME        NULL,
+    [EXEC_AS_OF_TIME]           TIME (7)        NULL,
+    [EXEC_DATE]                 DATETIME        NULL,
+    [EXEC_TIME]                 TIME (7)        NULL,
+    [EXEC_BRKR]                 VARCHAR (255)   NULL,
+    [USERS_COMM._AMOUNT]        DECIMAL (18, 6) NULL,
+    [USERS_COMM._RATE]          DECIMAL (18, 6) NULL,
+    [STRATEGY_TYPE]             VARCHAR (15)    NULL,
+    [ROUTE_INSTRUCTIONS]        VARCHAR (511)   NULL,
+    [ORDERREFID]                VARCHAR (511)   NULL,
+    [LAST_MARKET]               VARCHAR (15)    NULL,
+    [EXCHANGE_EXEC_DATE]        DATETIME        NULL,
+    [EXCHANGE_EXEC_TIME]        TIME (7)        NULL,
+    [EXEC/TRAN_BROKER]          VARCHAR (15)    NULL,
+    [ROUTED_AMOUNT]             DECIMAL (18, 6) NULL,
+    [TRAN_TYPE]                 VARCHAR (7)     NULL,
+    [TRAN_TIF]                  VARCHAR (7)     NULL,
+    [TRAN_LIMIT_PRICE]          DECIMAL (18, 6) NULL,
+    [TRAN_ACCOUNT]              VARCHAR (15)    NULL,
+    [TRAN_HANDLING_INSTRUCTION] VARCHAR (7)     NULL,
+    [TRAN_EXEC_INSTRUCTION]     INT             NULL,
+    [TRAN_COMMISSION_AMOUNT]    DECIMAL (18, 6) NULL,
+    [TRAN_COMMISSION_RATE]      DECIMAL (18, 6) NULL,
+    [TRAN_REASON_CODE]          VARCHAR (15)    NULL,
+    [BROKER]                    VARCHAR (15)    NULL,
+    [ORDER_ENTRY_TIME]          TIME (7)        NULL,
+    [ORDER_CREATE_DATE]         DATETIME        NULL,
+    [LIQUIDITY]                 INT             NULL,
+    [LASTCAPACITY]              INT             NULL,
+    [CFD_FLAG]                  VARCHAR (1)     NULL,
+    [DAY_AVG_PRICE]             DECIMAL (18, 6) NULL,
+    [REROUTEDBROKER]            VARCHAR (255)   NULL,
+    [EXEC_TYPE]                 VARCHAR (7)     NULL,
+    [EXEC_SEQ_NUMBER]           INT             NULL,
+    [EXEC_PREV_SEQ_NUMBER]      INT             NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME        DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME        DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50)   DEFAULT ('UNKNOWN') NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC) WITH (FILLFACTOR = 90)
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [idx_date_exchange]
+    ON [dbo].[T_BBG_TCA_EMSX_TRADE_FILLS]([EXEC_DATE] ASC)
+    INCLUDE([EXCHANGE], [CURRENCY], [ISIN], [CUSIP], [SEDOL]);
+
+
+GO
+CREATE NONCLUSTERED INDEX [idx_order_num]
+    ON [dbo].[T_BBG_TCA_EMSX_TRADE_FILLS]([ORDER_NUMBER] ASC, [EXEC/TRAN_BROKER] ASC)
+    INCLUDE([EXEC_PREV_SEQ_NUMBER]);
+

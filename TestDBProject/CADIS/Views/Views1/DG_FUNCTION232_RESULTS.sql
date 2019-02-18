@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION232_RESULTS" AS 
+SELECT ET."PADealingEventId",ET."PADealingRegisterId",ET."PADealingEventTypeId",ET."SubmittedByPersonId",ET."EventTrueFalse",ET."EventDetails",ET."EventDate",ET."DocumentationFolderLink",ET."JoinGUID",ET."PADealingEventCreationDatetime",ET."PADealingEventLastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."JiraIssueKey",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Compliance"."PADealingEvents" ET WITH (NOLOCK)

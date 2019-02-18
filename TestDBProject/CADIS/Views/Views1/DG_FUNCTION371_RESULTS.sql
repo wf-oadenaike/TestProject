@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION371_RESULTS" AS 
+SELECT ET."UnquotedSecuritiesFundInvestmentId",ET."UnquotedSecuritiesId",ET."FundCode",ET."NumberOfShares",ET."FundAllocation",ET."TotalAmountInvested",ET."PercentageHeldAtClosing",ET."WorkflowVersionGUID",ET."JoinGUID",ET."UnquotedSecuritiesCreationDate",ET."UnquotedSecuritiesCreatedByPersonId",ET."UnquotedSecuritiesLastModifiedDate",ET."UnquotedSecuritiesLastModifiedByPersonId" FROM "Access.ManyWho"."UnquotedSecuritiesFundInvestmentsVw" ET WITH (NOLOCK)

@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[ED_FUTYF]
+(@DeliveryCode NVARCHAR (4000) NULL, @StartDate DATETIME NULL, @Basis NVARCHAR (4000) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[ED_FUTYF]
+

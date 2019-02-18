@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION73_RESULTS" AS 
+SELECT ET."MonitoringThemeNoteCollectionSeqId",ET."MonitoringThemeId",ET."MonitoringCategoryId",ET."EventDetails",ET."FirstLineResponse",ET."ComplianceConcerns",ET."Governance",ET."OutlierCount",ET."OccurrenceDate",ET."PeriodStartDate",ET."PeriodEndDate",ET."CompleteNotes" FROM "Access.ManyWho"."ComplianceMonitoringThemeNotesSeqReadOnlyVw" ET WITH (NOLOCK)

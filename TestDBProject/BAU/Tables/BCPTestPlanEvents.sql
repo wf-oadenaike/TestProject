@@ -1,0 +1,25 @@
+﻿CREATE TABLE [BAU].[BCPTestPlanEvents] (
+    [BCPTestPlanEventId]                   INT              IDENTITY (1, 1) NOT NULL,
+    [BCPTestPlanRegisterId]                INT              NOT NULL,
+    [TestPlanStatus]                       VARCHAR (25)     NULL,
+    [RecordedByPersonId]                   SMALLINT         CONSTRAINT [DF_BCPTPE_BCPTPERP] DEFAULT ((-1)) NOT NULL,
+    [EventDetails]                         VARCHAR (MAX)    NULL,
+    [EventDate]                            DATETIME         NULL,
+    [TestPlanResult]                       VARCHAR (25)     NULL,
+    [CalendarYear]                         CHAR (4)         NULL,
+    [IsReTest]                             BIT              CONSTRAINT [df_btpe_iet] DEFAULT ((0)) NOT NULL,
+    [DocumentationFolderLink]              VARCHAR (2000)   NULL,
+    [JoinGUID]                             UNIQUEIDENTIFIER NOT NULL,
+    [BCPTestPlanEventCreationDate]         DATETIME         CONSTRAINT [DF_BCPTPE_BCPTPECD] DEFAULT (getdate()) NOT NULL,
+    [BCPTestPlanEventLastModifiedDatetime] DATETIME         CONSTRAINT [DF_BCPTPE_BCPTPELMD] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]                DATETIME         CONSTRAINT [DF_BCPTPE_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                 DATETIME         CONSTRAINT [DF_BCPTPE_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]               NVARCHAR (50)    CONSTRAINT [DF_BCPTPE_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                INT              CONSTRAINT [DF_BCPTPE_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]               ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]            DATETIME         CONSTRAINT [DF_BCPTPE_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKBCPTestPlanEvents] PRIMARY KEY CLUSTERED ([BCPTestPlanEventId] ASC),
+    CONSTRAINT [BCPTestPlanEventsBCPTestPlanId] FOREIGN KEY ([BCPTestPlanRegisterId]) REFERENCES [BAU].[BCPTestPlanRegister] ([BCPTestPlanRegisterId]),
+    CONSTRAINT [BCPTestPlanEventsRecordedByPersonId] FOREIGN KEY ([RecordedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

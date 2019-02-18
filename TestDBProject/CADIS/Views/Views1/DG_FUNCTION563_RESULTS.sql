@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION563_RESULTS" AS 
+SELECT ET."RequestEventID",ET."ClientRequestID",ET."ClientName",ET."ClientCompanyName",ET."EventType",ET."ReviewerID",ET."Reviewer",ET."SubmittedByPersonID",ET."Submittedby",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."EventStatus",ET."JiraIssueKey",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Access.ManyWho"."DueDiligenceRequestEventsVw" ET WITH (NOLOCK)

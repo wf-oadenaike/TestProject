@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION425_RESULTS" AS 
+SELECT ET."AuditPlanEventId",ET."AuditPlanRegisterId",ET."AuditPlanEventType",ET."EventPersonId",ET."SalesforceUserId",ET."PersonsName",ET."EventRoleId",ET."RoleName",ET."EventTrueFalse",ET."EventDetails",ET."EventDate",ET."DocumentationFolderLink",ET."WorkflowVersionGUID",ET."JoinGUID",ET."AuditPlanEventCreationDate",ET."AuditPlanEventLastModifiedDate" FROM "Access.ManyWho"."AuditPlanEventsVw" ET WITH (NOLOCK)

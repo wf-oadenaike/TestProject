@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION478_RESULTS" AS 
+SELECT ET."MakeContact",ET."SalesforceHyperlink",ET."SfAccountId",ET."Sector",ET."AccountName",ET."AccountOwnerId",ET."PostCode",ET."IsPriorityClient",ET."CurrOutletOwnSales",ET."PrevOutletOwnSales",ET."CurrOutletMarketSales",ET."PrevOutletMarketSales",ET."CurrMktShare",ET."PrevMktShare",ET."SalesMoveValue",ET."MktShareMoveValue",ET."OverrideStatus",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."SalesFromDate",ET."SalesToDate" FROM "Sales.BP"."FCAccountMovementOverride" ET WITH (NOLOCK)

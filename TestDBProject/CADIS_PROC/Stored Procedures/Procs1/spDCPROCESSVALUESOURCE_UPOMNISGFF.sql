@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_PROC].[spDCPROCESSVALUESOURCE_UPOMNISGFF]
+@TargetFieldName NVARCHAR (500), @ROW_NUMBER INT, @TYPE VARCHAR (20)
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

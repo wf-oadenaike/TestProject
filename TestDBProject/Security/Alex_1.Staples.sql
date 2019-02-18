@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [Alex.Staples]
+    WITH PASSWORD = N'pvV<ybzgNy{o+zm`hqTR8z|omsFT7_&#$!~<eps1Goq{bsfa', SID = 0xD196B3635234BF40B3889F8D5F9D779B, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+

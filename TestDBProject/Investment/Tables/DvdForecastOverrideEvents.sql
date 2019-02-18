@@ -1,0 +1,25 @@
+﻿CREATE TABLE [Investment].[DvdForecastOverrideEvents] (
+    [DvdForecastOverrideEventId]                   INT              IDENTITY (1, 1) NOT NULL,
+    [DvdForecastCalcOverrideId]                    INT              NOT NULL,
+    [SubmittedByPersonId]                          SMALLINT         CONSTRAINT [DF_DFOE_SLESP] DEFAULT ((-1)) NOT NULL,
+    [OverrideExDate]                               DATE             NULL,
+    [OverrideDvdValue]                             DECIMAL (18, 6)  NULL,
+    [OverrideSpecialCumShares]                     DECIMAL (15, 2)  NULL,
+    [OverrideCommentary]                           VARCHAR (MAX)    NULL,
+    [OverrideDvdChangeReasonId]                    INT              NULL,
+    [EventDate]                                    DATETIME         NULL,
+    [JoinGUID]                                     UNIQUEIDENTIFIER NOT NULL,
+    [DvdForecastOverrideEventCreationDatetime]     DATETIME         CONSTRAINT [DF_DFOE_DFOECD] DEFAULT (getdate()) NOT NULL,
+    [DvdForecastOverrideEventLastModifiedDatetime] DATETIME         CONSTRAINT [DF_DFOE_DFOELMD] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]                        DATETIME         CONSTRAINT [DF_DFOE_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                         DATETIME         CONSTRAINT [DF_DFOE_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]                       NVARCHAR (50)    CONSTRAINT [DF_DFOE_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                        INT              CONSTRAINT [DF_DFOE_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]                       ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]                    DATETIME         CONSTRAINT [DF_DFOE_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKDvdForecastOverrideEvents] PRIMARY KEY CLUSTERED ([DvdForecastOverrideEventId] ASC),
+    CONSTRAINT [DvdForecastOverrideEventsCalcOverrideId] FOREIGN KEY ([DvdForecastCalcOverrideId]) REFERENCES [Investment].[DvdForecastCalcOverride] ([DvdForecastCalcOverrideId]),
+    CONSTRAINT [DvdForecastOverrideEventsEventTypeId] FOREIGN KEY ([OverrideDvdChangeReasonId]) REFERENCES [Investment].[DvdChangeReasons] ([DvdChangeReasonId]),
+    CONSTRAINT [DvdForecastOverrideEventsSubmittedByPersonId] FOREIGN KEY ([SubmittedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION251_RESULTS" AS 
+SELECT ET."ProcDocumentId1",ET."ProcDocumentId2",ET."IsActive",ET."JoinGUID",ET."ProcDocToDocumentRelationshipCreationDatetime",ET."ProcDocToDocumentRelationshipLastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "PolicyProc"."ProcDocumentToDocumentRelationship" ET WITH (NOLOCK)

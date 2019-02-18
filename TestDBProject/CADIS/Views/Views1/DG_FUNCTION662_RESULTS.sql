@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION662_RESULTS" AS 
+SELECT ET."username",ET."LastLogin" FROM "CADIS"."VW_Web_User_Activity" ET WITH (NOLOCK)

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION417_RESULTS" AS 
+SELECT ET."WhistleblowingId",ET."RaisedByPersonId",ET."RaisedDate",ET."ReviewedByPersonId",ET."ReviewedDate",ET."Summary",ET."Comments",ET."Status",ET."EmployeeNotifiedYesNo",ET."AnonymousConcernYesNo",ET."ConcernAgainstComplianceYesNo",ET."DocumentationFolderLink",ET."JoinGUID",ET."WhistleblowingCreationDate",ET."WhistleblowingLastModifiedDate" FROM "Organisation"."Whistleblowing" ET WITH (NOLOCK)

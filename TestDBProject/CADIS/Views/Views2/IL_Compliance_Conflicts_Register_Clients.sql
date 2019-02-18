@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Compliance_Conflicts_Register_Clients" AS 
+SELECT V."ConflictsRegisterClientId" AS "Conflicts Register Client ID",V."ConflictId" AS "Conflict ID",V."ClientSalesforceId" AS "Client Salesforce ID",V."ClientName" AS "Client Name", J4.DF AS "Created By Person ID",V."CreationDate" AS "Creation Date",V."IsActive" AS "Is Active" FROM "Compliance"."ConflictsRegisterClients" V LEFT OUTER JOIN (SELECT DISTINCT "PersonId" AS JF,"PersonsName" AS DF FROM "Core"."Persons")  J4 ON  J4.JF=V."CreatedByPersonId"

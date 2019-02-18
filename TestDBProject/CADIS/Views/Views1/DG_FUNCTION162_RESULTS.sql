@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION162_RESULTS" AS 
+SELECT ET."ClientTakeOnCheckListId",ET."CheckListTemplateId",ET."CheckListItemName",ET."EventType",ET."ClientTakeOnId",ET."ClientTakeOnName",ET."CheckItemTrueFalse",ET."RecordedByPersonId",ET."SubmittedBy",ET."DocumentationFolderLink",ET."JoinGUID",ET."ClientTakeOnCheckListCreationDatetime",ET."ClientTakeOnCheckListLastModifiedDatetime" FROM "Access.ManyWho"."ClientTakeOnCheckListReadOnlyVw" ET WITH (NOLOCK)

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Organisation_Meeting_Attendees" AS 
+SELECT V."MeetingRegisterId" AS "Meeting Register ID", J1.DF AS "Attendee Role",V."ActiveFlag" AS "Active Flag",V."MeetingAttendeeFromDatetime" AS "Meeting Attendee From Date",V."MeetingAttendeeToDatetime" AS "Meeting Attendee To Date" FROM "Organisation"."MeetingAttendees" V LEFT OUTER JOIN (SELECT DISTINCT "RoleId" AS JF,"RoleName" AS DF FROM "Core"."Roles")  J1 ON  J1.JF=V."AttendeeRoleId"

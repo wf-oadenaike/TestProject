@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION158_RESULTS" AS 
+SELECT ET."RegulatoryInteractionId",ET."SubmittedByPersonId",ET."SubmittedBy",ET."InteractionDate",ET."Status",ET."SummaryDescription",ET."Comments",ET."ContactedBy",ET."ContactTitle",ET."RegulatoryBody",ET."InteractionTitle",ET."BoxFolderId",ET."DocumentationFolderLink",ET."JoinGUID",ET."RegulatoryInteractionRegisterCreationDatetime",ET."RegulatoryInteractionRegisterLastModifiedDatetime" FROM "Access.ManyWho"."RegulatoryInteractionRegisterReadOnlyVw" ET WITH (NOLOCK)

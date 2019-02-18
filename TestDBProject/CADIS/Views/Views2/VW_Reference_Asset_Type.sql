@@ -1,0 +1,8 @@
+﻿CREATE VIEW "CADIS"."VW_Reference_Asset_Type"
+AS
+SELECT
+T1.* 
+FROM
+"dbo"."T_REF_ASSET_TYPE" T1
+WHERE
+T1.[ACTIVE] = 'Y'

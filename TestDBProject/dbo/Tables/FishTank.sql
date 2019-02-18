@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[FishTank] (
+    [Period]                           DATETIME2 (7)  NULL,
+    [source]                           NVARCHAR (50)  NULL,
+    [Fishtank_ID]                      NVARCHAR (50)  NULL,
+    [SFID]                             NVARCHAR (50)  NULL,
+    [client_Name]                      NVARCHAR (100) NULL,
+    [Primary_Business]                 NVARCHAR (50)  NULL,
+    [Client_sub_type]                  NVARCHAR (50)  NULL,
+    [Geography]                        NVARCHAR (50)  NULL,
+    [Region]                           NVARCHAR (50)  NULL,
+    [date]                             DATETIME2 (7)  NULL,
+    [Gross_Sales]                      NVARCHAR (50)  NULL,
+    [Outflow]                          NVARCHAR (50)  NULL,
+    [NetSales]                         NVARCHAR (50)  NULL,
+    [Holding_Value]                    NVARCHAR (50)  NULL,
+    [revenue]                          NVARCHAR (50)  NULL,
+    [revenue_IN]                       NVARCHAR (50)  NULL,
+    [revenue_OUT]                      NVARCHAR (50)  NULL,
+    [Sales_Responsibility]             NVARCHAR (50)  NULL,
+    [Asset_Class]                      NVARCHAR (50)  NULL,
+    [Asset_Sub_Class]                  NVARCHAR (50)  NULL,
+    [Mandate_Asset_Class_Strategy]     NVARCHAR (50)  NULL,
+    [Mandate_Asset_Sub_CLass_Strategy] NVARCHAR (50)  NULL,
+    [FundName]                         NVARCHAR (50)  NULL,
+    [Product_Range]                    NVARCHAR (50)  NULL,
+    [ProductRange]                     NVARCHAR (100) NULL
+);
+

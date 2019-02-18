@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION37_RESULTS" AS 
+SELECT ET."DepartmentId",ET."PostingDateId",ET."TransactionDateId",ET."FinancialLineTypeId",ET."NominalCode",ET."TransactionNo",ET."CurrentRow",ET."CurrentRowSwitchId",ET."DeletedRow",ET."FinancialFactId",ET."BudgetAmount",ET."ActualAmount",ET."ControlId",ET."SourceSystemId",ET."AccountRef",ET."TaxCode",ET."DetailNotes",ET."ProjectCode",ET."TransactionTypeId",ET."IsDiscretionary",ET."CountOf",ET."JournalLineID" FROM "Fact"."FinancialsFact" ET WITH (NOLOCK)

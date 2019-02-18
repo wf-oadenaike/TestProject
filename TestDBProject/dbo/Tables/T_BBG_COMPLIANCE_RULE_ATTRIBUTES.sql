@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[T_BBG_COMPLIANCE_RULE_ATTRIBUTES] (
+    [CADIS_PARENT_ID]                                          VARCHAR (50)  NULL,
+    [ATTRIBUTE_ATTRCODE]                                       VARCHAR (50)  NULL,
+    [ATTRIBUTE_ATTRDESC]                                       VARCHAR (50)  NULL,
+    [ATTRIBUTE_ATTRPERCENT]                                    VARCHAR (50)  NULL,
+    [ATTRDETAILS_TYPE]                                         VARCHAR (50)  NULL,
+    [ATTRDETAILS_VIOLATEIFPRICEISNA]                           VARCHAR (50)  NULL,
+    [ATTRDETAILS_CHECKLIMITPRC]                                VARCHAR (50)  NULL,
+    [CONDITIONSNEEDED_CONDITIONSNEEDEDVAL]                     VARCHAR (50)  NULL,
+    [NANR_NANRVAL]                                             VARCHAR (50)  NULL,
+    [USGOVTHIGHEST_USGOVTHIGHESTVAL]                           VARCHAR (50)  NULL,
+    [MONEYMKTS_INCLMONEYMKTS]                                  VARCHAR (50)  NULL,
+    [MATURITYCALCULATEDIN_MATURITYCALCULATEDINVAL]             VARCHAR (50)  NULL,
+    [MATURITYFROM_MATURITYFROMVAL]                             VARCHAR (50)  NULL,
+    [MATURITYFUNDREDEMPTIONDATE_MATURITYFUNDREDEMPTIONDATEVAL] VARCHAR (50)  NULL,
+    [CUSTOMFIELD_CUSTOMFIELDVAL]                               VARCHAR (50)  NULL,
+    [ISSUEDATERANGECALCULATEDIN_ISSUEDATERANGECALCULATEDINVAL] VARCHAR (50)  NULL,
+    [PRICESOURCEPRECEDENCETABLE_VALUE]                         VARCHAR (50)  NULL,
+    [EXPIRATIONCALCULATEDIN_EXPIRATIONCALCULATEDINVAL]         VARCHAR (50)  NULL,
+    [EXPIRATIONFROM_EXPIRATIONFROMVAL]                         VARCHAR (50)  NULL,
+    [CADIS_SYSTEM_INSERTED]                                    DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                                     DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]                                   NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                                    INT           DEFAULT ((1)) NULL
+);
+

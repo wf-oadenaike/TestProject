@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Risk_Sub_Categories" AS 
+SELECT V."SubCategoryId" AS "Sub Category ID", J1.DF AS "Category ID",V."SubCategory" AS "Sub Category",V."RiskAppetite" AS "Risk Appetite",V."CreatedDate" AS "Created Date",V."CADIS_SYSTEM_INSERTED",V."CADIS_SYSTEM_UPDATED",V."CADIS_SYSTEM_CHANGEDBY",V."CADIS_SYSTEM_PRIORITY",V."CADIS_SYSTEM_TIMESTAMP",V."CADIS_SYSTEM_LASTMODIFIED" FROM "Risk"."SubCategories" V LEFT OUTER JOIN (SELECT DISTINCT "CategoryId" AS JF,"Category" AS DF FROM "Risk"."Categories")  J1 ON  J1.JF=V."CategoryId"

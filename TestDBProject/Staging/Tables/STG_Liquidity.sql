@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Staging].[STG_Liquidity] (
+    [Fund]                    NVARCHAR (256) NULL,
+    [Sector]                  NVARCHAR (256) NULL,
+    [SubSector]               NVARCHAR (256) NULL,
+    [Ticker]                  NVARCHAR (256) NULL,
+    [LiquidityProfile0_1]     NVARCHAR (256) NULL,
+    [LiquidityProfile1_5]     NVARCHAR (256) NULL,
+    [LiquidityProfile5_20]    NVARCHAR (256) NULL,
+    [LiquidityProfile20_100]  NVARCHAR (256) NULL,
+    [LiquidityProfile100_250] NVARCHAR (256) NULL,
+    [LiquidityProfile_250]    NVARCHAR (256) NULL,
+    [Remaining0_1]            NVARCHAR (256) NULL,
+    [Remaining1_5]            NVARCHAR (256) NULL,
+    [Remaining5_20]           NVARCHAR (256) NULL,
+    [Remaining20_100]         NVARCHAR (256) NULL,
+    [Remaining100_250]        NVARCHAR (256) NULL,
+    [Remaining_250]           NVARCHAR (256) NULL,
+    [Cost0_1]                 NVARCHAR (256) NULL,
+    [Cost1_5]                 NVARCHAR (256) NULL,
+    [Cost5_20]                NVARCHAR (256) NULL,
+    [Cost20_100]              NVARCHAR (256) NULL,
+    [Cost100_250]             NVARCHAR (256) NULL,
+    [Cost_250]                NVARCHAR (256) NULL,
+    [FileName]                NVARCHAR (256) NULL,
+    [CreatedDate]             DATETIME       CONSTRAINT [DF_SBL_CD] DEFAULT (getdate()) NOT NULL
+);
+

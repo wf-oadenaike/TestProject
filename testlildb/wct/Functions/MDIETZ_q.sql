@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[MDIETZ_q]
+(@CashFlows_RangeQuery NVARCHAR (MAX) NULL, @StartDate DATETIME NULL, @EndDate DATETIME NULL, @BMV FLOAT (53) NULL, @EMV FLOAT (53) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[MDIETZ_q]
+

@@ -1,0 +1,16 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPPMFX_INFO_RUNID] (
+    [FXRATE_ID]                     VARCHAR (16) NOT NULL,
+    [DATE]                          DATETIME     NOT NULL,
+    [FROM_ISO_CURRENCY_CODE__RUNID] INT          NOT NULL,
+    [TO_ISO_CURRENCY_CODE__RUNID]   INT          NOT NULL,
+    [SPOT_RATE__RUNID]              INT          NOT NULL,
+    [1_MONTH_FORWARD_RATE__RUNID]   INT          NOT NULL,
+    [2_MONTH_FORWARD_RATE__RUNID]   INT          NOT NULL,
+    [3_MONTH_FORWARD_RATE__RUNID]   INT          NOT NULL,
+    [6_MONTH_FORWARD_RATE__RUNID]   INT          NOT NULL,
+    [1_YEAR_FORWARD_RATE__RUNID]    INT          NOT NULL,
+    [DATA_QUALITY__RUNID]           INT          NOT NULL,
+    [EX_RATE_CHG_PCT__RUNID]        INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([FXRATE_ID] ASC, [DATE] ASC)
+);
+

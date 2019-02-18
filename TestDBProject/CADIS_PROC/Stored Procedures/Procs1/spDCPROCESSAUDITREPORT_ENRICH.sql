@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_PROC].[spDCPROCESSAUDITREPORT_ENRICH]
+@TargetFieldName NVARCHAR (500), @FromDate DATETIME, @UNIQUE_IDENTIFIER VARCHAR (30)
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

@@ -1,0 +1,26 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPSECEXPST_INFO_VALUE] (
+    [SOURCE_TABLE]              VARCHAR (50)   NOT NULL,
+    [SOURCE_KEY]                VARCHAR (50)   NOT NULL,
+    [SOURCE_COLUMN]             VARCHAR (50)   NOT NULL,
+    [EXCEPTION_CODE]            INT            NOT NULL,
+    [SOURCE_DATE]               DATETIME       NOT NULL,
+    [PROCESS_STATUS]            VARCHAR (2)    DEFAULT ('N') NULL,
+    [ENTITY]                    VARCHAR (40)   NULL,
+    [SOURCE]                    VARCHAR (50)   NULL,
+    [SOURCE_COMPONENT]          VARCHAR (50)   NULL,
+    [EDM_SEC_ID]                INT            NULL,
+    [SOURCE_VALUE]              VARCHAR (1000) NULL,
+    [DATA_A_TYPE]               VARCHAR (100)  NULL,
+    [DATA_A_VALUE]              VARCHAR (1000) NULL,
+    [DATA_B_TYPE]               VARCHAR (100)  NULL,
+    [DATA_B_VALUE]              VARCHAR (1000) NULL,
+    [DATA_C_TYPE]               VARCHAR (100)  NULL,
+    [DATA_C_VALUE]              VARCHAR (1000) NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME       DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME       DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50)  DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]     INT            DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_LASTMODIFIED] DATETIME       DEFAULT (getdate()) NULL,
+    PRIMARY KEY CLUSTERED ([SOURCE_TABLE] ASC, [SOURCE_KEY] ASC, [SOURCE_COLUMN] ASC, [EXCEPTION_CODE] ASC, [SOURCE_DATE] ASC)
+);
+

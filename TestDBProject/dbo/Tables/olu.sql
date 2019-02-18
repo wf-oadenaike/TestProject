@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[olu] (
+    [REPORT_DATE]            DATETIME         NULL,
+    [FUND_SHORT_NAME]        VARCHAR (15)     NOT NULL,
+    [CCY]                    VARCHAR (3)      NOT NULL,
+    [AS_OF_DATE]             DATETIME         NOT NULL,
+    [VALUE]                  DECIMAL (38, 15) NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50)    DEFAULT ('UNKNOWN') NULL,
+    PRIMARY KEY CLUSTERED ([FUND_SHORT_NAME] ASC, [CCY] ASC, [AS_OF_DATE] ASC) WITH (FILLFACTOR = 80)
+);
+

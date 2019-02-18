@@ -1,0 +1,18 @@
+﻿CREATE TABLE [dbo].[T_SLA_PROCESS_MONITOR] (
+    [PLATFORM]               VARCHAR (50)  NOT NULL,
+    [SOURCE]                 VARCHAR (50)  NOT NULL,
+    [ENTITY]                 VARCHAR (50)  NOT NULL,
+    [SUB_ENTITY]             VARCHAR (50)  NOT NULL,
+    [RUN_DATE]               DATETIME      NOT NULL,
+    [ROW_COUNT]              INT           NULL,
+    [PREVIOUS_ROW_COUNT]     INT           NULL,
+    [PROCESS_STATUS]         VARCHAR (30)  NULL,
+    [RUN_STATUS]             VARCHAR (30)  NULL,
+    [TIME_STATUS]            VARCHAR (30)  NULL,
+    [ALERT_SENT]             BIT           NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    PRIMARY KEY CLUSTERED ([PLATFORM] ASC, [SOURCE] ASC, [ENTITY] ASC, [SUB_ENTITY] ASC, [RUN_DATE] ASC) WITH (FILLFACTOR = 80)
+);
+

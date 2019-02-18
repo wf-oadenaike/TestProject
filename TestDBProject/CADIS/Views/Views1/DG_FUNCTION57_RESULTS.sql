@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION57_RESULTS" AS 
+SELECT ET."MonitoringCategoryNoteId",ET."MonitoringCategoryId",ET."CategoryNote",ET."MonitoringNoteTypeId",ET."ValidFromDate",ET."ValidToDate",ET."OccurrenceDate",ET."SubmittedByPersonId",ET."SubmittedDate",ET."JoinGUID",ET."CategoryNoteCreationDate",ET."CategoryNoteLastModifiedDate",ET."MonitoringNoteCollectionSeqId" FROM "Compliance"."MonitoringCategoryNotes" ET WITH (NOLOCK)

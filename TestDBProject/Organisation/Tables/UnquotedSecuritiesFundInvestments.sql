@@ -1,0 +1,25 @@
+﻿CREATE TABLE [Organisation].[UnquotedSecuritiesFundInvestments] (
+    [UnquotedSecuritiesFundInvestmentId]       INT              IDENTITY (1, 1) NOT NULL,
+    [UnquotedSecuritiesId]                     INT              NOT NULL,
+    [FundCode]                                 VARCHAR (16)     NOT NULL,
+    [NumberOfShares]                           INT              NULL,
+    [FundAllocation]                           DECIMAL (18, 6)  NULL,
+    [TotalAmountInvested]                      DECIMAL (18, 6)  NULL,
+    [PercentageHeldAtClosing]                  DECIMAL (18, 6)  NULL,
+    [StampDuty]                                DECIMAL (18, 6)  NULL,
+    [WorkflowVersionGUID]                      UNIQUEIDENTIFIER NULL,
+    [JoinGUID]                                 UNIQUEIDENTIFIER NOT NULL,
+    [UnquotedSecuritiesCreationDate]           DATETIME         CONSTRAINT [DF_USFI_USCD] DEFAULT (getdate()) NOT NULL,
+    [UnquotedSecuritiesCreatedByPersonId]      SMALLINT         NOT NULL,
+    [UnquotedSecuritiesLastModifiedDate]       DATETIME         CONSTRAINT [DF_USFI_USLMD] DEFAULT (getdate()) NOT NULL,
+    [UnquotedSecuritiesLastModifiedByPersonId] SMALLINT         NOT NULL,
+    [CADIS_SYSTEM_INSERTED]                    DATETIME         CONSTRAINT [DF_USFI_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                     DATETIME         CONSTRAINT [DF_USFI_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]                   NVARCHAR (50)    CONSTRAINT [DF_USFI_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                    INT              CONSTRAINT [DF_USFI_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]                   ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]                DATETIME         CONSTRAINT [DF_USFI_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [XPKnquotedSecuritiesFundInvestments] PRIMARY KEY CLUSTERED ([UnquotedSecuritiesFundInvestmentId] ASC),
+    CONSTRAINT [UnquotedSecuritiesFundInvestmentsUnquotedSecuritiesId] FOREIGN KEY ([UnquotedSecuritiesId]) REFERENCES [Organisation].[UnquotedSecurities] ([UnquotedSecuritiesId])
+);
+

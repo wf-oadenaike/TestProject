@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION438_RESULTS" AS 
+SELECT ET."WhistleblowingEventId",ET."WhistleblowingId",ET."WhistleblowingEventTypeId",ET."WhistleblowingEventType",ET."RecordedByPersonId",ET."RecordedBy",ET."EventDetails",ET."EventDate",ET."DocumentationFolderLink",ET."JoinGUID",ET."WhistleblowingEventCreationDate",ET."WhistleblowingEventLastModifiedDate" FROM "Access.ManyWho"."WhistleblowingEventsReadOnlyVw" ET WITH (NOLOCK)

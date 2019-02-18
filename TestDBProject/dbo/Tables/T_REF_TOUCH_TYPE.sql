@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[T_REF_TOUCH_TYPE] (
+    [ID]            BIGINT         IDENTITY (1, 1) NOT NULL,
+    [TouchTypeName] NVARCHAR (250) NULL,
+    [TouchType]     NVARCHAR (10)  NULL,
+    CONSTRAINT [PK_T_REF_TOUCH_TYPE] PRIMARY KEY CLUSTERED ([ID] ASC) WITH (FILLFACTOR = 80)
+);
+

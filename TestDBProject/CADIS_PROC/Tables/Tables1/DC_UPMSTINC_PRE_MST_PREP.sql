@@ -1,0 +1,25 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPMSTINC_PRE_MST_PREP] (
+    [FUND_SHORT_NAME]        VARCHAR (50)     NOT NULL,
+    [EDM_SEC_ID]             INT              NOT NULL,
+    [FUND_FISCAL_YEAR]       INT              NOT NULL,
+    [FUND_FISCAL_QUARTER]    INT              NOT NULL,
+    [DVD_CCY]                VARCHAR (3)      NULL,
+    [WITHHOLDING_TAX]        DECIMAL (26, 6)  NULL,
+    [DECLARED_DATE]          DATETIME         NULL,
+    [POSITION_DATE]          DATETIME         NULL,
+    [POSITION]               DECIMAL (20, 6)  NULL,
+    [BID_PRICE]              DECIMAL (24, 10) NULL,
+    [SPOT_RATE]              DECIMAL (24, 10) NULL,
+    [MARKET_VALUE]           DECIMAL (24, 10) NULL,
+    [EX_DATE]                DATE             NULL,
+    [RATE]                   DECIMAL (20, 6)  NULL,
+    [NET_INCOME]             DECIMAL (24, 10) NULL,
+    [TO_PAY]                 DECIMAL (24, 10) NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME         NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME         NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50)    NULL,
+    [CADIS_SYSTEM_RUNID]     INT              NOT NULL,
+    [CADIS_SYSTEM_TOPRUNID]  INT              NOT NULL,
+    PRIMARY KEY CLUSTERED ([FUND_SHORT_NAME] ASC, [EDM_SEC_ID] ASC, [FUND_FISCAL_YEAR] ASC, [FUND_FISCAL_QUARTER] ASC) WITH (FILLFACTOR = 80)
+);
+

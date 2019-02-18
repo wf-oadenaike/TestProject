@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[MDIETZ]
+(@CashFlow_TableName NVARCHAR (MAX) NULL, @CashFlowDates_ColumnName NVARCHAR (4000) NULL, @CashFlows_ColumnName NVARCHAR (4000) NULL, @GroupedColumnName NVARCHAR (4000) NULL, @GroupedColumnValue SQL_VARIANT NULL, @StartDate DATETIME NULL, @EndDate DATETIME NULL, @BMV FLOAT (53) NULL, @EMV FLOAT (53) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[MDIETZ]
+

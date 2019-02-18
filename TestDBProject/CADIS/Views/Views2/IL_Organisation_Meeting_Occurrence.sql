@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Organisation_Meeting_Occurrence" AS 
+SELECT V."MeetingRegisterId" AS "Meeting Register ID",V."MeetingDateTime" AS "Meeting Date",V."MeetingNotes" AS "Meeting Notes",V."JIRAEpicKey" AS "JIRA Epic Key",V."ActiveFlag" AS "Active Flag",V."DocumentationFolderLink" AS "Documentation Folder Link",V."MeetingOccurrenceCreationDatetime" AS "Meeting Occurrence Creation Date",V."MeetingOccurrenceLastModifiedDatetime" AS "Meeting Occurrence Last Modified Date",V."MeetingOccurrenceId" AS "Meeting Occurrence ID" FROM "Organisation"."MeetingOccurrence" V

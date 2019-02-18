@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION157_RESULTS" AS 
+SELECT ET."RegulatoryInteractionEventId",ET."RegulatoryInteractionId",ET."RegulatoryInteractionEventTypeId",ET."RegulatoryInteractionEventType",ET."SubmittedByPersonId",ET."SubmittedBy",ET."AssignedToPersonId",ET."AssignedTo",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."JiraTaskKey",ET."DocumentationFolderLink",ET."JoinGUID",ET."RegulatoryInteractionEventCreationDatetime",ET."RegulatoryInteractionEventLastModifiedDatetime" FROM "Access.ManyWho"."RegulatoryInteractionEventsReadOnlyVw" ET WITH (NOLOCK)

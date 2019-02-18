@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION611_RESULTS" AS 
+SELECT ET."ID",ET."LegalName",ET."CountryID",ET."CurrencyID",ET."SubsectorID",ET."SFAccountID",ET."BoxFolderID",ET."JiraEpicKey",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."IsActive",ET."FundManagerPersonID",ET."InvestmentAnalystPersonID",ET."CompanyNumber",ET."CompanyType",ET."KnownName" FROM "Investment"."T_UnquotedIssuers" ET WITH (NOLOCK)

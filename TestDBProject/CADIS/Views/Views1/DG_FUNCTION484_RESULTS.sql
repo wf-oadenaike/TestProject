@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION484_RESULTS" AS 
+SELECT ET."EventTypeId",ET."EventTypeName",ET."EventTypeCode",ET."EventTypeOwnerId",ET."EventTypeOwnerName",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Access.ManyWho"."HuddleEventTypeReadOnlyVw" ET WITH (NOLOCK)

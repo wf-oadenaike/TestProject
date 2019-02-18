@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION588_RESULTS" AS 
+SELECT ET."EventId",ET."ToolId",ET."EventDetails",ET."SubmittedByPersonId",ET."EventDate",ET."EventType",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Organisation"."CriticalUserDefinedToolsEvents" ET WITH (NOLOCK)

@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[T_MASTER_ISSUER] (
+    [EDM_Issuer_ID]            INT           IDENTITY (600000000, 1) NOT NULL,
+    [Issuer_Name]              VARCHAR (250) NULL,
+    [Ticker_exchange]          VARCHAR (250) NULL,
+    [Country_Of_Risk]          VARCHAR (250) NULL,
+    [Country_Of_Domicile]      VARCHAR (250) NULL,
+    [LEI]                      VARCHAR (250) NULL,
+    [ID_BB_GLOBAL_CO]          VARCHAR (250) NULL,
+    [Country_Of_Incorporation] VARCHAR (4)   NULL,
+    [CompanyType]              VARCHAR (250) NULL,
+    [Salesforce_Account_Id]    VARCHAR (250) NULL,
+    [BoxFolderID]              VARCHAR (250) NULL,
+    [JiraEpicKey]              VARCHAR (250) NULL,
+    [PrimaryAnalystPersonID]   SMALLINT      NULL,
+    [SecondaryAnalystPersonID] SMALLINT      NULL,
+    [Currency]                 VARCHAR (3)   NULL,
+    [CADIS_SYSTEM_INSERTED]    DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]     DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]   NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    CONSTRAINT [PK_T_MASTER_ISSUER] PRIMARY KEY CLUSTERED ([EDM_Issuer_ID] ASC) WITH (FILLFACTOR = 80),
+    CONSTRAINT [FK_Currency] FOREIGN KEY ([Currency]) REFERENCES [dbo].[T_REF_CURRENCY] ([ISO_CCY_CD]),
+    CONSTRAINT [FK_Person] FOREIGN KEY ([PrimaryAnalystPersonID]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [FK_Person1] FOREIGN KEY ([SecondaryAnalystPersonID]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [FK_REF_Country] FOREIGN KEY ([Country_Of_Incorporation]) REFERENCES [dbo].[T_REF_COUNTRY] ([ISO_CTY_CD])
+);
+

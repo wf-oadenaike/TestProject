@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION131_RESULTS" AS 
+SELECT ET."TraderAuthorisationEventId",ET."TraderAuthorisationId",ET."EventType",ET."RecordedByPersonId",ET."RecordedBy",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."Status",ET."JiraKey",ET."DocumentationFolderLink",ET."JoinGUID",ET."TraderAuthorisationEventCreationDatetime",ET."TraderAuthorisationEventLastModifiedDatetime" FROM "Access.ManyWho"."TraderAuthorisationEventsReadOnlyVw" ET WITH (NOLOCK)

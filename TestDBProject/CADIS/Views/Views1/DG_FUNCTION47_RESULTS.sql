@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION47_RESULTS" AS 
+SELECT ET."PolicyThemeRegisterId",ET."PolicyThemeEventTypeId",ET."ReviewCollection",ET."PersonId",ET."PolicyThemeEventId",ET."RoleId",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."DocumentationFolderLink",ET."WorkflowVersionGUID",ET."JoinGUID",ET."PolicyThemeEventCreationDatetime",ET."PolicyThemeEventLastModifiedDatetime" FROM "Organisation"."PolicyThemeEvents" ET WITH (NOLOCK)

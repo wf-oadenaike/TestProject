@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Risk_Impact" AS 
+SELECT V."RiskImpactId" AS "Risk Impact Id",V."ImpactName" AS "Impact Name",V."ImpactScore" AS "Impact Score",V."CreatedDate" AS "Created Date",V."CADIS_SYSTEM_INSERTED",V."CADIS_SYSTEM_UPDATED",V."CADIS_SYSTEM_CHANGEDBY",V."CADIS_SYSTEM_PRIORITY",V."CADIS_SYSTEM_TIMESTAMP",V."CADIS_SYSTEM_LASTMODIFIED" FROM "Risk"."RiskImpact" V

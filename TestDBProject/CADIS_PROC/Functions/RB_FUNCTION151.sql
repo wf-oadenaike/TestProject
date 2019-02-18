@@ -1,0 +1,10 @@
+﻿CREATE FUNCTION [CADIS_PROC].[RB_FUNCTION151]
+(@INPUT0 VARCHAR (20), @INPUT1 VARCHAR (20))
+RETURNS BIT
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN NULL
+END
+

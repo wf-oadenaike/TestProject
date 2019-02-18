@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_PolicyProc_Maintenance" AS 
+SELECT V."Type" AS "Type",V."Id" AS "ID",V."PolicyName" AS "Policy Name",V."Version" AS "Version",V."Status" AS "Status",V."LastReviewDate" AS "Last Review Date",V."NextReviewDate" AS "Next Review Date", J7.DF AS "Person",V."IsActive" AS "Active",V."LATE" AS "Late" FROM "dbo"."V_POLICY_PROC" V LEFT OUTER JOIN (SELECT DISTINCT "PersonId" AS JF,"PersonsName" AS DF FROM "Core"."Persons")  J7 ON  J7.JF=V."PersonId"

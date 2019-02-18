@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_SYS].[SPPROCESSMESSAGE_INS]
+@RUNTOKEN INT, @MSGID NVARCHAR (50), @PLGUID NVARCHAR (32)
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION615_RESULTS" AS 
+SELECT ET."TrainingTitle",ET."TrainingTypeId",ET."AttestationRequiredYesNo",ET."AnnualTrainingYesNo",ET."AttendanceApproverPersonId",ET."IsActive",ET."JoinGUID",ET."TrainingCourseCreationDate",ET."TrainingCourseLastModifiedDate",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."TrainingCourseId",ET."AttestationText",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Compliance"."TrainingCourses" ET WITH (NOLOCK)

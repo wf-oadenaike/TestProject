@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION337_RESULTS" AS 
+SELECT ET."KPIID",ET."LastUpdatedDate",ET."KPIGroupId",ET."KPIGroupName",ET."KPIName",ET."KPIDescription",ET."IsPercentage",ET."KPIValue",ET."OwnerRoleName",ET."PercentageOverThresholdRed",ET."PercentageOverThresholdAmber",ET."PercentageOverThresholdGreen",ET."RedThresholdValue",ET."AmberThresholdValue",ET."GreenThresholdValue",ET."IsRed",ET."IsAmber",ET."IsGreen",ET."FrequencyName",ET."RiskCategory",ET."RiskSubCategory",ET."MaxLastUpdatedDate" FROM "Access.WebDev"."KRILatestDataVw" ET WITH (NOLOCK)

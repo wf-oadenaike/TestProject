@@ -1,0 +1,68 @@
+﻿CREATE VIEW [Access.ManyWho].[BPSDividendsQuarterlySummaryVw]
+AS
+--/******************************
+--** Desc:
+--** Auth: R.Dixon
+--** Date: 25/04/2018
+--**************************
+--** Change History
+--**************************
+--** JIRA		  Date		  Author	Description 
+--** ----		  ----------  -------	------------------------------------
+--** DAP-1836     25/04/2018  R.Dixon	Replaces [Access.ManyWho].[DividendsQuarterlySummaryVw] by extracting from table of calculated values
+--*******************************/
+
+
+SELECT	T.FUND_SHORT_NAME,
+		T.INCOME_PERIOD_QTR,
+		T.INCOME_PERIOD_YR,
+		T.AS_AT_DATE,
+		T.GROSS_DVD_VAL,
+		Y.GROSS_DVD_VAL AS GROSS_DVD_VAL_PREV,
+		(T.GROSS_DVD_VAL - Y.GROSS_DVD_VAL) AS GROSS_DVD_VAL_CHG,
+		T.NET_DVD_VAL,
+		Y.NET_DVD_VAL AS NET_DVD_VAL_PREV,
+		(T.NET_DVD_VAL - Y.NET_DVD_VAL) AS NET_DVD_VAL_CHG,
+		T.UNITS,
+		Y.UNITS AS UNITS_PREV,
+		T.UNITS - Y.UNITS AS UNITS_CHG,
+		T.GROSS_DVD_VAL_ORIG,
+		T.NET_DVD_VAL_ORIG,
+		T.UNITS_ORIG,
+		T.DVD_RATE,
+		Y.DVD_RATE AS DVD_RATE_PREV,
+		T.DVD_RATE - Y.DVD_RATE AS DVD_RATE_CHG,
+		T.CADIS_SYSTEM_INSERTED,
+		T.CADIS_SYSTEM_UPDATED,
+		T.CADIS_SYSTEM_CHANGEDBY 
+FROM	[dbo].[T_BPS_DVD_QTR_SUMMARY] T
+LEFT	OUTER JOIN 
+		(SELECT	FUND_SHORT_NAME,
+				INCOME_PERIOD_QTR,
+				INCOME_PERIOD_YR,
+				AS_AT_DATE,
+				GROSS_DVD_VAL,
+				NET_DVD_VAL,
+				UNITS,
+				GROSS_DVD_VAL_ORIG,
+				NET_DVD_VAL_ORIG,
+				UNITS_ORIG,
+				DVD_RATE,
+				FUND_DVD_RATE_PER_YEAR,
+				CADIS_SYSTEM_INSERTED,
+				CADIS_SYSTEM_UPDATED,
+				CADIS_SYSTEM_CHANGEDBY 
+		FROM [dbo].[T_BPS_DVD_QTR_SUMMARY] T
+		WHERE AS_AT_DATE = (SELECT	MAX(AS_AT_DATE)
+							FROM	[DBO].[T_BPS_DVD_QTR_SUMMARY]
+							WHERE	AS_AT_DATE NOT IN
+									(SELECT	MAX(AS_AT_DATE)
+									FROM	[DBO].[T_BPS_DVD_QTR_SUMMARY]
+									)
+							)
+		) Y
+ON		Y.FUND_SHORT_NAME = T.FUND_SHORT_NAME 
+AND		Y.INCOME_PERIOD_QTR = T.INCOME_PERIOD_QTR
+AND		Y.INCOME_PERIOD_YR = T.INCOME_PERIOD_YR
+WHERE	T.AS_AT_DATE = (SELECT MAX(AS_AT_DATE) FROM [DBO].[T_BPS_DVD_QTR_SUMMARY])
+

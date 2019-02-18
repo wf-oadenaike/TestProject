@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_PROC].[SPDG_FUNCTION321_INBOXUPD]
+@Inserted DATETIME, @ChangedBy NVARCHAR (256), @ValidationInfo NVARCHAR (4000), @Id INT, @CADIS_SYSTEM_UPDATED DATETIME, @CADIS_SYSTEM_UPDATED_UPDATE BIT, @CADIS_SYSTEM_CHANGEDBY NVARCHAR (50), @CADIS_SYSTEM_CHANGEDBY_UPDATE BIT, @AccSalesforceId CHAR (18), @AccSalesforceId_UPDATE BIT, @AccName NVARCHAR (100), @AccName_UPDATE BIT, @AccMatrixOutletId CHAR (5), @AccMatrixOutletId_UPDATE BIT, @AccSivId NVARCHAR (100), @AccSivId_UPDATE BIT, @AccParentSivId NVARCHAR (100), @AccParentSivId_UPDATE BIT, @AccFcaId INT, @AccFcaId_UPDATE BIT, @AccPostcode NVARCHAR (20), @AccPostcode_UPDATE BIT, @AccLandline NVARCHAR (100), @AccLandline_UPDATE BIT, @AccFax NVARCHAR (100), @AccFax_UPDATE BIT, @AccWebsite NVARCHAR (100), @AccWebsite_UPDATE BIT, @AccFirmSegment NVARCHAR (100), @AccFirmSegment_UPDATE BIT, @AccAuthStatus NVARCHAR (100), @AccAuthStatus_UPDATE BIT, @AccPlatformsUsed NVARCHAR (1000), @AccPlatformsUsed_UPDATE BIT, @AccOutletType NVARCHAR (100), @AccOutletType_UPDATE BIT, @AccVerifiedBy NVARCHAR (100), @AccVerifiedBy_UPDATE BIT, @AccIsExistingRel BIT, @AccIsExistingRel_UPDATE BIT, @AccIsPriorityClient BIT, @AccIsPriorityClient_UPDATE BIT, @AccOwnerId NVARCHAR (100), @AccOwnerId_UPDATE BIT, @AccOwnerName NVARCHAR (100), @AccOwnerName_UPDATE BIT, @WoodfordLastUpdate DATETIME, @WoodfordLastUpdate_UPDATE BIT, @MatrixLastUpdate DATETIME, @MatrixLastUpdate_UPDATE BIT, @StartDateTime DATETIME, @StartDateTime_UPDATE BIT, @EndDateTime DATETIME, @EndDateTime_UPDATE BIT, @IsActive BIT, @IsActive_UPDATE BIT, @AccCalculatedPriority DECIMAL (19, 2), @AccCalculatedPriority_UPDATE BIT, @AccIsKeyAccount BIT, @AccIsKeyAccount_UPDATE BIT, @RegionId INT, @RegionId_UPDATE BIT, @IsConfirmRequired BIT, @IsConfirmRequired_UPDATE BIT, @JoinGUID UNIQUEIDENTIFIER, @JoinGUID_UPDATE BIT, @CADIS_SYSTEM_LASTMODIFIED DATETIME, @CADIS_SYSTEM_LASTMODIFIED_UPDATE BIT
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

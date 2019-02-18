@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_PROC].[spDCPROCESSAUDITREPORT_UPMSTFX]
+@TargetFieldName NVARCHAR (500), @FromDate DATETIME, @FXRATE_ID VARCHAR (16), @DATE DATETIME
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

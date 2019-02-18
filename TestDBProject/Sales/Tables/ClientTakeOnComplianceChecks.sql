@@ -1,0 +1,25 @@
+﻿CREATE TABLE [Sales].[ClientTakeOnComplianceChecks] (
+    [ClientTakeOnId]                                  INT              NOT NULL,
+    [Classification]                                  VARCHAR (50)     NULL,
+    [ClientCategorisationChangeNotes]                 VARCHAR (MAX)    NULL,
+    [IMADocumentationFolderLink]                      VARCHAR (2000)   NULL,
+    [ClientContactName]                               VARCHAR (50)     NULL,
+    [ClientContactSalesForceId]                       VARCHAR (18)     NULL,
+    [ClientAuthorityContactName]                      VARCHAR (50)     NULL,
+    [ClientAuthorityContactSalesForceId]              VARCHAR (18)     NULL,
+    [RecordedByPersonId]                              SMALLINT         CONSTRAINT [DF_CTOCC_CTOCCRP] DEFAULT ((-1)) NOT NULL,
+    [DocumentationFolderLink]                         VARCHAR (2000)   NULL,
+    [JoinGUID]                                        UNIQUEIDENTIFIER NOT NULL,
+    [ClientTakeOnComplianceCheckCreationDatetime]     DATETIME         CONSTRAINT [DF_CTOCC_CTOMACDT] DEFAULT (getdate()) NOT NULL,
+    [ClientTakeOnComplianceCheckLastModifiedDatetime] DATETIME         CONSTRAINT [DF_CTOCC_CTOMALMDT] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]                           DATETIME         CONSTRAINT [DF_CTOCC_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                            DATETIME         CONSTRAINT [DF_CTOCC_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]                          NVARCHAR (50)    CONSTRAINT [DF_CTOCC_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                           INT              CONSTRAINT [DF_CTOCC_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]                          ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]                       DATETIME         CONSTRAINT [DF_CTOCC_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKClientTakeOnComplianceChecks] PRIMARY KEY CLUSTERED ([ClientTakeOnId] ASC),
+    CONSTRAINT [ClientTakeOnComplianceCheckClientTakeOnId] FOREIGN KEY ([ClientTakeOnId]) REFERENCES [Sales].[ClientTakeOnRegister] ([ClientTakeOnId]),
+    CONSTRAINT [ClientTakeOnComplianceCheckRecordedByPersonId] FOREIGN KEY ([RecordedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

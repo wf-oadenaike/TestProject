@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [pat.gaunt]
+    WITH PASSWORD = N'|pyvV`ybyL{ozmh:qb$ 1|eCmsFT7_&#$!~<psoq{sfadYv$' MUST_CHANGE, SID = 0x87F08A3DE947BA48A1B557E01C9C99CB, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+

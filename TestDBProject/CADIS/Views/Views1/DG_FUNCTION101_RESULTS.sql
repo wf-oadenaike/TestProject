@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION101_RESULTS" AS 
+SELECT ET."UnquotedCompanyCommentaryId",ET."UnquotedCompanyStage",ET."UnquotedCompanyId",ET."Commentary",ET."CommentaryByPersonId",ET."CommentaryByRoleId",ET."CommentaryCreatedDate",ET."CommentaryLastModifiedDate",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Organisation"."UnquotedCompanyCommentaries" ET WITH (NOLOCK)

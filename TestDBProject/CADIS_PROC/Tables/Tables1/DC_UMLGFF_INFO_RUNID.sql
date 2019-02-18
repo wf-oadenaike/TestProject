@@ -1,0 +1,16 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UMLGFF_INFO_RUNID] (
+    [FILE_NAME__RUNID]       INT          NOT NULL,
+    [FILE_TYPE__RUNID]       INT          NOT NULL,
+    [FILE_DATE__RUNID]       INT          NOT NULL,
+    [FUND_SHORT_NAME]        VARCHAR (15) NOT NULL,
+    [PORTFOLIO_NAME__RUNID]  INT          NOT NULL,
+    [CURRENCY__RUNID]        INT          NOT NULL,
+    [FUND_FLOW_TYPE__RUNID]  INT          NOT NULL,
+    [FLOW_TYPE__RUNID]       INT          NOT NULL,
+    [AMOUNT__RUNID]          INT          NOT NULL,
+    [TRADE_DATE]             DATETIME     NOT NULL,
+    [VALUE_DATE__RUNID]      INT          NOT NULL,
+    [NT_ACCOUNT_CODE__RUNID] INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([FUND_SHORT_NAME] ASC, [TRADE_DATE] ASC) WITH (FILLFACTOR = 80)
+);
+

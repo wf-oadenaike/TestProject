@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION375_RESULTS" AS 
+SELECT ET."FundCode",ET."ReportDate",ET."BenchMark",ET."EndWeightPort",ET."EndWeightBench",ET."EndWeightDelta",ET."RtnDayPort",ET."RtnDayBench",ET."RtnDayDelta",ET."RtnWtdPort",ET."RtnWtdBench",ET."RtnWtdDelta",ET."RtnMtdPort",ET."RtnMtdBench",ET."RtnMtdDelta",ET."RtnQtdPort",ET."RtnQtdBench",ET."RtnQtdDelta",ET."RtnYtdPort",ET."RtnYtdBench",ET."RtnYtdDelta" FROM "Access.WebDev"."ufn_GetFundPerformance"(NULL) ET

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION361_RESULTS" AS 
+SELECT ET."SecurityFundInvestmentId",ET."SecurityBloombergId",ET."Tranche",ET."FundCode",ET."NumberOfShares",ET."FundAllocation",ET."TotalAmountInvested",ET."PercentageHeldAtClosing",ET."StampDuty",ET."SubmittedByPersonId",ET."JoinGUID",ET."CreationDatetime",ET."LastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Unquoted"."SecurityFundInvestments" ET WITH (NOLOCK)

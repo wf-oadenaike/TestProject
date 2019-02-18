@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[T_UNQUOTED_REVALUATION] (
+    [REVALUATION_ID]          INT              IDENTITY (1, 1) NOT NULL,
+    [FUNDING_ID]              INT              NULL,
+    [ISSUER]                  VARCHAR (80)     NULL,
+    [EDM_SEC_ID]              INT              NULL,
+    [REVALUATION_TYPE]        VARCHAR (255)    NULL,
+    [REVALUATION_SUB_TYPE]    VARCHAR (255)    NULL,
+    [EXPECTED_ENACTMENT_DATE] DATETIME         NULL,
+    [ACTUAL_ENACTMENT_DATE]   DATETIME         NULL,
+    [FM_LOW]                  DECIMAL (6, 3)   NULL,
+    [FM_HIGH]                 DECIMAL (6, 3)   NULL,
+    [DP_LOW]                  DECIMAL (24, 10) NULL,
+    [DP_HIGH]                 DECIMAL (24, 10) NULL,
+    [ACD]                     DECIMAL (24, 10) NULL,
+    [STATUS_INTERNAL]         VARCHAR (255)    NULL,
+    [STATUS_EXTERNAL]         VARCHAR (255)    NULL,
+    [TECH_STATUS]             VARCHAR (255)    NULL,
+    [CADIS_SYSTEM_INSERTED]   DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]    DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]  NVARCHAR (50)    DEFAULT ('UNKNOWN') NULL,
+    [JiraIssueKey]            VARCHAR (18)     NULL,
+    [IssuerID]                INT              NULL,
+    [EDM_ISSUER_ID]           INT              NULL,
+    PRIMARY KEY CLUSTERED ([REVALUATION_ID] ASC) WITH (FILLFACTOR = 80)
+);
+

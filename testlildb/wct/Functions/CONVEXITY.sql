@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[CONVEXITY]
+(@Settlement DATETIME NULL, @Maturity DATETIME NULL, @Rate FLOAT (53) NULL, @Yield FLOAT (53) NULL, @Frequency INT NULL, @Basis NVARCHAR (4000) NULL, @Par FLOAT (53) NULL, @Redemption FLOAT (53) NULL, @IssueDate DATETIME NULL, @FirstInterestDate DATETIME NULL, @LastInterestDate DATETIME NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[CONVEXITY]
+

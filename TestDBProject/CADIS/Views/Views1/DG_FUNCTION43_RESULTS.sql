@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION43_RESULTS" AS 
+SELECT ET."PlacingEventId",ET."PlacingRegisterId",ET."PlacingEventType",ET."EventPersonId",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."JoinGUID",ET."PlacingEventCreationDatetime",ET."PlacingEventLastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Operation"."PlacingEvents" ET WITH (NOLOCK)

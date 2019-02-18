@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION343_RESULTS" AS 
+SELECT ET."ProcedureId",ET."ProcedureName",ET."Version",ET."Status",ET."SummaryDescription",ET."ProcDocumentId",ET."DocumentName",ET."IsActive",ET."ModifiedByPersonId",ET."ModifiedByPerson",ET."DocumentationFolderLink",ET."JoinGUID",ET."ProcedureRegisterCreationDatetime",ET."ProcedureRegisterLastModifiedDatetime" FROM "Access.WebDev"."ProcedureRegisterReadOnlyVw" ET WITH (NOLOCK)

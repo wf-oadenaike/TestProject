@@ -1,0 +1,1 @@
+C:\Program Files (x86)\Microsoft SQL Server\140\DAC\bin\SqlPackage.exe /action:Publish /sourceFile: "\\woodford-fp01\UserFolder\oluwaseun.adenaike\Documents\Visual Studio 2015\projects\TestProject\testlildb\bin\Debug\testlildb.dacpac"/ targetconnectionstring:"DataSource= (localdb)\MSSQLLocalDB Initial Catalog=TestDb; Integrated Security=True;" 

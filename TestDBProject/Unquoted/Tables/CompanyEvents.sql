@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Unquoted].[CompanyEvents] (
+    [CompanyEventId]                   INT              IDENTITY (1, 1) NOT NULL,
+    [CompanyId]                        INT              NOT NULL,
+    [CompanyStage]                     VARCHAR (5)      NULL,
+    [CompanyEventTypeId]               SMALLINT         NOT NULL,
+    [SubmittedByPersonId]              SMALLINT         CONSTRAINT [DF_CE_CESP] DEFAULT ((-1)) NOT NULL,
+    [EventDetails]                     VARCHAR (MAX)    NULL,
+    [EventDate]                        DATETIME         NULL,
+    [EventTrueFalse]                   BIT              NULL,
+    [DocumentationFolderLink]          VARCHAR (2000)   NULL,
+    [JoinGUID]                         UNIQUEIDENTIFIER NOT NULL,
+    [CompanyEventCreationDatetime]     DATETIME         CONSTRAINT [DF_CE_CECD] DEFAULT (getdate()) NOT NULL,
+    [CompanyEventLastModifiedDatetime] DATETIME         CONSTRAINT [DF_CE_CELMD] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]            DATETIME         CONSTRAINT [DF_CE_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]             DATETIME         CONSTRAINT [DF_CE_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]           NVARCHAR (50)    CONSTRAINT [DF_CEE_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]            INT              CONSTRAINT [DF_CE_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]           ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]        DATETIME         CONSTRAINT [DF_CE_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKCompanyEvents] PRIMARY KEY CLUSTERED ([CompanyEventId] ASC),
+    CONSTRAINT [CompanyEventsCompanyId] FOREIGN KEY ([CompanyId]) REFERENCES [Investment].[Companies] ([CompanyId]),
+    CONSTRAINT [CompanyEventsCompanyStageId] FOREIGN KEY ([CompanyStage]) REFERENCES [Unquoted].[CompanyStages] ([CompanyStage]),
+    CONSTRAINT [CompanyEventsEventTypeId] FOREIGN KEY ([CompanyEventTypeId]) REFERENCES [Unquoted].[CompanyEventTypes] ([CompanyEventTypeId]),
+    CONSTRAINT [CompanyEventsSubmittedByPersonId] FOREIGN KEY ([SubmittedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

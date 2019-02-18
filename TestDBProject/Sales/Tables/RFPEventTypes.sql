@@ -1,0 +1,6 @@
+﻿CREATE TABLE [Sales].[RFPEventTypes] (
+    [RFPEventTypeId] SMALLINT      IDENTITY (1, 1) NOT NULL,
+    [RFPEventType]   VARCHAR (128) NOT NULL,
+    CONSTRAINT [PKRFPEventTypes] PRIMARY KEY CLUSTERED ([RFPEventTypeId] ASC)
+);
+

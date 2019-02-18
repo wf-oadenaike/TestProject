@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Unquoted].[ConfirmedTrades] (
+    [FUND_SHORT_CODE]           VARCHAR (20)  NULL,
+    [AccountNumber]             VARCHAR (511) NULL,
+    [UnquotedCompanyId]         INT           NULL,
+    [ListedCompanyId]           INT           NULL,
+    [EntryDate]                 VARCHAR (511) NULL,
+    [AccountName]               VARCHAR (511) NULL,
+    [AssetDescription]          VARCHAR (511) NULL,
+    [LocalCurrencyCode]         VARCHAR (511) NULL,
+    [ISIN]                      VARCHAR (511) NULL,
+    [SEDOL]                     VARCHAR (511) NULL,
+    [BloombergGlobalExchangeID] VARCHAR (511) NULL,
+    [BloombergTickerID]         VARCHAR (511) NULL,
+    [Shares]                    VARCHAR (511) NULL,
+    [ExecutingBrokerName]       VARCHAR (511) NULL,
+    [TransactionPriceBase]      VARCHAR (511) NULL,
+    [BrokerCommissionBase]      VARCHAR (511) NULL,
+    [TransactionAmtLocal]       VARCHAR (511) NULL,
+    [TransactionAmtBase]        VARCHAR (511) NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME      CONSTRAINT [DF_CT_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME      CONSTRAINT [DF_CT_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50) CONSTRAINT [DF_CT_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]     INT           CONSTRAINT [DF_CT_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]    ROWVERSION    NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED] DATETIME      CONSTRAINT [DF_CT_CSL] DEFAULT (getdate()) NULL
+);
+

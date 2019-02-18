@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [CADIS]
+    AUTHORIZATION [dbo];
+

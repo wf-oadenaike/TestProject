@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_PROC].[SPDG_FUNCTION494_INBOXSELROWNUMBER]
+@TDate DATE, @Fund VARCHAR (10), @MaxDate DATE, @RowNum INT OUTPUT, @WhereSQL NVARCHAR (MAX), @Username NVARCHAR (250), @Sort NVARCHAR (30), @ReportDate DATETIME, @Fund1 VARCHAR (15), @CCY VARCHAR (3), @AsOfDate DATETIME
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

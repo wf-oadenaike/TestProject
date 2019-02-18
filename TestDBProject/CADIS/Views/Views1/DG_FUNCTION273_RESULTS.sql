@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION273_RESULTS" AS 
+SELECT ET."KPIBreachId",ET."KPIId",ET."KPIName",ET."KPIDescription",ET."RefreshFrequencyId",ET."FrequencyName",ET."KPIValue",ET."ThresholdValue",ET."RAGName",ET."BreachDate",ET."FollowUpAction",ET."JoinGUID",ET."RiskOwnerRoleId",ET."RiskOwnerRole",ET."RiskOwnerPersonId",ET."RiskOwner",ET."KPIBreachCreationDatetime",ET."KPIBreachLastModifiedDatetime" FROM "Access.ManyWho"."KPIBreachRegisterReadOnlyVw" ET WITH (NOLOCK)

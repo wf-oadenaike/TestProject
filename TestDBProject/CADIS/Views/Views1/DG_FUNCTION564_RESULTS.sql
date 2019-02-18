@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION564_RESULTS" AS 
+SELECT ET."ConflictsRegisterActionId",ET."ConflictId",ET."ActionTypeId",ET."ActionType",ET."ActionDate",ET."ActionComment",ET."CreatedByPersonId",ET."CreatedByPersonName",ET."CreationDate",ET."JIRAIssueKey",ET."IsActive",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Access.ManyWho"."ConflictRegisterActionsVw" ET WITH (NOLOCK)

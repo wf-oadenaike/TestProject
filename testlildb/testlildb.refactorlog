@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="8438bb44-3f4d-4edb-bd65-8e86affb88e6" ChangeDateTime="02/18/2019 12:28:53">
+    <Property Name="ElementName" Value="[dbo].[test_tca_table].[C_IPO]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[test_tca_table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[C_IPO_OLU]" />
+  </Operation>
+</Operations>

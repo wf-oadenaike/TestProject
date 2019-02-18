@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION598_RESULTS" AS 
+SELECT ET."Fund",ET."CCY",ET."CCY_NAME",ET."AsOfDate",ET."ReportDate",ET."C_BSE_CCY",ET."T_NARR_LONG",ET."A_TRAN_RP_BASE",ET."A_TRAN_AMT",ET."ValueGBP",ET."FxSpotRate" FROM "Access.WebDev"."ufn_NTCashLadderSummary"(NULL, NULL, NULL) ET

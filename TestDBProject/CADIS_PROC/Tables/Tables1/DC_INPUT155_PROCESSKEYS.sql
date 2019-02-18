@@ -1,0 +1,5 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_INPUT155_PROCESSKEYS] (
+    [sf_sfaccountid] VARCHAR (18) NOT NULL,
+    PRIMARY KEY CLUSTERED ([sf_sfaccountid] ASC)
+);
+

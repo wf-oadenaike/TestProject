@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION702_RESULTS" AS 
+SELECT ET."Activated_Order",ET."Activated_Account",ET."slck_Date",ET."OrderDate",ET."Year",ET."Month",ET."Activated_Order_Amount",ET."Activated_Order_Pct",ET."Allocated_Order",ET."Allocated_Account",ET."Allocated_Order_Amount",ET."Allocated_Order_Pct",ET."Stock",ET."slck_OrderID",ET."slck_Message",ET."slck_PostedBy",ET."AsOfDate",ET."AsAtDate" FROM "Access.WebDev"."BERCAllocationVolumeChangesVw" ET WITH (NOLOCK)

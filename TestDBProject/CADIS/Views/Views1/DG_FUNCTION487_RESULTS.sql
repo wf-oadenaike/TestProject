@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION487_RESULTS" AS 
+SELECT ET."EventId",ET."EventSummary",ET."EventDate",ET."DateIdentified",ET."ReportedDate",ET."JIRAKey",ET."JoinGUID",ET."SlackChannel",ET."RecordedByPersonId",ET."ReportedByPersonId",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."EventName",ET."SubCategoryID",ET."PotentialLoss",ET."IsActive",ET."WorstCaseScenario",ET."EventOwnerPersonId",ET."ActualEvent" FROM "Organisation"."HuddleEvents" ET WITH (NOLOCK)

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION240_RESULTS" AS 
+SELECT ET."UnquotedCompanyDecisionId",ET."UnquotedCompanyStage",ET."InvestmentDecisionType",ET."UnquotedCompanyId",ET."DecisionByPersonId",ET."DecisionBySalesforceUserId",ET."DecisionBy",ET."DecisionByRoleId",ET."JoinGUID",ET."DecisionCreatedDate",ET."DecisionLastModifiedDate",ET."DeferDecisionDate" FROM "Access.ManyWho"."UnquotedCompanyDecisionsReadonlyVw" ET WITH (NOLOCK)

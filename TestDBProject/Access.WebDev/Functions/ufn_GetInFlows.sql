@@ -1,0 +1,224 @@
+﻿
+
+CREATE FUNCTION [Access.WebDev].[ufn_GetInFlows]
+(
+	@ReportDate DATE = NULL,
+	@swing tinyint=0
+)
+RETURNS @Output TABLE (
+	[FUND_SHORT_NAME] VARCHAR(256) NULL,
+	[FUND_LONG_NAME] VARCHAR(256) NULL,
+	[IN_FLOW_DATE] DATETIME NULL,
+	[FUND_FLOW_TYPE] VARCHAR(15) NULL,
+	[FLOW_TYPE] VARCHAR(15) NULL,
+	[VALUE] DECIMAL(18,2) NULL,
+	[LastUpdatedDate] DATETIME NULL
+)
+AS
+BEGIN
+-------------------------------------------------------------------------------------- 
+-- Name:			[Access.WebDev].[ufn_GetInFlows]
+-- 
+-- Note:			
+-- 
+-- Author:			K Wu
+-- Date:			26/01/2016
+-------------------------------------------------------------------------------------- 
+-- History:			Initial Write 
+-- Description:		Obtains Fund In Flow totals for given reporting date
+-- 
+-- R Dixon	04/07/2017 now retrieves confirmed data if available, otherwise uses unconfirmed data.
+-- R Dixon	23/08/2017 when checking for confirmed data, ensure it's for FUND_FLOW_TYPE = 'GROSS'
+-- R Dixon	22/05/2018 DAP-2004, get SJP Date as most recent business date prior to @ReportDate
+-------------------------------------------------------------------------------------- 
+	DECLARE @SJPDate DATE;
+	
+IF @ReportDate IS NULL
+	SET @ReportDate = (SELECT MAX(transaction_date) FROM [dbo].[T_MASTER_FUND_FLOW]);
+
+-- SJP is at T. AUM and flows are at T+1
+SET @SJPDate = (
+				SELECT	MAX(CALENDARDATE)
+				FROM	CORE.CALENDAR 
+				WHERE	ISHOLIDAYUK = 0 AND ISWEEKDAY = 1
+				AND		CALENDARDATE < convert(DATE, @ReportDate)
+				)
+
+DECLARE @Interim TABLE (
+	[FUND_SHORT_NAME] VARCHAR(256) NULL,
+	[IN_FLOW_DATE] DATETIME NULL,
+	[FUND_FLOW_TYPE] VARCHAR(15) NULL,
+	[FLOW_TYPE] VARCHAR(15) NULL,
+	[VALUE] DECIMAL(18,2) NULL,
+	[LastUpdatedDate] DATETIME NULL
+	)
+
+INSERT INTO @Interim (
+		[FUND_SHORT_NAME]
+      ,[IN_FLOW_DATE]
+	  ,[FUND_FLOW_TYPE]
+      ,[FLOW_TYPE]
+	  ,[VALUE] 
+	  ,[LastUpdatedDate]
+		)
+		SELECT * FROM
+		(
+		SELECT
+				'OMNIS1' AS FUND_SHORT_NAME
+				,[VALUATION_POINT_DATE] AS TRANSACTION_DATE
+				,'GROSS' AS FUND_FLOW_TYPE
+				,(CASE WHEN SUM([DECISION_VALUE]) < 0 THEN 'REDEMPTION' ELSE 'SUBSCRIPTION' END) AS FLOW_TYPE
+				,SUM([DECISION_VALUE]) AS MARKET_VALUE
+				,MAX([CADIS_SYSTEM_UPDATED]) AS [CADIS_SYSTEM_UPDATED]
+		FROM	[dbo].[T_MASTER_FND_SHARE_CLASS_FLOW] AS Confirmed
+		GROUP	BY [VALUATION_POINT_DATE]
+		) data
+		WHERE	CONVERT(DATE,[TRANSACTION_DATE]) = @ReportDate
+
+
+-- If we do not have the confirmed numbers for OMNIS1 then use the estimates
+IF	NOT EXISTS (SELECT TOP 1 1 FROM @Interim)
+BEGIN
+	INSERT	INTO @Interim (
+			[FUND_SHORT_NAME]
+			,[IN_FLOW_DATE]
+			,[FUND_FLOW_TYPE]
+			,[FLOW_TYPE]
+			,[VALUE]
+			,[LastUpdatedDate]
+			)
+	SELECT	'OMNIS1' AS FUND_SHORT_NAME
+			, [TRANSACTION_DATE] AS [TRANSACTION_DATE]
+			,[FUND_FLOW_TYPE]
+			, [FLOW_TYPE] AS [FLOW_TYPE]
+			,(CASE WHEN [FLOW_TYPE] = 'REDEMPTION' THEN -1 ELSE 1 END) * [MARKET_VALUE] AS [MARKET_VALUE]
+			,[CADIS_SYSTEM_UPDATED]
+	FROM	[dbo].[T_MASTER_GROSS_FUND_FLOW]
+	WHERE	CONVERT(DATE,[TRANSACTION_DATE]) = @ReportDate
+	AND		FUND_SHORT_NAME = 'OMNIS1'
+	AND		SOURCE_TYPE = 'UNCONFIRMED'
+END
+
+;WITH CTE_FX AS (
+	SELECT	fx.[FXRATE_ID], [SPOT_RATE]
+	FROM	[dbo].[T_MASTER_FXRATE] fx
+	INNER	JOIN (
+			SELECT	[FXRATE_ID]
+					,MAX([DATE]) AS [DATE]
+			FROM	[dbo].[T_MASTER_FXRATE]
+			WHERE	[DATE] <= @ReportDate
+	  GROUP BY [FXRATE_ID]
+				) data 
+	ON		data.[FXRATE_ID] = fx.[FXRATE_ID] AND data.[DATE] = fx.[DATE]
+	), 
+CTE_FEEDER AS (
+	SELECT	SUM(VALUE) AS VALUE, 'GBP' AS CCY,
+			(CASE WHEN [TYPE] IN ('Sale','Class Switch Sale') THEN 'SUBSCRIPTION' ELSE 'REDEMPTION' END) AS FLOW_TYPE
+			, MAX([CADIS_SYSTEM_UPDATED]) AS [CADIS_SYSTEM_UPDATED]
+	FROM	[dbo].[T_MASTER_DEALS_IN_PROGRESS]
+	WHERE	CONVERT(DATE, VALUATION_POINT) = @ReportDate
+	AND		ASSET = 'WEIFA' AND MAIN_OWNER_NAME = 'Northern Trust Nominees (Ireland) Ltd'
+	-- Use confirmed figures if available, otherwise use estimated
+	AND		[ESTIMATED?] = (SELECT	TOP 1 [ESTIMATED?] 
+							FROM	[dbo].[T_MASTER_DEALS_IN_PROGRESS] 
+							WHERE	CONVERT(DATE, VALUATION_POINT) = @ReportDate 
+							AND		ASSET = 'WEIFA' AND MAIN_OWNER_NAME = 'Northern Trust Nominees (Ireland) Ltd'
+							ORDER	BY [ESTIMATED?] ASC)
+	GROUP	BY (CASE WHEN [TYPE] IN ('Sale','Class Switch Sale') THEN 'SUBSCRIPTION' ELSE 'REDEMPTION' END) 
+	),
+	--- use this query to determine whether we have confirmed data for a given fund. If not use unconfirmed data.
+CTE_SOURCE_TYPE AS (
+	SELECT	FUND_SHORT_NAME, SOURCE_TYPE
+	FROM
+		(SELECT	FUND_SHORT_NAME, SOURCE_TYPE, ROW_NUMBER()  OVER (PARTITION BY FUND_SHORT_NAME ORDER BY SOURCE_TYPE ASC) AS ROWNUMBER
+		FROM	(
+				SELECT	DISTINCT FUND_SHORT_NAME, SOURCE_TYPE
+				FROM	T_MASTER_FUND_FLOW
+				WHERE	CONVERT(DATE,[TRANSACTION_DATE]) = @ReportDate
+				AND		FUND_FLOW_TYPE = 'GROSS'
+				) FUNDS
+		) SOURCE_TYPES
+	WHERE	SOURCE_TYPES.ROWNUMBER = 1
+	)
+INSERT	INTO @Interim (
+		[FUND_SHORT_NAME]
+		,[IN_FLOW_DATE]
+		,[FUND_FLOW_TYPE]
+		,[FLOW_TYPE]
+		,[VALUE]
+		,[LastUpdatedDate]
+		)
+SELECT	ff.[FUND_SHORT_NAME] AS [FUND_FLOW_NAME]
+		,CONVERT(DATE,[TRANSACTION_DATE]) AS [IN_FLOW_DATE]
+		,[FUND_FLOW_TYPE]
+		,[FLOW_TYPE]
+		,[MARKET_VALUE] * (CASE WHEN CURRENCY = 'GBP' THEN 1 ELSE [SPOT_RATE] END) * (CASE WHEN FLOW_TYPE = 'REDEMPTION' THEN -1 ELSE 1 END) AS [VALUE]
+		,[CADIS_SYSTEM_UPDATED]
+FROM	[dbo].[T_MASTER_FUND_FLOW] ff
+INNER	JOIN CTE_SOURCE_TYPE st
+ON		st.FUND_SHORT_NAME = ff.FUND_SHORT_NAME
+AND		st.SOURCE_TYPE = ff.SOURCE_TYPE
+LEFT	JOIN CTE_FX fx ON CURRENCY + 'GBP' = fx.FXRATE_ID
+WHERE	CONVERT(DATE,[TRANSACTION_DATE]) = @ReportDate
+AND		ff.[FUND_SHORT_NAME] NOT IN('SJPDST', 'SJPXUK', 'SJPNUK', 'OMNIS1')
+AND		FUND_FLOW_TYPE = 'GROSS'
+UNION	ALL
+SELECT	[FUND_SHORT_NAME] AS [FUND_FLOW_NAME]
+		,CONVERT(DATE,[TRANSACTION_DATE]) AS [IN_FLOW_DATE]
+		,[FUND_FLOW_TYPE]
+		,[FLOW_TYPE]
+		,[MARKET_VALUE] * (CASE WHEN CURRENCY = 'GBP' THEN 1 ELSE [SPOT_RATE] END) * (CASE WHEN FLOW_TYPE = 'REDEMPTION' THEN -1 ELSE 1 END) AS [VALUE]
+		,[CADIS_SYSTEM_UPDATED]
+FROM	[dbo].[T_MASTER_FUND_FLOW]
+LEFT	JOIN CTE_FX fx ON CURRENCY + 'GBP' = fx.FXRATE_ID
+WHERE	CONVERT(DATE,[TRANSACTION_DATE]) = @SJPDate
+AND		LTRIM(RTRIM(REPLACE(REPLACE([FUND_SHORT_NAME], CHAR(13), ''), CHAR(10), ''))) IN('SJPDST', 'SJPXUK', 'SJPNUK')
+AND		FUND_FLOW_TYPE = 'GROSS'
+UNION	ALL
+SELECT	'WIMOFF' AS [FUND_FLOW_NAME]
+		,@ReportDate AS [IN_FLOW_DATE]
+		,'GROSS'
+		,FLOW_TYPE
+		,[VALUE] * (CASE WHEN CCY = 'GBP' THEN 1 ELSE [SPOT_RATE] END)
+		AS [VALUE]
+		,[CADIS_SYSTEM_UPDATED]
+FROM	CTE_FEEDER
+LEFT	JOIN CTE_FX fx ON CCY + 'GBP' = fx.FXRATE_ID
+  
+-- Deduct WIMOFF feeder fund values from WIMEIF fund values
+if (@swing=0)
+BEGIN
+UPDATE	i
+SET		i.VALUE = i.VALUE - i2.VALUE
+FROM	@Interim i
+INNER	JOIN @Interim i2
+ON		i.FLOW_TYPE = i2.FLOW_TYPE
+AND		i.FUND_SHORT_NAME = 'WIMEIF'
+AND		i2.FUND_SHORT_NAME = 'WIMOFF'
+END    
+-- Create  NET records
+INSERT	INTO @Interim
+SELECT	i.FUND_SHORT_NAME, IN_FLOW_DATE, 'NET' AS FUND_FLOW_TYPE, CASE WHEN SUM(VALUE) >= 0 THEN 'SUBSCRIPTION' ELSE 'REDEMPTION' END AS FLOW_TYPE, SUM(VALUE) AS VALUE, MAX(LastUpdatedDate) as LastUpdatedDate
+FROM	@interim i
+GROUP	BY FUND_SHORT_NAME, IN_FLOW_DATE
+
+INSERT	INTO @Output
+SELECT	fnd.SHORT_NAME AS FUND_SHORT_NAME
+		,fnd.LONG_NAME AS FUND_LONG_NAME
+		,o.IN_FLOW_DATE
+		,o.FUND_FLOW_TYPE
+		,o.FLOW_TYPE
+		,o.VALUE
+		,o.LastUpdatedDate
+FROM	[dbo].[T_MASTER_FND] fnd
+LEFT	JOIN @Interim o ON o.FUND_SHORT_NAME = fnd.SHORT_NAME
+
+
+   --INSERT INTO @Output ([LastUpdatedDate])
+   -- VALUES( @ReportDate )
+
+RETURN
+   
+END
+
+

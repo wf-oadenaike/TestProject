@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [BoomiETL]
+    WITH PASSWORD = N'epvyb;ty{ozmhqOb|eWkpsoMmsFT7_&#$!~<UqI5{sfWsa!w', SID = 0x23A3D2BA3DD7AC40BEBFC0424218D757, DEFAULT_LANGUAGE = [us_english];
+

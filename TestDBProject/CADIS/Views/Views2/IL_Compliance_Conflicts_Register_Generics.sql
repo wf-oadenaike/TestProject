@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Compliance_Conflicts_Register_Generics" AS 
+SELECT V."ConflictsRegisterGenericId" AS "Conflicts Register Generic ID",V."GenericConflictTitle" AS "Generic Conflict Title",V."GenericConflictDetails" AS "Generic Conflict Details", J3.DF AS "Created By Person ID",V."CreationDate" AS "Creation Date" FROM "Compliance"."ConflictsRegisterGenerics" V LEFT OUTER JOIN (SELECT DISTINCT "PersonId" AS JF,"PersonsName" AS DF FROM "Core"."Persons")  J3 ON  J3.JF=V."CreatedByPersonId"

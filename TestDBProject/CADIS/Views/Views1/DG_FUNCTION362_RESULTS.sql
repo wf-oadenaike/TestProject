@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION362_RESULTS" AS 
+SELECT ET."RevaluationEventId",ET."SecurityRevaluationId",ET."SecurityEventTypeId",ET."SubmittedByPersonId",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."DocumentationFolderLink",ET."JoinGUID",ET."RevaluationEventCreationDatetime",ET."RevaluationEventLastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Unquoted"."SecurityRevaluationEvents" ET WITH (NOLOCK)

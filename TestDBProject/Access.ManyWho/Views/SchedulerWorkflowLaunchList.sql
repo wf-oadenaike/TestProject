@@ -1,0 +1,10 @@
+﻿CREATE VIEW [Access.ManyWho].[SchedulerWorkflowLaunchList]
+	AS 
+SELECT [WorkflowLaunchId]
+      ,[FlowId]
+      ,[LaunchDate]
+	  ,[LaunchRef]
+	  ,[IsActive]
+	  ,[JoinGUID]
+      ,[CreatedDate]
+  FROM [Scheduler].[WorkflowLaunchList]

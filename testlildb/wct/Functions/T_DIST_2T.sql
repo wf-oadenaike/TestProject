@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[T_DIST_2T]
+(@X FLOAT (53) NULL, @df FLOAT (53) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[T_DIST_2T]
+

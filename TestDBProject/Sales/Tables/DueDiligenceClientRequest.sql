@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Sales].[DueDiligenceClientRequest] (
+    [ClientRequestID]        INT              IDENTITY (1, 1) NOT NULL,
+    [RequestTypeID]          SMALLINT         NOT NULL,
+    [ClientName]             VARCHAR (150)    NULL,
+    [ClientCompanyName]      VARCHAR (150)    NULL,
+    [RelationshipManagerID]  SMALLINT         NOT NULL,
+    [ReviewerID]             SMALLINT         NULL,
+    [ClientAssessmentID]     VARCHAR (150)    NULL,
+    [JiraEpicKey]            VARCHAR (120)    NULL,
+    [Status]                 VARCHAR (50)     NULL,
+    [JoinGUID]               UNIQUEIDENTIFIER NOT NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME         CONSTRAINT [DDCR_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME         CONSTRAINT [DDCR_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50)    CONSTRAINT [DDCR_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CEOSignOffRequired]     BIT              NULL,
+    [DueDateOverride]        BIT              NULL,
+    [DueDate]                DATETIME         NULL,
+    [SlackChannelName]       VARCHAR (150)    NULL,
+    [CoachingRequired]       BIT              NULL,
+    [DocumentsRequired]      BIT              NULL,
+    CONSTRAINT [PK_DDCR_ClientRequestID] PRIMARY KEY CLUSTERED ([ClientRequestID] ASC) WITH (FILLFACTOR = 80),
+    CONSTRAINT [DDCR_RelationshipManagerID] FOREIGN KEY ([RelationshipManagerID]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [DDCR_RequestTypeID] FOREIGN KEY ([RequestTypeID]) REFERENCES [Sales].[DueDiligenceRequestType] ([TypeID]),
+    CONSTRAINT [DDCR_ReviewerID] FOREIGN KEY ([ReviewerID]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

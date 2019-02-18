@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[ISALPHA]
+(@Text NVARCHAR (MAX) NULL)
+RETURNS BIT
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[ISALPHA]
+

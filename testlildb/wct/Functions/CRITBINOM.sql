@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[CRITBINOM]
+(@Trials INT NULL, @Probability_s FLOAT (53) NULL, @Alpha FLOAT (53) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[CRITBINOM]
+

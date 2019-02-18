@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION724_RESULTS" AS 
+SELECT ET."ReviewID",ET."RequestID",ET."EntityName",ET."ChangeType",ET."StatusID",ET."StatusName",ET."ReviewTypeID",ET."ReviewTypeName",ET."Details",ET."SubmittedDate",ET."ReviewerPersonID",ET."ReviewerPersonName",ET."JiraIssueKey",ET."IsActive",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Access.ManyWho"."NewOrgStructureReviewRegisterVw" ET WITH (NOLOCK)

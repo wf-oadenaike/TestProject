@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [KPI]
+    AUTHORIZATION [rdsadmin];
+

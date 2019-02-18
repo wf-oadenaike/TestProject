@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_PROC].[SPDG_FUNCTION692_INBOXDEL]
+@SOURCE_SLA_SUBSCRIBER_ID INT
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

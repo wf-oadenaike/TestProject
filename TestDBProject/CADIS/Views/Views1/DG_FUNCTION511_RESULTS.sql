@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION511_RESULTS" AS 
+SELECT ET."QuarterId",ET."QuarterEndingName",ET."ReviewTaskJiraKey",ET."DocusignTaskJiraKey",ET."SendLetterTaskJiraKey",ET."UploadInvoiceTaskJiraKey",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_LASTMODIFIED" FROM "Investment"."ResearchBrokerQuarter" ET WITH (NOLOCK)

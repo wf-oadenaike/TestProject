@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[SFTEST_q]
+(@X_RangeQuery NVARCHAR (MAX) NULL, @Statistic NVARCHAR (4000) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[SFTEST_q]
+

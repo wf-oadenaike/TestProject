@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[CALCDATE]
+(@Year INT NULL, @Month INT NULL, @Day INT NULL)
+RETURNS DATETIME
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[CALCDATE]
+

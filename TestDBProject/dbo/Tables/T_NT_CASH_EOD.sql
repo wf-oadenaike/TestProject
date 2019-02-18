@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[T_NT_CASH_EOD] (
+    [FILE_NAME]                       VARCHAR (100)   NULL,
+    [FILE_TYPE]                       VARCHAR (4)     NULL,
+    [FILE_DATE]                       DATETIME        NULL,
+    [NUMBER_OF_RECORDS]               INT             NULL,
+    [TRADE_DATE]                      DATETIME        NULL,
+    [FUND_NAME]                       VARCHAR (6)     NULL,
+    [CASH_UPDATE_TYPE]                DECIMAL (15, 5) NULL,
+    [CASH_ADJT_TRADE_SETTLE]          DECIMAL (18, 6) NULL,
+    [OPEN_CURRENT_TRADE_FUT_MARGIN]   DECIMAL (16, 6) NULL,
+    [OPEN_CURRENT_SETTLE_SHRT_MARGIN] DECIMAL (16, 6) NULL,
+    [ISO_CCY_CODE]                    VARCHAR (8)     NULL,
+    [CASH_TICKET_CODE_CTC]            VARCHAR (8)     NULL,
+    [AS_OF_DATE]                      DATETIME        NULL,
+    [SECURITY]                        VARCHAR (12)    NULL,
+    [NOTES]                           VARCHAR (180)   NULL,
+    [PRIME_BROKER]                    VARCHAR (30)    NULL,
+    [STRATEGY]                        VARCHAR (16)    NULL,
+    [FUND_CLASS]                      VARCHAR (8)     NULL,
+    [NUMBER_OF_UNITS]                 DECIMAL (14, 6) NULL,
+    [UNIT_OF_VALUE]                   DECIMAL (12, 3) NULL,
+    [CADIS_SYSTEM_INSERTED]           DATETIME        CONSTRAINT [DF__T_NT_CASH__CADIS__66CD7715] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]            DATETIME        CONSTRAINT [DF__T_NT_CASH__CADIS__67C19B4E] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]          NVARCHAR (50)   CONSTRAINT [DF__T_NT_CASH__CADIS__68B5BF87] DEFAULT ('UNKOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]           INT             CONSTRAINT [DF__T_NT_CASH__CADIS__69A9E3C0] DEFAULT ((1)) NULL
+);
+

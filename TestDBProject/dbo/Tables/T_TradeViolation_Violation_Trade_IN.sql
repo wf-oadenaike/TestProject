@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[T_TradeViolation_Violation_Trade_IN] (
+    [CADIS_BATCH_ID]          INT            NOT NULL,
+    [CADIS_MSG_ID]            INT            CONSTRAINT [DF__T_TradeVi__CADIS__1C02BB68] DEFAULT ((1)) NOT NULL,
+    [CADIS_PARENT_ID]         INT            NOT NULL,
+    [CADIS_ROW_ID]            INT            NOT NULL,
+    [Trade_CADIS_ROW_ID]      INT            NULL,
+    [Trade_AccruedBookVal]    NVARCHAR (100) NULL,
+    [Trade_AccruedMktVal]     NVARCHAR (100) NULL,
+    [Trade_AccruedParVal]     NVARCHAR (100) NULL,
+    [Trade_AlertType]         NVARCHAR (100) NULL,
+    [Trade_AllocTktNum]       NVARCHAR (100) NULL,
+    [Trade_Broker]            NVARCHAR (100) NULL,
+    [Trade_MasterTktNum]      NVARCHAR (100) NULL,
+    [Trade_OrderNum]          NVARCHAR (100) NULL,
+    [Trade_PostMsgTargetName] NVARCHAR (100) NULL,
+    [Trade_PostMsgTargetType] NVARCHAR (100) NULL,
+    [Trade_SettleDate]        NVARCHAR (100) NULL,
+    [Trade_TerminalID]        NVARCHAR (100) NULL,
+    [Trade_TktFunc]           NVARCHAR (100) NULL,
+    [Trade_TktType]           NVARCHAR (100) NULL,
+    [CADIS_SYSTEM_INSERTED]   DATETIME       CONSTRAINT [DF__T_TradeVi__CADIS__1CF6DFA1] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]    DATETIME       CONSTRAINT [DF__T_TradeVi__CADIS__1DEB03DA] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]  NVARCHAR (50)  CONSTRAINT [DF__T_TradeVi__CADIS__1EDF2813] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]   INT            CONSTRAINT [DF__T_TradeVi__CADIS__1FD34C4C] DEFAULT ((1)) NULL,
+    CONSTRAINT [PK_T_TradeViolation_Violation_Trade_IN] PRIMARY KEY CLUSTERED ([CADIS_BATCH_ID] ASC, [CADIS_MSG_ID] ASC, [CADIS_PARENT_ID] ASC, [CADIS_ROW_ID] ASC) WITH (FILLFACTOR = 90)
+);
+

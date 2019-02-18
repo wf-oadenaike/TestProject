@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[DISTANCE]
+(@SourceLat FLOAT (53) NULL, @SourceLong FLOAT (53) NULL, @DestLat FLOAT (53) NULL, @DestLong FLOAT (53) NULL, @Units NVARCHAR (4000) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[DISTANCE]
+

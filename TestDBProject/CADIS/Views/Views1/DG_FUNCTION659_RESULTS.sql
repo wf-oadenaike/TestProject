@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION659_RESULTS" AS 
+SELECT ET."SecurityAllocationID",ET."FundingID",ET."IssuerID",ET."Issuer",ET."SecurityID",ET."Security",ET."WIMEIFPortfolioAllocationID",ET."WIMEIFPortfolioAllocationAmount",ET."WIMPCTPortfolioAllocationID",ET."WIMPCTPortfolioAllocationAmount",ET."OMNISPortfolioAllocationID",ET."OMNISPortfolioAllocationAmount" FROM "Investment"."V_UnquotedFundingSecurityAllocations" ET WITH (NOLOCK)

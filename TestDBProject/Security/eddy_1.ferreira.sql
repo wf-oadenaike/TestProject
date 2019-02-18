@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [eddy.ferreira]
+    WITH PASSWORD = N'pvyiKaby{oJuzmhq|epsI2o2msFT7_&#$!~<q{snfNavzyVy' MUST_CHANGE, SID = 0x797C9C1B1B8BB946949BA9C1E59480AA, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+

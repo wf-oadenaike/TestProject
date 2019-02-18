@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Compliance].[RegulatoryInteractionRegister] (
+    [RegulatoryInteractionId]                           INT              IDENTITY (1, 1) NOT NULL,
+    [SubmittedByPersonId]                               SMALLINT         CONSTRAINT [DF_RIR_RIRSP] DEFAULT ((-1)) NOT NULL,
+    [InteractionDate]                                   DATETIME         CONSTRAINT [DF_RIR_RIRID] DEFAULT (getdate()) NOT NULL,
+    [Status]                                            VARCHAR (50)     NULL,
+    [SummaryDescription]                                NVARCHAR (MAX)   NULL,
+    [Comments]                                          NVARCHAR (MAX)   NULL,
+    [ContactedBy]                                       VARCHAR (MAX)    NULL,
+    [ContactTitle]                                      VARCHAR (50)     NULL,
+    [RegulatoryBody]                                    VARCHAR (256)    NULL,
+    [InteractionTitle]                                  VARCHAR (256)    NULL,
+    [BoxFolderId]                                       VARCHAR (25)     NULL,
+    [DocumentationFolderLink]                           VARCHAR (2000)   NULL,
+    [JoinGUID]                                          UNIQUEIDENTIFIER NOT NULL,
+    [RegulatoryInteractionRegisterCreationDatetime]     DATETIME         CONSTRAINT [DF_RIR_RIRCDT] DEFAULT (getdate()) NOT NULL,
+    [RegulatoryInteractionRegisterLastModifiedDatetime] DATETIME         CONSTRAINT [DF_RIR_RIRLMDT] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]                             DATETIME         CONSTRAINT [DF_RIR_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                              DATETIME         CONSTRAINT [DF_RIR_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]                            NVARCHAR (50)    CONSTRAINT [DF_RIR_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                             INT              CONSTRAINT [DF_RIR_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]                            ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]                         DATETIME         CONSTRAINT [DF_RIR_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKRegulatoryInteractionRegister] PRIMARY KEY CLUSTERED ([RegulatoryInteractionId] ASC),
+    CONSTRAINT [RegulatoryInteractionRegisterSubmittedByPersonId] FOREIGN KEY ([SubmittedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

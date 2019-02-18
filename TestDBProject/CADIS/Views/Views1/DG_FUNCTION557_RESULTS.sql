@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION557_RESULTS" AS 
+SELECT ET."RiskAppetiteRegisterId",ET."RiskOwnerId",ET."SubCategoryID",ET."ProposedRiskAppetite",ET."StatusID",ET."SubmittedByPersonId",ET."CreatedDate",ET."LastModifiedDate",ET."JiraIssueKey",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."IsActive",ET."IndividualReview",ET."CurrentRiskAppetite" FROM "Risk"."RiskAppetiteRegister" ET WITH (NOLOCK)

@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_PROC].[spDCPROCESSAUDITREPORT_UBPSDVHISA]
+@TargetFieldName NVARCHAR (500), @FromDate DATETIME, @STOCK VARCHAR (20), @ROW_ID INT, @AS_AT_DATE DATETIME
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [Rizwan.Malik]
+    WITH PASSWORD = N'pJvy0bly{o,`zmlh9q|epTsomsFT7_&#$!~<oq!{sfaqvhzy', SID = 0x9BDD152E9142EE4E8358C591A585340F, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+

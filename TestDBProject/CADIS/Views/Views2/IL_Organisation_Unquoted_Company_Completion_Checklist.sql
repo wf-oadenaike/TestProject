@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Organisation_Unquoted_Company_Completion_Checklist" AS 
+SELECT V."UnquotedCompanyId" AS "Unquoted Company ID",V."ComplianceChecksComplete" AS "Compliance Checks Complete",V."InvestmentTrustBoardReporting" AS "Investment Trust Board Reporting",V."InitialInvestmentDate" AS "Initial Investment Date",V."CADIS_SYSTEM_INSERTED",V."CADIS_SYSTEM_UPDATED",V."CADIS_SYSTEM_CHANGEDBY",V."CADIS_SYSTEM_PRIORITY",V."CADIS_SYSTEM_TIMESTAMP",V."CADIS_SYSTEM_LASTMODIFIED" FROM "Organisation"."UnquotedCompanyCompletionChecklist" V

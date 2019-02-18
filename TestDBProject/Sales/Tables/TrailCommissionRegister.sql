@@ -1,0 +1,25 @@
+﻿CREATE TABLE [Sales].[TrailCommissionRegister] (
+    [TrailCommissionId]         INT              IDENTITY (1, 1) NOT NULL,
+    [MandateName]               VARCHAR (255)    NOT NULL,
+    [Status]                    VARCHAR (255)    NOT NULL,
+    [ShareClass]                VARCHAR (255)    NOT NULL,
+    [CommissionRate]            VARCHAR (255)    NOT NULL,
+    [RegulatorName]             VARCHAR (255)    NULL,
+    [RegulatorNumber]           VARCHAR (255)    NULL,
+    [Decision]                  VARCHAR (255)    NOT NULL,
+    [SubmittedByPersonId]       SMALLINT         CONSTRAINT [DF_TCR_TCRSP] DEFAULT ((-1)) NOT NULL,
+    [ReviewedByPersonId]        SMALLINT         CONSTRAINT [DF_TCR_TCRRP] DEFAULT ((-1)) NULL,
+    [ReviewedDate]              DATE             NOT NULL,
+    [DocumentationFolderLink]   VARCHAR (2000)   NOT NULL,
+    [JoinGUID]                  UNIQUEIDENTIFIER NOT NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME         CONSTRAINT [DF_TCR_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME         CONSTRAINT [DF_TCR_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50)    CONSTRAINT [DF_TCR_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]     INT              CONSTRAINT [DF_TCR_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]    ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED] DATETIME         CONSTRAINT [DF_TCR_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [TrailCommissionId] PRIMARY KEY CLUSTERED ([TrailCommissionId] ASC),
+    CONSTRAINT [TrailCommissionRegisterReviewedByPersonId] FOREIGN KEY ([ReviewedByPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [TrailCommissionRegisterSubmittedByPersonId] FOREIGN KEY ([SubmittedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

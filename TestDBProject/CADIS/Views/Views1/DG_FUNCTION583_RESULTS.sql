@@ -1,0 +1,7 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION583_RESULTS" AS 
+SELECT ET."ChildOrderId",ET."OrderID",ET."SecurityName",ET."Ticker",ET."OrderShares",ET."OrderPercentOfMedianDailyVolume",ET."Year",ET."Month",ET."SlackCommentary",ET."MinMedianDailyVolForAggTree" FROM "Access.WebDev"."AggregationPolicySmallVolumeTrades" ET WITH (NOLOCK) WHERE (
+"ORDERPERCENTOFMEDIANDAILYVOLUME" 
+	<= 
+(SELECT CHAR_VALUE FROM "dbo"."T_REF_LOOKUP" WHERE ENTITY = 'WEB_DEV' AND SUB_ENTITY ='DEAGG_SMALL_VOL_TRADES' AND FIELD = 'ORDER_PERCENT_OF_MEDIAN_DAILY_VOLUME' AND FIELD_VALUE = 'TOLERANCE')
+)
+

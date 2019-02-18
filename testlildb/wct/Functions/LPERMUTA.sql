@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[LPERMUTA]
+(@n INT NULL, @k INT NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[LPERMUTA]
+

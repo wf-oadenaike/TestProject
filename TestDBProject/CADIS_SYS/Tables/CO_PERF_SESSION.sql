@@ -1,0 +1,13 @@
+﻿CREATE TABLE [CADIS_SYS].[CO_PERF_SESSION] (
+    [ID]               BIGINT         IDENTITY (1, 1) NOT NULL,
+    [DATE]             DATETIME       NOT NULL,
+    [SESSIONID]        VARCHAR (50)   NOT NULL,
+    [USERAGENT]        VARCHAR (2000) NULL,
+    [SCREENWIDTH]      INT            NULL,
+    [SCREENHEIGHT]     INT            NULL,
+    [WINDOWWIDTH]      INT            NULL,
+    [WINDOWHEIGHT]     INT            NULL,
+    [DEVICEPIXELRATIO] FLOAT (53)     NULL,
+    CONSTRAINT [PK_CO_PERF_SESSION] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+

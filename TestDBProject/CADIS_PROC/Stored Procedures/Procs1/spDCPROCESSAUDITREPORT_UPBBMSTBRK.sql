@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_PROC].[spDCPROCESSAUDITREPORT_UPBBMSTBRK]
+@TargetFieldName NVARCHAR (500), @FromDate DATETIME, @MASTER_BROKER_NUMBER VARCHAR (40)
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

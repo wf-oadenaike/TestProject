@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[T_REGULATORY_RULE_DETAIL_STAGE] (
+    [ROW_ID]                   BIGINT        NOT NULL,
+    [FUND_CODE]                VARCHAR (255) NULL,
+    [RULE_ID]                  VARCHAR (255) NULL,
+    [TICKER]                   VARCHAR (255) NULL,
+    [IDENTIFIER]               VARCHAR (255) NULL,
+    [QUANTITY]                 VARCHAR (255) NULL,
+    [PRICE]                    VARCHAR (255) NULL,
+    [SECURITY_CURRENCY]        VARCHAR (255) NULL,
+    [MARKET_VALUE]             VARCHAR (255) NULL,
+    [ATTRIBUTE_1]              VARCHAR (255) NULL,
+    [ATTRIBUTE_2]              VARCHAR (255) NULL,
+    [IN_VIOLATION]             VARCHAR (255) NULL,
+    [EFFECTIVE_DATE]           VARCHAR (255) NULL,
+    [REPORT_DATE]              VARCHAR (255) NULL,
+    [IS_SUBTITLE]              BIT           NULL,
+    [CONVERTED_EFFECTIVE_DATE] INT           NULL,
+    [CONVERTED_REPORT_DATE]    INT           NULL,
+    [CADIS_SYSTEM_INSERTED]    DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]     DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]   NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]    INT           DEFAULT ((1)) NULL,
+    PRIMARY KEY CLUSTERED ([ROW_ID] ASC) WITH (FILLFACTOR = 90)
+);
+

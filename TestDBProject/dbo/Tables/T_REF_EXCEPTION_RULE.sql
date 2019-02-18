@@ -1,0 +1,19 @@
+﻿CREATE TABLE [dbo].[T_REF_EXCEPTION_RULE] (
+    [EXCEPTION_CODE]                 INT           NOT NULL,
+    [EXCEPTION_TYPE]                 VARCHAR (50)  NOT NULL,
+    [EXCEPTION_NAME]                 VARCHAR (150) NULL,
+    [EXCEPTION_DESC]                 VARCHAR (250) NOT NULL,
+    [EXCEPTION_DAYS_VALID]           INT           NULL,
+    [DEFAULT_BUSINESS_PROCESS_LEVEL] INT           NULL,
+    [DEFAULT_STATUS]                 VARCHAR (50)  NULL,
+    [DEFAULT_PRIORITY]               VARCHAR (20)  NULL,
+    [DEFAULT_OWNER]                  VARCHAR (50)  NULL,
+    [DEFAULT_TEAM]                   VARCHAR (50)  NULL,
+    [CADIS_SYSTEM_INSERTED]          DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]           DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]         NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]          INT           DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]         ROWVERSION    NOT NULL,
+    PRIMARY KEY CLUSTERED ([EXCEPTION_CODE] ASC)
+);
+

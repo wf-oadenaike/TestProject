@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Compliance].[RegulatoryInteractionEvents] (
+    [RegulatoryInteractionEventId]                   INT              IDENTITY (1, 1) NOT NULL,
+    [RegulatoryInteractionId]                        INT              NOT NULL,
+    [RegulatoryInteractionEventTypeId]               SMALLINT         NOT NULL,
+    [SubmittedByPersonId]                            SMALLINT         CONSTRAINT [DF_RIE_RIESP] DEFAULT ((-1)) NOT NULL,
+    [AssignedToPersonId]                             SMALLINT         NULL,
+    [JiraTaskKey]                                    VARCHAR (18)     NULL,
+    [EventDetails]                                   VARCHAR (MAX)    NULL,
+    [EventDate]                                      DATETIME         NULL,
+    [EventTrueFalse]                                 BIT              NULL,
+    [DocumentationFolderLink]                        VARCHAR (2000)   NULL,
+    [JoinGUID]                                       UNIQUEIDENTIFIER NOT NULL,
+    [RegulatoryInteractionEventCreationDatetime]     DATETIME         CONSTRAINT [DF_RIE_RIECD] DEFAULT (getdate()) NOT NULL,
+    [RegulatoryInteractionEventLastModifiedDatetime] DATETIME         CONSTRAINT [DF_RIE_RIELMD] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]                          DATETIME         CONSTRAINT [DF_RIE_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                           DATETIME         CONSTRAINT [DF_RIE_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]                         NVARCHAR (50)    CONSTRAINT [DF_RIE_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                          INT              CONSTRAINT [DF_RIE_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]                         ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]                      DATETIME         CONSTRAINT [DF_RIE_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKRegulatoryInteractionEvents] PRIMARY KEY CLUSTERED ([RegulatoryInteractionEventId] ASC),
+    CONSTRAINT [RegulatoryInteractionEventsAssignedtoPersonId] FOREIGN KEY ([AssignedToPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [RegulatoryInteractionEventsEventTypeId] FOREIGN KEY ([RegulatoryInteractionEventTypeId]) REFERENCES [Compliance].[RegulatoryInteractionEventTypes] ([RegulatoryInteractionEventTypeId]),
+    CONSTRAINT [RegulatoryInteractionEventsRegulatoryInteractionId] FOREIGN KEY ([RegulatoryInteractionId]) REFERENCES [Compliance].[RegulatoryInteractionRegister] ([RegulatoryInteractionId]),
+    CONSTRAINT [RegulatoryInteractionEventsSubmittedByPersonId] FOREIGN KEY ([SubmittedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

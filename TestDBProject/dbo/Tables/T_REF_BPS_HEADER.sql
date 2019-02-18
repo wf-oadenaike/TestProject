@@ -1,0 +1,14 @@
+﻿CREATE TABLE [dbo].[T_REF_BPS_HEADER] (
+    [BB_KEY]                 INT           NOT NULL,
+    [TYPE]                   VARCHAR (20)  NULL,
+    [HDR_PARAM]              VARCHAR (50)  NULL,
+    [HELD_HDR]               BIT           NULL,
+    [HELD_VALUE]             VARCHAR (50)  NULL,
+    [CADIS_SYSTEM_TIMESTAMP] ROWVERSION    NOT NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]  INT           DEFAULT ((1)) NULL,
+    PRIMARY KEY CLUSTERED ([BB_KEY] ASC) WITH (FILLFACTOR = 90)
+);
+

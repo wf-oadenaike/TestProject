@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION113_RESULTS" AS 
+SELECT ET."StopListEventId",ET."StopListReasonId",ET."EventDetails",ET."StopListStatusId",ET."EventDate",ET."SubmittedByPersonId",ET."JIRAIssueKey",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Compliance"."StopListEvents" ET WITH (NOLOCK)

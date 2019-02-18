@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION218_RESULTS" AS 
+SELECT ET."MeetingRegisterId",ET."MeetingTypeId",ET."MeetingTypeBK",ET."MeetingNameBK",ET."MeetingSummary",ET."MeetingOwnerRoleId",ET."MeetingOwnerRoleName",ET."AssigneeRoleId",ET."AssigneeRoleName",ET."JIRAProjectKey",ET."ActiveFlag",ET."MeetingDay",ET."DocumentationFolderLink",ET."WorkflowVersionGUID",ET."JoinGUID",ET."MeetingRegisterCreationDatetime",ET."MeetingRegisterLastModifiedDatetime" FROM "Access.ManyWho"."MeetingsRegisterVw" ET WITH (NOLOCK)

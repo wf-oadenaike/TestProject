@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[T_BBG_CASH_RESULTS_IN] (
+    [FILE_NAME]              VARCHAR (100)  NULL,
+    [FILE_DATE]              DATETIME       NULL,
+    [FILE_TYPE]              VARCHAR (30)   NULL,
+    [BBG_RUN_ID]             BIGINT         NOT NULL,
+    [ROW_ID]                 BIGINT         IDENTITY (1, 1) NOT NULL,
+    [BODY_TEXT]              NVARCHAR (MAX) NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME       DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME       DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50)  DEFAULT ('UNKNOWN') NULL,
+    PRIMARY KEY CLUSTERED ([ROW_ID] ASC) WITH (FILLFACTOR = 80)
+);
+

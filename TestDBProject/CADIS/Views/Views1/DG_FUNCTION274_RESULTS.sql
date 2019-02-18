@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION274_RESULTS" AS 
+SELECT ET."JoinGUID",ET."ApproverID",ET."ServiceID",ET."ApprovalTypeID",ET."ApproverPersonID",ET."ChangeManagementRegisterCreationDatetime",ET."ChangeManagementRegisterLastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "ChangeManagement"."ChangeApprovers" ET WITH (NOLOCK)

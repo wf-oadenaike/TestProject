@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Master_Fund_Flow_Discrepancy" AS 
+SELECT V."FUND_SHORT_NAME" AS "Fund Short Name",V."TRANSACTION_DATE" AS "Transaction Date",V."CURRENCY" AS "Currency",V."SOURCE_TYPE" AS "Source Type",V."NT_IOO_MARKET_VALUE" AS "NT IOO Market Value",V."TA_MARKET_VALUE" AS "Transfer Agent Market Value",V."MARKET_VALUE_DIFFERENCE" AS "Market Value Difference" FROM "dbo"."VW_MASTER_FUND_FLOW_DISCREPANCY" V

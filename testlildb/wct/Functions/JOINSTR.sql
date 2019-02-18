@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[JOINSTR]
+(@Separator NVARCHAR (4000) NULL, @MaxItems INT NULL, @Values_Tablename NVARCHAR (4000) NULL, @ColumnName NVARCHAR (4000) NULL, @GroupedColumnName NVARCHAR (4000) NULL, @GroupedColumnValue SQL_VARIANT NULL)
+RETURNS NVARCHAR (MAX)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[JOINSTR]
+

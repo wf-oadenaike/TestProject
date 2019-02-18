@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[T_CO_BAK_PROCESSHISTORY_ARCHIVE] (
+    [RUNID]         INT            NOT NULL,
+    [COMPONENTID]   INT            NOT NULL,
+    [RUNSTART]      DATETIME       NULL,
+    [RUNEND]        DATETIME       NULL,
+    [RUNSUCCESSFUL] BIT            NOT NULL,
+    [LAUNCHEDBY]    NVARCHAR (256) NOT NULL,
+    [GUID]          NCHAR (32)     NOT NULL,
+    [PARENTRUNID]   INT            NULL,
+    PRIMARY KEY CLUSTERED ([RUNID] ASC)
+);
+

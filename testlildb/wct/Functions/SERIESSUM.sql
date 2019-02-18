@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[SERIESSUM]
+(@x FLOAT (53) NULL, @n FLOAT (53) NULL, @m FLOAT (53) NULL, @a_TableName NVARCHAR (MAX) NULL, @a_ColumnName NVARCHAR (4000) NULL, @a_GroupedColumnName NVARCHAR (4000) NULL, @a_GroupedColumnValue SQL_VARIANT NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[SERIESSUM]
+

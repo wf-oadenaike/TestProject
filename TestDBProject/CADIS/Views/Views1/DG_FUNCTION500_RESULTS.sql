@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION500_RESULTS" AS 
+SELECT ET."CompanyId",ET."SFID",ET."StatusId",ET."StatusCode",ET."CompanyName",ET."ReferrerName",ET."StageId",ET."ReferrerContactId",ET."SystemStatusId",ET."InvestmentAnalystPersonId",ET."InvestmentAnalystPersonName",ET."InvestmentOwnerPersonId",ET."InvestmentOwnerPersonName",ET."BoxDocumentLocation",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Unquoted"."InvestmentCompaniesVw" ET WITH (NOLOCK)

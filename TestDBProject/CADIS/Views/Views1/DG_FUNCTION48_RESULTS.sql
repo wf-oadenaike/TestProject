@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION48_RESULTS" AS 
+SELECT ET."MeetingRegisterId",ET."AgendaItemNameBK",ET."MeetingAgendaItemId",ET."AgendaItemDetails",ET."ReporterRoleId",ET."AssigneeRoleId",ET."IssueType",ET."ActiveFlag",ET."LagLead",ET."DocumentationFolderLink",ET."WorkflowVersionGUID",ET."JoinGUID",ET."MeetingAgendaItemCreationDatetime",ET."MeetingAgendaItemLastModifiedDatetime",ET."Frequency",ET."Purpose",ET."Outcome" FROM "Organisation"."MeetingAgendaItems" ET WITH (NOLOCK)

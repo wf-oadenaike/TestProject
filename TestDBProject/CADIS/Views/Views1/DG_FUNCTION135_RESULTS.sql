@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION135_RESULTS" AS 
+SELECT ET."FundManagerSignOffId",ET."SubmittedByPersonId",ET."SubmittedDate",ET."ReviewedByPersonId",ET."ReviewDate",ET."Status",ET."MandateId",ET."ValuationDate",ET."JiraIssueKey",ET."Notes",ET."BoxFolderId",ET."DocumentationFolderLink",ET."JoinGUID",ET."FundManagerSignOffCreationDatetime",ET."FundManagerSignOffLastModifiedDatetime" FROM "Sales"."FundManagerSignOff" ET WITH (NOLOCK)

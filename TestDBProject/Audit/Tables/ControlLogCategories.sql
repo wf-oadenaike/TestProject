@@ -1,0 +1,18 @@
+﻿CREATE TABLE [Audit].[ControlLogCategories] (
+    [ControlLogCategoryId]      SMALLINT       IDENTITY (1, 1) NOT NULL,
+    [CategoryName]              VARCHAR (128)  NOT NULL,
+    [CategoryDescription]       VARCHAR (2048) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME       CONSTRAINT [DF_CLC_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME       CONSTRAINT [DF_CLC_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50)  CONSTRAINT [DF_CLC_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]     INT            CONSTRAINT [DF_CLC_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]    ROWVERSION     NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED] DATETIME       CONSTRAINT [DF_CLC_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKControlLogCategories] PRIMARY KEY CLUSTERED ([CategoryName] ASC)
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [UXIControlLogCategories]
+    ON [Audit].[ControlLogCategories]([ControlLogCategoryId] ASC);
+

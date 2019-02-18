@@ -1,0 +1,6 @@
+﻿CREATE VIEW "CADIS"."VW_SSO_Users_and_Groups"
+AS
+select T1.[USERNAME] "User Login",
+T1.[GROUPNAME]
+from
+"CADIS"."AUTH_GROUPUSER" T1

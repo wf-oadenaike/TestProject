@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Subscriber" AS 
+SELECT V."SUBSCRIBER_ID" AS "Subscriber ID",V."DESCRIPTION" AS "Subscriber",V."EMAIL_ADDRESS" AS "Email Address",V."NOTIFY_BY_EMAIL" AS "Notify By Email",V."SLACK_ADDRESS" AS "Slack Address",V."NOTIFY_BY_SLACK" AS "Notify By Slack",V."ACTIVE" AS "Active",V."CADIS_SYSTEM_INSERTED" AS "Inserted",V."CADIS_SYSTEM_UPDATED" AS "Updated",V."CADIS_SYSTEM_CHANGEDBY" AS "Updated By" FROM "dbo"."T_REF_SUBSCRIBER" V

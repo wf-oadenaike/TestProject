@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[T_BLOOMBERG_BROKERINFO] (
+    [Master_Broker_Id]  VARCHAR (50) NULL,
+    [Broker_Id]         VARCHAR (50) NOT NULL,
+    [Broker_Short_Name] VARCHAR (50) NULL,
+    [Broker_Long_Name]  VARCHAR (50) NULL,
+    CONSTRAINT [T_BLOOMBERG_BROKERINFO_PK] PRIMARY KEY CLUSTERED ([Broker_Id] ASC) WITH (FILLFACTOR = 80)
+);
+

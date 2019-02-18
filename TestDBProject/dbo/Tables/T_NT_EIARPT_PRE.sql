@@ -1,0 +1,16 @@
+﻿CREATE TABLE [dbo].[T_NT_EIARPT_PRE] (
+    [DATE]                   DATETIME      NULL,
+    [ACCOUNT_NUMBER]         VARCHAR (50)  NULL,
+    [SEC_DESCRIPTION]        VARCHAR (50)  NULL,
+    [CUSIP]                  VARCHAR (20)  NULL,
+    [SEDOL]                  VARCHAR (20)  NULL,
+    [CTRY_OF_TAXATION]       VARCHAR (5)   NULL,
+    [TOTAL_INC_AMORT_EARNED] VARCHAR (100) NULL,
+    [UNITS]                  VARCHAR (100) NULL,
+    [FUND_NET_INCOME]        VARCHAR (100) NULL,
+    [RATE]                   VARCHAR (100) NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50) DEFAULT ('UNKNOWN') NULL
+);
+

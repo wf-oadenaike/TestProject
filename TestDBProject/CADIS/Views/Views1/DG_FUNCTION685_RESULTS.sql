@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION685_RESULTS" AS 
+SELECT ET."PermanentInsiderID",ET."PersonID",ET."AdditionDateTime",ET."CeasedDateTime",ET."ActiveFlag",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "dbo"."Compliance_PermanentInsiders" ET WITH (NOLOCK)

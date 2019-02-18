@@ -1,0 +1,21 @@
+﻿CREATE TABLE [dbo].[T_MASTER_FND_MODEL] (
+    [MODEL_CODE_ID]             INT             IDENTITY (1, 1) NOT NULL,
+    [MODEL_CODE]                VARCHAR (20)    NOT NULL,
+    [MODEL_SHORT_NAME]          VARCHAR (20)    NOT NULL,
+    [MODEL_LONG_NAME]           VARCHAR (50)    NOT NULL,
+    [MODEL_TYPE]                VARCHAR (12)    NOT NULL,
+    [MODEL_SUB_TYPE]            VARCHAR (25)    NOT NULL,
+    [RISK_RATING]               SMALLINT        NOT NULL,
+    [STATUS]                    VARCHAR (8)     NOT NULL,
+    [BASE_CURRENCY]             VARCHAR (3)     NOT NULL,
+    [VALUATION_POINT]           VARCHAR (12)    NOT NULL,
+    [FEE]                       DECIMAL (10, 6) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME        DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME        DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50)   DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]     INT             DEFAULT ((1)) NOT NULL,
+    [CADIS_SYSTEM_TIMESTAMP]    ROWVERSION      NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED] DATETIME        DEFAULT (getdate()) NULL,
+    PRIMARY KEY CLUSTERED ([MODEL_CODE] ASC) WITH (FILLFACTOR = 90)
+);
+

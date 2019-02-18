@@ -1,0 +1,26 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPMASTERPR_EXPIRY_PREP] (
+    [EDM_SEC_ID]                INT           NOT NULL,
+    [PRICE_TYPE]                VARCHAR (50)  NOT NULL,
+    [PRICE_SOURCE]              DATETIME      NULL,
+    [PRICE_DATE]                DATETIME      NOT NULL,
+    [PRICE_TIME]                DATETIME      NULL,
+    [AVERAGE_COST]              DATETIME      NULL,
+    [PRICE_SOURCE_RANKING]      DATETIME      NULL,
+    [PRICE_ISO_CCY]             DATETIME      NULL,
+    [MASTER_PRICE]              DATETIME      NULL,
+    [ASK_PRICE]                 DATETIME      NULL,
+    [MID_PRICE]                 DATETIME      NULL,
+    [BID_PRICE]                 DATETIME      NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME      NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME      NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50) NULL,
+    [CADIS_SYSTEM_PRIORITY]     INT           NULL,
+    [CADIS_SYSTEM_TIMESTAMP]    ROWVERSION    NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED] DATETIME      NULL,
+    [LAST_UPDATE_DATE]          DATETIME      NULL,
+    [FX_RATE]                   DATETIME      NULL,
+    [MARKET_VALUE]              DATETIME      NULL,
+    [TICKER]                    DATETIME      NULL,
+    PRIMARY KEY CLUSTERED ([EDM_SEC_ID] ASC, [PRICE_TYPE] ASC, [PRICE_DATE] ASC) WITH (FILLFACTOR = 80)
+);
+

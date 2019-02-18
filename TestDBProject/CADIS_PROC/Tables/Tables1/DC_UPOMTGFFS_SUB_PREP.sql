@@ -1,0 +1,13 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPOMTGFFS_SUB_PREP] (
+    [ROW_NUMBER]           INT              NOT NULL,
+    [TRANSACTION_DATE]     DATETIME         NULL,
+    [MARKET_VALUE]         DECIMAL (28, 10) NULL,
+    [TYPE]                 VARCHAR (104)    NOT NULL,
+    [CURRENCY]             VARCHAR (100)    NULL,
+    [FLOW_TYPE]            VARCHAR (12)     NOT NULL,
+    [SETTLEMENT_DATE]      DATETIME         NULL,
+    [CADIS_SYSTEM_UPDATED] DATETIME         NULL,
+    [STATUS]               VARCHAR (100)    NULL,
+    PRIMARY KEY CLUSTERED ([ROW_NUMBER] ASC, [TYPE] ASC) WITH (FILLFACTOR = 80)
+);
+

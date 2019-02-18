@@ -1,0 +1,2 @@
+﻿CREATE USER [KenWu] FOR LOGIN [KenWu];
+

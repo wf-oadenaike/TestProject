@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [keironroberts]
+    WITH PASSWORD = N'Lp,lvy}by{ozmhq5T|epsoq{msFT7_&#$!~<sfavzsyyvolt' MUST_CHANGE, SID = 0xC2C5E11B3A459740B67CABFAF560D15F, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+

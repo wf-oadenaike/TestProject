@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION84_RESULTS" AS 
+SELECT ET."ClientTakeOnEventId",ET."ClientTakeOnId",ET."ClientTakeOnName",ET."RFPId",ET."EventTypeId",ET."ClientTakeOnEventType",ET."SubmittedByPersonId",ET."SubmittedBy",ET."SubmittedDate",ET."EventDetails",ET."EventDate",ET."ReviewComments",ET."EventTrueFalse",ET."DepartmentId",ET."DepartmentName",ET."JiraSubTaskKey",ET."JiraEpicKey",ET."DocumentationFolderLink",ET."JoinGUID",ET."ClientTakeOnEventCreationDate",ET."ClientTakeOnEventLastModifiedDatetime" FROM "Access.ManyWho"."ClientTakeOnEventsReadOnlyVw" ET WITH (NOLOCK)

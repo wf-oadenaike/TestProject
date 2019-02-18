@@ -1,0 +1,17 @@
+﻿CREATE VIEW [Access.ManyWho].[UnquotedSecuritiesFundInvestmentsVw]
+AS
+SELECT 
+	[UnquotedSecuritiesFundInvestmentId] 
+	,[UnquotedSecuritiesId]
+      ,[FundCode]
+      ,[NumberOfShares]
+      ,[FundAllocation]
+      ,[TotalAmountInvested]
+      ,[PercentageHeldAtClosing]
+      ,[WorkflowVersionGUID]
+      ,[JoinGUID]
+      ,[UnquotedSecuritiesCreationDate]
+      ,[UnquotedSecuritiesCreatedByPersonId]
+      ,[UnquotedSecuritiesLastModifiedDate]
+      ,[UnquotedSecuritiesLastModifiedByPersonId]
+  FROM [Organisation].[UnquotedSecuritiesFundInvestments]

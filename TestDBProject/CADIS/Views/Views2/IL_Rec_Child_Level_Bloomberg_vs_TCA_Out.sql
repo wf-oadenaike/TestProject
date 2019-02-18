@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Rec_Child_Level_Bloomberg_vs_TCA_Out" AS 
+SELECT V."ORDER_ID" AS "Order ID",V."BB_ACCOUNT" AS "BB Account",V."TCA_ACCOUNT" AS "ITG Account",V."BB_ALLOCATED_QUANTITY" AS "BB Allocated Quantity",V."TCA_ALLOCATED_QUANTITY" AS "ITG Allocated Quantity",V."MATCHED_TYPE" AS "Matched Type",V."REASON" AS "Reason" FROM "TCA"."V_REC_CHILD_LEVEL_BLOOMBERG_TCA_OUT" V

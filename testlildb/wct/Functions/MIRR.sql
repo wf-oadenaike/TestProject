@@ -1,0 +1,4 @@
+﻿CREATE AGGREGATE [wct].[MIRR](@CF_Amt FLOAT (53) NULL, @Per INT NULL, @Finance_rate FLOAT (53) NULL, @Reinvest_rate FLOAT (53) NULL)
+    RETURNS FLOAT (53)
+    EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.MIRR];
+

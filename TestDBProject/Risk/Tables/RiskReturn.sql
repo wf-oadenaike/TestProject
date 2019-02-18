@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Risk].[RiskReturn] (
+    [RiskReturnId]                   INT              IDENTITY (1, 1) NOT NULL,
+    [RiskOwnerRoleId]                SMALLINT         NOT NULL,
+    [JiraKey]                        VARCHAR (128)    NULL,
+    [CreatedForPersonId]             SMALLINT         NULL,
+    [DueDate]                        DATETIME         NULL,
+    [CompletionDate]                 DATETIME         NULL,
+    [CompletedByPersonId]            SMALLINT         NULL,
+    [IsActive]                       BIT              CONSTRAINT [DF_RRT_IA] DEFAULT ((1)) NOT NULL,
+    [RiskRAG]                        VARCHAR (10)     NULL,
+    [RiskRAGRationale]               VARCHAR (MAX)    NULL,
+    [ManagementActivities]           VARCHAR (MAX)    NULL,
+    [JoinGUID]                       UNIQUEIDENTIFIER NOT NULL,
+    [RiskReturnCreationDatetime]     DATETIME         CONSTRAINT [DF_RRT_RRTCDT] DEFAULT (getdate()) NOT NULL,
+    [RiskReturnLastModifiedDatetime] DATETIME         CONSTRAINT [DF_RRT_RRTLMDT] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]          DATETIME         CONSTRAINT [DF_RRT_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]           DATETIME         CONSTRAINT [DF_RRT_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]         NVARCHAR (50)    CONSTRAINT [DF_RRT_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]          INT              CONSTRAINT [DF_RRT_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]         ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]      DATETIME         CONSTRAINT [DF_RRT_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKRiskReturn] PRIMARY KEY CLUSTERED ([RiskReturnId] ASC),
+    CONSTRAINT [RiskReturnCompletedByPersonId] FOREIGN KEY ([CompletedByPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [RiskReturnCreatedForPersonId] FOREIGN KEY ([CreatedForPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [RiskReturnRiskOwnerRoleId] FOREIGN KEY ([RiskOwnerRoleId]) REFERENCES [Core].[Roles] ([RoleId])
+);
+

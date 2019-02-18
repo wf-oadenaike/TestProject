@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [Oluwaseun.Adenaike]
+    WITH PASSWORD = N'KU|pS$Uuvyby{=Fp}ozm^hq|msFT7_&#$!~<ep=soqr{GOg<', SID = 0x14DE292B58431A44BED931298764422B, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+

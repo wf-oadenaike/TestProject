@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [Olu_2]
+    AUTHORIZATION [dbo];
+

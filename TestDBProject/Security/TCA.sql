@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [TCA]
+    AUTHORIZATION [dbo];
+

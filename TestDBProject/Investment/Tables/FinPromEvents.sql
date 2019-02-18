@@ -1,0 +1,25 @@
+﻿CREATE TABLE [Investment].[FinPromEvents] (
+    [FinPromEventId]               INT              IDENTITY (1, 1) NOT NULL,
+    [FinPromRegisterId]            INT              NOT NULL,
+    [FinPromEventType]             VARCHAR (128)    NOT NULL,
+    [EventPersonId]                SMALLINT         NOT NULL,
+    [EventRoleId]                  SMALLINT         NULL,
+    [EventTrueFalse]               BIT              NULL,
+    [EventComments]                VARCHAR (2048)   NULL,
+    [EventDate]                    DATETIME         CONSTRAINT [DF_FPRE_ED] DEFAULT (getdate()) NOT NULL,
+    [WorkflowVersionGUID]          UNIQUEIDENTIFIER NULL,
+    [JoinGUID]                     UNIQUEIDENTIFIER NOT NULL,
+    [FinPromEventCreationDate]     DATETIME         CONSTRAINT [DF_FPE_FPECD] DEFAULT (getdate()) NOT NULL,
+    [FinPromEventLastModifiedDate] DATETIME         CONSTRAINT [DF_FPE_FPELMD] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]        DATETIME         CONSTRAINT [DF_FPE_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]         DATETIME         CONSTRAINT [DF_FPE_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]       NVARCHAR (50)    CONSTRAINT [DF_FPE_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]        INT              CONSTRAINT [DF_FPE_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]       ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]    DATETIME         CONSTRAINT [DF_FPE_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKFinPromsEvents] PRIMARY KEY CLUSTERED ([FinPromEventId] ASC),
+    CONSTRAINT [FinPromEventsPersonId] FOREIGN KEY ([EventPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [FinPromEventsRoleId] FOREIGN KEY ([EventRoleId]) REFERENCES [Core].[Roles] ([RoleId]),
+    CONSTRAINT [FinPromRegisterId] FOREIGN KEY ([FinPromRegisterId]) REFERENCES [Investment].[FinPromsRegister] ([FinPromRegisterId])
+);
+

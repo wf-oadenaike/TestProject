@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[NUMPMTS]
+(@FirstPaymentDate DATETIME NULL, @LastPaymentDate DATETIME NULL, @PmtPerYear INT NULL)
+RETURNS INT
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[NUMPMTS]
+

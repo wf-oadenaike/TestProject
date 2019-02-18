@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [Stuart.Burns]
+    WITH PASSWORD = N'Ppvyr&bZty{ozxmhq|OBqeF<msFT7_&#$!~<psozq0{sfa}M', SID = 0x4F36CA48CE61CD43BC141F9547C1BE8D, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+

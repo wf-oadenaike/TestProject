@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION351_RESULTS" AS 
+SELECT ET."PAHoldingRegisterId",ET."SecurityName",ET."SecurityType",ET."SecurityIdentifier",ET."OwnerName",ET."Active",ET."InActiveDate",ET."DocumentationFolderLink",ET."JoinGUID",ET."PAHoldingCreationDatetime",ET."PAHoldingLastModifiedDatetime",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Access.ManyWho"."PAHoldingsRegisterReadOnlyVw" ET WITH (NOLOCK)

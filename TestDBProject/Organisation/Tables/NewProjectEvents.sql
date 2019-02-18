@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Organisation].[NewProjectEvents] (
+    [ProjectEventId]                      INT              IDENTITY (1, 1) NOT NULL,
+    [ProjectId]                           INT              NOT NULL,
+    [EventType]                           VARCHAR (100)    NOT NULL,
+    [EventStatus]                         VARCHAR (50)     NULL,
+    [SubmittedByPersonId]                 SMALLINT         CONSTRAINT [DF_NPE_NPESP] DEFAULT ((-1)) NOT NULL,
+    [EventDetails]                        VARCHAR (MAX)    NULL,
+    [EventDate]                           DATETIME         NULL,
+    [EventTrueFalse]                      BIT              NULL,
+    [ItemNumber]                          SMALLINT         NULL,
+    [Cost]                                DECIMAL (19, 2)  NULL,
+    [JiraIssueKey]                        VARCHAR (128)    NULL,
+    [DocumentationFolderLink]             VARCHAR (2000)   NULL,
+    [JoinGUID]                            UNIQUEIDENTIFIER NOT NULL,
+    [NewProjectEventCreationDatetime]     DATETIME         CONSTRAINT [DF_NPE_NPECD] DEFAULT (getdate()) NOT NULL,
+    [NewProjectEventLastModifiedDatetime] DATETIME         CONSTRAINT [DF_NPE_NPELMD] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]               DATETIME         CONSTRAINT [DF_NPE_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                DATETIME         CONSTRAINT [DF_NPE_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]              NVARCHAR (50)    CONSTRAINT [DF_NPE_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]               INT              CONSTRAINT [DF_NPE_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]              ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]           DATETIME         CONSTRAINT [DF_NPE_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKNewProjectEvents] PRIMARY KEY CLUSTERED ([ProjectEventId] ASC),
+    CONSTRAINT [NewProjectEventsSubmittedByPersonId] FOREIGN KEY ([SubmittedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

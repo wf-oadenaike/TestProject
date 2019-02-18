@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[T_MASTER_FND] (
+    [EDM_FND_ID]                   INT           IDENTITY (1, 1) NOT NULL,
+    [SHORT_NAME]                   VARCHAR (20)  NOT NULL,
+    [LONG_NAME]                    VARCHAR (100) NULL,
+    [START_DATE]                   DATETIME      NULL,
+    [FUND_TYPE]                    VARCHAR (50)  NULL,
+    [STATUS]                       VARCHAR (20)  NULL,
+    [BASE_CURRENCY]                VARCHAR (3)   NULL,
+    [LOCATION]                     VARCHAR (4)   NULL,
+    [VALUATION_PERIOD]             VARCHAR (20)  NULL,
+    [INCOME_PERIOD_QUARTER_OFFSET] INT           DEFAULT ((0)) NULL,
+    [ClientID]                     INT           NULL,
+    [IsActive]                     BIT           NULL,
+    [IsWoodfordMandate]            BIT           NULL,
+    [IsWeeklyValutaionSignOff]     BIT           NULL,
+    [IsWeeklyReconciliation]       BIT           NULL,
+    [WeeklyValuationSignOffDay]    VARCHAR (250) NULL,
+    [ReconciliationBoxFolderID]    VARCHAR (250) NULL,
+    [JoinGUID]                     VARCHAR (250) NULL,
+    [CADIS_SYSTEM_INSERTED]        DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]         DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]       NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]        INT           DEFAULT ((1)) NULL,
+    [EDM_FUND_GROUP_ID]            INT           NULL,
+    CONSTRAINT [PKT_MASTER_FND] PRIMARY KEY CLUSTERED ([SHORT_NAME] ASC) WITH (FILLFACTOR = 90),
+    CONSTRAINT [FK_UQLOCATION] FOREIGN KEY ([LOCATION]) REFERENCES [dbo].[T_REF_COUNTRY] ([ISO_CTY_CD])
+);
+

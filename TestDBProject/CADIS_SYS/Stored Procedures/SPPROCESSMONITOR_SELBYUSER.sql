@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_SYS].[SPPROCESSMONITOR_SELBYUSER]
+@CHANGEDBY NVARCHAR (100), @MERGEDSTATUS INT
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

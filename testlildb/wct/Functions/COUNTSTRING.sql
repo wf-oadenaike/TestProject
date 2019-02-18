@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[COUNTSTRING]
+(@Text NVARCHAR (MAX) NULL, @SearchValue NVARCHAR (MAX) NULL, @CaseSensitive BIT NULL)
+RETURNS INT
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[COUNTSTRING]
+

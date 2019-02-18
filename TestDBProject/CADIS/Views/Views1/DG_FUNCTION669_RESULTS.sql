@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION669_RESULTS" AS 
+SELECT ET."ChecklistID",ET."LegalEntityTypeID",ET."IncorporationCountryID",ET."JurisdictionCountryID",ET."StatusID",ET."Name",ET."ReviewDate",ET."NextReviewDate",ET."OutputFromScreening",ET."FalsePositives",ET."AdditionalFactors",ET."DocumentsReviewed",ET."Documentationfolderlink",ET."Rationale",ET."ReviewedByPersonID",ET."SDDApproved",ET."SubmittedByPersonID",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."IsActive" FROM "dbo"."Compliance_KYCChecklist" ET WITH (NOLOCK)

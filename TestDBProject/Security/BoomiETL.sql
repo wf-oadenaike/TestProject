@@ -1,0 +1,2 @@
+﻿CREATE USER [BoomiETL] FOR LOGIN [BoomiETL];
+

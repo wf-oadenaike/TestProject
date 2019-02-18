@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION711_RESULTS" AS 
+SELECT ET."sf_SfContactId",ET."sf_SfAccountId",ET."sf_LastName",ET."sf_FirstName",ET."DataField",ET."Mover",ET."sf_Value",ET."mx_Value",ET."OverrideValue",ET."OverrideChoice",ET."OverrideStatus",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."sf_FcaId",ET."sf_ContractMatrixId",ET."sf_AccountFcaId" FROM "Sales.BP"."ContactOverride" ET WITH (NOLOCK)

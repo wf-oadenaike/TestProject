@@ -1,0 +1,27 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPPREDVDFC_INFO_VALUE] (
+    [FundShortName]          VARCHAR (20)     NOT NULL,
+    [EDM_SEC_ID]             INT              NOT NULL,
+    [CalendarYear]           INT              NOT NULL,
+    [SecurityName]           VARCHAR (100)    NULL,
+    [DvdCCY]                 VARCHAR (3)      NULL,
+    [WithholdingTax]         DECIMAL (26, 6)  NULL,
+    [SpotRate]               DECIMAL (24, 10) NULL,
+    [DeclaredDate]           DATETIME         NULL,
+    [PositionDate]           DATETIME         NULL,
+    [BidPrice]               DECIMAL (24, 10) NULL,
+    [Position]               DECIMAL (20, 6)  NULL,
+    [MarketValue]            DECIMAL (24, 10) NULL,
+    [Q1ExDate]               DATETIME         NULL,
+    [Q1Rate]                 DECIMAL (20, 6)  NULL,
+    [Q2ExDate]               DATETIME         NULL,
+    [Q2Rate]                 DECIMAL (20, 6)  NULL,
+    [Q3ExDate]               DATETIME         NULL,
+    [Q3Rate]                 DECIMAL (20, 6)  NULL,
+    [Q4ExDate]               DATETIME         NULL,
+    [Q4Rate]                 DECIMAL (20, 6)  NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50)    DEFAULT ('UNKNOWN') NULL,
+    PRIMARY KEY CLUSTERED ([FundShortName] ASC, [EDM_SEC_ID] ASC, [CalendarYear] ASC) WITH (FILLFACTOR = 80)
+);
+

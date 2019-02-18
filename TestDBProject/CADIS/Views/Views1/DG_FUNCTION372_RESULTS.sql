@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION372_RESULTS" AS 
+SELECT ET."RevaluationEventId",ET."SecurityRevaluationId",ET."SecurityBloombergId",ET."SecurityName",ET."SecurityEventTypeId",ET."SecurityEventType",ET."SubmittedByPersonId",ET."PersonsName",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."DocumentationFolderLink",ET."JoinGUID",ET."RevaluationEventCreationDatetime",ET."RevaluationEventLastModifiedDatetime" FROM "Access.ManyWho"."UnquotedSecurityRevaluationEventsReadOnlyVw" ET WITH (NOLOCK)

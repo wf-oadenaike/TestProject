@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION102_RESULTS" AS 
+SELECT ET."UnquotedCompanyDecisionId",ET."UnquotedCompanyStage",ET."InvestmentDecisionType",ET."UnquotedCompanyId",ET."DecisionByPersonId",ET."DecisionByRoleId",ET."DecisionCreatedDate",ET."DecisionLastModifiedDate",ET."DeferDecisionDate",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Organisation"."UnquotedCompanyDecisions" ET WITH (NOLOCK)

@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[T_PKGD_FILE_UAT] (
+    [NO]                     INT           NOT NULL,
+    [INDEX]                  INT           NOT NULL,
+    [FILENAME_SPLIT]         VARCHAR (200) NOT NULL,
+    [PROCESSNAME]            VARCHAR (200) NULL,
+    [PATH]                   VARCHAR (200) NULL,
+    [SOURCEINPUT]            VARCHAR (200) NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME      DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50) DEFAULT ('UNKNOWN') NULL,
+    PRIMARY KEY CLUSTERED ([NO] ASC, [INDEX] ASC) WITH (FILLFACTOR = 80)
+);
+

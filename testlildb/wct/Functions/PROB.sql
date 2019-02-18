@@ -1,0 +1,4 @@
+﻿CREATE AGGREGATE [wct].[PROB](@x FLOAT (53) NULL, @p FLOAT (53) NULL, @lower_limit FLOAT (53) NULL, @upper_limit FLOAT (53) NULL)
+    RETURNS FLOAT (53)
+    EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.PROB];
+

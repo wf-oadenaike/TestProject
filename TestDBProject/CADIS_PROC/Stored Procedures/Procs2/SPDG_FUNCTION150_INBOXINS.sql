@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_PROC].[SPDG_FUNCTION150_INBOXINS]
+@Inserted DATETIME, @ChangedBy NVARCHAR (256), @ValidationInfo NVARCHAR (4000), @CADIS_SYSTEM_INSERTED DATETIME, @CADIS_SYSTEM_INSERTED_UPDATE BIT, @CADIS_SYSTEM_UPDATED DATETIME, @CADIS_SYSTEM_UPDATED_UPDATE BIT, @CADIS_SYSTEM_CHANGEDBY NVARCHAR (50), @CADIS_SYSTEM_CHANGEDBY_UPDATE BIT, @AgentName NVARCHAR (256), @AgentName_UPDATE BIT, @AccountName VARCHAR (256), @AccountName_UPDATE BIT, @Designation VARCHAR (50), @Designation_UPDATE BIT, @AccountSalesforceId VARCHAR (128), @AccountSalesforceId_UPDATE BIT, @ContactSalesforceId VARCHAR (128), @ContactSalesforceId_UPDATE BIT, @SalesforceNoteId VARCHAR (128), @SalesforceNoteId_UPDATE BIT, @RequestedByPersonId SMALLINT, @RequestedByPersonId_UPDATE BIT, @RequestedDate DATETIME, @RequestedDate_UPDATE BIT, @Status VARCHAR (50), @Status_UPDATE BIT, @BusinessCase VARCHAR (MAX), @BusinessCase_UPDATE BIT, @Decision VARCHAR (MAX), @Decision_UPDATE BIT, @DecisionDate DATETIME, @DecisionDate_UPDATE BIT, @DecisionByPersonId SMALLINT, @DecisionByPersonId_UPDATE BIT, @SummaryDetails VARCHAR (MAX), @SummaryDetails_UPDATE BIT, @IndicativeFlowImmediately VARCHAR (128), @IndicativeFlowImmediately_UPDATE BIT, @IndicativeFlowWithin12Months VARCHAR (128), @IndicativeFlowWithin12Months_UPDATE BIT, @IsUSInvestor BIT, @IsUSInvestor_UPDATE BIT, @IsUnregulated BIT, @IsUnregulated_UPDATE BIT, @IsIndividual BIT, @IsIndividual_UPDATE BIT, @MandateId INT, @MandateId_UPDATE BIT, @BloombergId VARCHAR (31), @BloombergId_UPDATE BIT, @ShareClassId INT, @ShareClassId_UPDATE BIT, @JiraTaskKey VARCHAR (128), @JiraTaskKey_UPDATE BIT, @DocumentationFolderLink VARCHAR (2000), @DocumentationFolderLink_UPDATE BIT, @JoinGUID UNIQUEIDENTIFIER, @JoinGUID_UPDATE BIT, @ShareClassWaiverRegisterLastModifiedDatetime DATETIME, @ShareClassWaiverRegisterLastModifiedDatetime_UPDATE BIT, @CADIS_SYSTEM_LASTMODIFIED DATETIME, @CADIS_SYSTEM_LASTMODIFIED_UPDATE BIT
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

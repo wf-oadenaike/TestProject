@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[T_BBG_RISK_MONITORING_IN_ATTRIBUTION_STAGING] (
+    [Fund]                      NVARCHAR (256) NULL,
+    [Sector]                    NVARCHAR (256) NULL,
+    [SubSector]                 NVARCHAR (256) NULL,
+    [Ticker]                    NVARCHAR (256) NULL,
+    [AverageWeightPort]         NVARCHAR (256) NULL,
+    [AverageWeightBench]        NVARCHAR (256) NULL,
+    [AverageWeight]             NVARCHAR (256) NULL,
+    [ContributiontoReturnPort]  NVARCHAR (256) NULL,
+    [ContributiontoReturnBench] NVARCHAR (256) NULL,
+    [ContributiontoReturn]      NVARCHAR (256) NULL,
+    [TotalReturnPort]           NVARCHAR (256) NULL,
+    [TotalReturnBench]          NVARCHAR (256) NULL,
+    [TotalReturn]               NVARCHAR (256) NULL,
+    [TotalAttribution]          NVARCHAR (256) NULL,
+    [AllocationEffect]          NVARCHAR (256) NULL,
+    [SelectionEffect]           NVARCHAR (256) NULL,
+    [CurrencyEffect]            NVARCHAR (256) NULL,
+    [FileName]                  NVARCHAR (256) NULL,
+    [FILE_DATE]                 NVARCHAR (256) NULL,
+    [FILE_TYPE]                 VARCHAR (20)   NULL,
+    [CADIS_SYSTEM_INSERTED]     DATETIME       NULL,
+    [CADIS_SYSTEM_UPDATED]      DATETIME       NULL,
+    [CADIS_SYSTEM_CHANGEDBY]    NVARCHAR (50)  NULL
+);
+

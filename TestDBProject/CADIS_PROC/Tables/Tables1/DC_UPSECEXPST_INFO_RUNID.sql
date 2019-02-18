@@ -1,0 +1,21 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPSECEXPST_INFO_RUNID] (
+    [SOURCE_TABLE]            VARCHAR (50) NOT NULL,
+    [SOURCE_KEY]              VARCHAR (50) NOT NULL,
+    [SOURCE_COLUMN]           VARCHAR (50) NOT NULL,
+    [EXCEPTION_CODE]          INT          NOT NULL,
+    [SOURCE_DATE]             DATETIME     NOT NULL,
+    [PROCESS_STATUS__RUNID]   INT          NOT NULL,
+    [ENTITY__RUNID]           INT          NOT NULL,
+    [SOURCE__RUNID]           INT          NOT NULL,
+    [SOURCE_COMPONENT__RUNID] INT          NOT NULL,
+    [EDM_SEC_ID__RUNID]       INT          NOT NULL,
+    [SOURCE_VALUE__RUNID]     INT          NOT NULL,
+    [DATA_A_TYPE__RUNID]      INT          NOT NULL,
+    [DATA_A_VALUE__RUNID]     INT          NOT NULL,
+    [DATA_B_TYPE__RUNID]      INT          NOT NULL,
+    [DATA_B_VALUE__RUNID]     INT          NOT NULL,
+    [DATA_C_TYPE__RUNID]      INT          NOT NULL,
+    [DATA_C_VALUE__RUNID]     INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([SOURCE_TABLE] ASC, [SOURCE_KEY] ASC, [SOURCE_COLUMN] ASC, [EXCEPTION_CODE] ASC, [SOURCE_DATE] ASC)
+);
+

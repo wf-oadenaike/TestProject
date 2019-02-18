@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[a] (
+    [CADIS_ID_FIXED_LEG] INT NULL
+);
+

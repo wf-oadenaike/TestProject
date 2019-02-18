@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION398_RESULTS" AS 
+SELECT ET."BCPTestPlanEventId",ET."BCPTestPlanRegisterId",ET."DepartmentId",ET."DepartmentName",ET."IsActive",ET."TestRequirement",ET."TestSuccessCriteria",ET."TestPlanStatus",ET."RecordedByPersonId",ET."RecordedBy",ET."EventDate",ET."EventDetails",ET."TestPlanResult",ET."CalendarYear",ET."IsReTest",ET."DocumentationFolderLink",ET."JoinGUID",ET."BCPTestPlanEventCreationDate",ET."BCPTestPlanEventLastModifiedDatetime" FROM "Access.ManyWho"."BCPTestPlanEventsReadOnlyVw" ET WITH (NOLOCK)

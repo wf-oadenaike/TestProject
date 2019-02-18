@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION82_RESULTS" AS 
+SELECT ET."RFPId",ET."ClientId",ET."RFPName",ET."RelationshipManagerId",ET."FirstDraftDeadlineDate",ET."FinalDraftDeadlineDate",ET."RFPDeadlineDate",ET."RFPStatus",ET."FinalDraftLink",ET."RelationshipManagerNotes",ET."ClientTakeOnYesNo",ET."SubmittedByPersonId",ET."ApprovedByPersonId",ET."JiraTaskKey",ET."HeadOfSalesPersonId",ET."ProjectId",ET."DocumentationFolderLink",ET."DocumentationFolderLink2",ET."JoinGUID",ET."RFPRegisterCreationDatetime",ET."RFPRegisterLastModifiedDatetime" FROM "Sales"."RFPRegister" ET WITH (NOLOCK)

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION109_RESULTS" AS 
+SELECT ET."ValuationReviewId",ET."UnquotedCompanyId",ET."ValuationReviewMeetingDate",ET."BoxUrl",ET."WorkflowVersionGUID",ET."JoinGUID",ET."ValuationReviewCreationDate",ET."ValuationReviewCreatedByPersonId",ET."ValuationReviewModifiedDate",ET."ValuationReviewLastModifiedByPersonId",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Organisation"."ValuationReviews" ET WITH (NOLOCK)

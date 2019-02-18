@@ -1,0 +1,119 @@
+﻿CREATE FUNCTION [Access.WebDev].[ufn_GetYTDInFlows] ()
+
+RETURNS @Output TABLE (
+	[FUND_SHORT_NAME] VARCHAR(256) NULL,
+	[FUND_LONG_NAME] VARCHAR(256) NULL,
+	[IN_FLOW_DATE] DATETIME NULL,
+	[SUBS_YTD_VALUE] DECIMAL(18,2) NULL,
+    [TOTAL_YTD_VALUE] DECIMAL(18,2) NULL
+)
+
+AS
+BEGIN
+
+DECLARE @Interim TABLE (
+	[FUND_SHORT_NAME] VARCHAR(256) NULL,
+	[FUND_LONG_NAME] VARCHAR(256) NULL,
+	[IN_FLOW_DATE] DATETIME NULL,
+	[FLOW_TYPE] VARCHAR(256) NULL,
+	[VALUE] DECIMAL(18,2) NULL
+);
+
+DECLARE @InterimTotals TABLE (
+	[FUND_SHORT_NAME] VARCHAR(256) NULL,
+	[FUND_LONG_NAME] VARCHAR(256) NULL,
+	[IN_FLOW_DATE] DATETIME NULL,
+	[SUBSVALUE] DECIMAL(18,2) NULL,
+	[TOTALVALUE] DECIMAL(18,2) NULL	
+);
+
+
+DECLARE @ReportDate DATE,
+        @FiscalYearStart DATE;
+
+  SET @ReportDate = GetDate();
+  
+  SET @FiscalYearStart = (SELECT FiscalFirstDayOfYear FROM [Core].[Calendar] WHERE CalendarDate = CAST(GetDate() as Date));
+  
+  -- exclude WIMPCT
+  INSERT INTO @Interim
+  (FUND_SHORT_NAME,
+   FUND_LONG_NAME,
+   IN_FLOW_DATE,
+   FLOW_TYPE,
+   VALUE)   
+   SELECT sgif.FUND_SHORT_NAME
+	  ,sgif.FUND_LONG_NAME
+	  ,sgif.IN_FLOW_DATE
+	  ,sgif.FLOW_TYPE
+	  ,SUM(sgif.Value)
+   FROM
+	(SELECT 
+			gif.FUND_SHORT_NAME
+		   ,gif.FUND_LONG_NAME
+		   ,gif.IN_FLOW_DATE
+		   ,gif.FLOW_TYPE
+		   ,ISNULL(gif.VALUE,0) as Value
+	FROM [Core].[Calendar] Cal
+	CROSS APPLY [Access.WebDev].[ufn_GetInFlows] (Cal.CalendarDate,null) gif
+    WHERE Cal.CalendarDate BETWEEN @FiscalYearStart AND @ReportDate
+	AND gif.IN_FLOW_DATE IS NOT NULL
+	AND gif.FUND_SHORT_NAME != 'WIMPCT'
+	AND gif.FUND_FLOW_TYPE='GROSS' ) sgif
+	GROUP BY sgif.FUND_SHORT_NAME
+			,sgif.FUND_LONG_NAME
+			,sgif.IN_FLOW_DATE
+			,sgif.FLOW_TYPE;
+			
+	
+	-- get totals for subscription and subscription+redemption
+	INSERT INTO @InterimTotals
+		(FUND_SHORT_NAME,
+		 FUND_LONG_NAME,
+		 IN_FLOW_DATE,
+		 SUBSVALUE,
+		 TOTALVALUE)  	
+	SELECT FUND_SHORT_NAME
+	  ,FUND_LONG_NAME
+	  ,IN_FLOW_DATE
+	  ,(SELECT SUM(im2.Value) 
+	    FROM @Interim im2 
+		WHERE im2.FUND_SHORT_NAME = im.FUND_SHORT_NAME 
+		AND im2.IN_FLOW_DATE = im.IN_FLOW_DATE
+		AND im2.FLOW_TYPE='SUBSCRIPTION')
+	  ,SUM(im.Value)
+	FROM @Interim im
+	--WHERE FLOW_TYPE = 'SUBSCRIPTION'
+	GROUP BY FUND_SHORT_NAME
+	  ,FUND_LONG_NAME
+	  ,IN_FLOW_DATE;
+		 
+   -- YTD totals for each FUND
+   
+   INSERT INTO @OUTPUT
+   (FUND_SHORT_NAME,
+   FUND_LONG_NAME,
+   IN_FLOW_DATE,
+   SUBS_YTD_VALUE,
+   TOTAL_YTD_VALUE
+   )  
+
+   SELECT im.FUND_SHORT_NAME,
+		  im.FUND_LONG_NAME,
+          im.IN_FLOW_DATE,
+          ISNULL((SELECT SUM(im2.SUBSVALUE)
+		   FROM @InterimTotals im2 
+		   WHERE im2.FUND_SHORT_NAME = im.FUND_SHORT_NAME 
+		   AND im2.IN_FLOW_DATE <= im.IN_FLOW_DATE
+		   GROUP BY im2.FUND_SHORT_NAME),0),
+          ISNULL((SELECT SUM(im2.TOTALVALUE)
+		   FROM @InterimTotals im2 
+		   WHERE im2.FUND_SHORT_NAME = im.FUND_SHORT_NAME 
+		   AND im2.IN_FLOW_DATE <= im.IN_FLOW_DATE
+		   GROUP BY im2.FUND_SHORT_NAME),0)	   
+   FROM @InterimTotals im
+  
+   
+   RETURN
+   
+END

@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[ACCRINT]
+(@Issue DATETIME NULL, @First_interest DATETIME NULL, @Settlement DATETIME NULL, @Rate FLOAT (53) NULL, @Par FLOAT (53) NULL, @Frequency FLOAT (53) NULL, @Basis NVARCHAR (4000) NULL, @Calc_method BIT NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[ACCRINT]
+

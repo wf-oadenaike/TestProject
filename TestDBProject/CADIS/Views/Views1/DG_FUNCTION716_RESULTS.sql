@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION716_RESULTS" AS 
+SELECT ET."EventId",ET."RequestId",ET."EventTypeID",ET."EventType",ET."SubmittedByPersonId",ET."SubmittedByPersonName",ET."EventDate",ET."EventDetails",ET."IsActive",ET."Jiraissuekey",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Access.ManyWho"."NewOrgStructureChangeRequestEventsVw" ET WITH (NOLOCK)

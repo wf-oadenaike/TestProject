@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Staging].[RegionSrc] (
+    [Id]                         VARCHAR (50)    NULL,
+    [OwnerId]                    VARCHAR (50)    NULL,
+    [IsDeleted]                  VARCHAR (50)    NULL,
+    [Name]                       NVARCHAR (1000) NULL,
+    [CurrencyIsoCode]            VARCHAR (50)    NULL,
+    [CreatedDate]                VARCHAR (50)    NULL,
+    [CreatedById]                VARCHAR (50)    NULL,
+    [LastModifiedDate]           VARCHAR (50)    NULL,
+    [LastModifiedById]           VARCHAR (50)    NULL,
+    [SystemModstamp]             VARCHAR (50)    NULL,
+    [Company_Owner__c]           NVARCHAR (1000) NULL,
+    [Contact_Owner__c]           NVARCHAR (1000) NULL,
+    [Contact_RSM__c]             NVARCHAR (1000) NULL,
+    [Description__c]             NVARCHAR (MAX)  NULL,
+    [Regional_Sales_Manager__c]  NVARCHAR (1000) NULL,
+    [Sales_Account_Manager__c]   NVARCHAR (1000) NULL,
+    [SW_GLEQ__c]                 NVARCHAR (1000) NULL,
+    [SW_REST__c]                 NVARCHAR (1000) NULL,
+    [SW_TSAL__c]                 NVARCHAR (1000) NULL,
+    [SW_UKAC__c]                 NVARCHAR (1000) NULL,
+    [SW_UKEB__c]                 NVARCHAR (1000) NULL,
+    [SW_UKEI__c]                 NVARCHAR (1000) NULL,
+    [Total_Sector_Weightings__c] NVARCHAR (1000) NULL
+);
+

@@ -1,0 +1,11 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_UPPLNOTIF_INFO_RUNID] (
+    [RUNID]                    INT           NOT NULL,
+    [PROCESS_NAME]             VARCHAR (250) NOT NULL,
+    [PROCESS_TYPE]             VARCHAR (50)  NOT NULL,
+    [NOTIFICATION_SENT__RUNID] INT           NOT NULL,
+    [RUNSTART__RUNID]          INT           NOT NULL,
+    [RUNEND__RUNID]            INT           NOT NULL,
+    [RUNSUCCESSFUL__RUNID]     INT           NOT NULL,
+    PRIMARY KEY CLUSTERED ([RUNID] ASC, [PROCESS_NAME] ASC, [PROCESS_TYPE] ASC)
+);
+

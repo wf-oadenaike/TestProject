@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_SYS].[SPWEBUSERDELBYUSERNAME]
+@USERNAME NVARCHAR (100), @CHANGEDBY NVARCHAR (256)
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

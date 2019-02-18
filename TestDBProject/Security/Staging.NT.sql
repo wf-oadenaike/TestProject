@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [Staging.NT]
+    AUTHORIZATION [dbo];
+

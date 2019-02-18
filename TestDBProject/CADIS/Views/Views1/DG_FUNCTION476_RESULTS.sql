@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION476_RESULTS" AS 
+SELECT ET."MakeContact",ET."MatrixOutletId",ET."AccountName",ET."AccountFcaId",ET."BillingCity",ET."BillingPostCode",ET."AccountOwnerId",ET."TotalOwnSales",ET."TotalMarketSales",ET."EquityIncomeOwnSales",ET."EquityIncomeMarketSales",ET."SpecialistSectorOwnSales",ET."SpecialistSectorMarketSales",ET."SalesFromDate",ET."SalesToDate",ET."OverrideStatus",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Sales.BP"."NewAccountOverride" ET WITH (NOLOCK)

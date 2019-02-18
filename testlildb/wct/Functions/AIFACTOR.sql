@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[AIFACTOR]
+(@Basis NVARCHAR (4000) NULL, @Rate FLOAT (53) NULL, @Maturity DATETIME NULL, @Settlement DATETIME NULL, @Frequency INT NULL, @FirstInterestDate DATETIME NULL, @LastInterestDate DATETIME NULL, @IssueDate DATETIME NULL, @Holidays NVARCHAR (MAX) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[AIFACTOR]
+

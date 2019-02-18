@@ -1,0 +1,25 @@
+﻿CREATE TABLE [Compliance].[PADealingEvents] (
+    [PADealingEventId]                   INT              IDENTITY (1, 1) NOT NULL,
+    [PADealingRegisterId]                INT              NOT NULL,
+    [PADealingEventTypeId]               SMALLINT         NOT NULL,
+    [SubmittedByPersonId]                SMALLINT         NOT NULL,
+    [EventTrueFalse]                     BIT              NULL,
+    [EventDetails]                       VARCHAR (MAX)    NULL,
+    [EventDate]                          DATETIME         NULL,
+    [DocumentationFolderLink]            VARCHAR (2000)   NULL,
+    [JoinGUID]                           UNIQUEIDENTIFIER NOT NULL,
+    [PADealingEventCreationDatetime]     DATETIME         CONSTRAINT [DF_PADE_PADECD] DEFAULT (getdate()) NOT NULL,
+    [PADealingEventLastModifiedDatetime] DATETIME         CONSTRAINT [DF_PADE_PADELMD] DEFAULT (getdate()) NOT NULL,
+    [CADIS_SYSTEM_INSERTED]              DATETIME         CONSTRAINT [DF_PADE_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]               DATETIME         CONSTRAINT [DF_PADE_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]             NVARCHAR (50)    CONSTRAINT [DF_PADE_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]              INT              CONSTRAINT [DF_PADE_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]             ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]          DATETIME         CONSTRAINT [DF_PADE_CSL] DEFAULT (getdate()) NULL,
+    [JiraIssueKey]                       NVARCHAR (50)    NULL,
+    CONSTRAINT [PKPADealingEvents] PRIMARY KEY CLUSTERED ([PADealingEventId] ASC),
+    CONSTRAINT [PADealingEventsRegisterId] FOREIGN KEY ([PADealingRegisterId]) REFERENCES [Compliance].[PADealingRegister] ([PADealingRegisterId]),
+    CONSTRAINT [PADealingEventTypeId] FOREIGN KEY ([PADealingEventTypeId]) REFERENCES [Compliance].[PADealingEventTypes] ([PADealingEventTypeId]),
+    CONSTRAINT [PADealingSubmittedByPersonId] FOREIGN KEY ([SubmittedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+

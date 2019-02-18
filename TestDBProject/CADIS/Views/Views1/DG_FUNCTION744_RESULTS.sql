@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION744_RESULTS" AS 
+SELECT ET."Fund Short Name",ET."EDM_SEC_ID",ET."Security Name",ET."Dvd CCY",ET."Position",ET."Price",ET."Mkt Value",ET."Dividend Declared",ET."Q1 XD Date",ET."Q1 Rate",ET."Q1 Income",ET."Q1 Yet To Go XD",ET."Q2 XD Date",ET."Q2 Rate",ET."Q2 Income",ET."Q2 Yet To Go XD",ET."Q3 XD Date",ET."Q3 Rate",ET."Q3 Income",ET."Q3 Yet To Go XD",ET."Q4 XD Date",ET."Q4 Rate",ET."Q4 Income",ET."Q4 Yet To Go XD" FROM "CADIS"."VW_Dividend_Projection" ET WITH (NOLOCK)

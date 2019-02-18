@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[T_BBAIM_XML_esxsd_BatchFeed_esxsd_TradeFeed_esxsd_TBAFields_IN] (
+    [CADIS_BATCH_ID]                           INT            NOT NULL,
+    [CADIS_MSG_ID]                             INT            CONSTRAINT [DF__T_BBAIM_X__CADIS__02F4B477] DEFAULT ((1)) NOT NULL,
+    [CADIS_PARENT_ID]                          INT            NOT NULL,
+    [CADIS_ROW_ID]                             INT            NOT NULL,
+    [esxsd:TBACodeLinkIndicator]               NVARCHAR (MAX) NULL,
+    [esxsd:TBACodeTicketReferenceTicketNumber] NVARCHAR (MAX) NULL,
+    [esxsd:STIPCodeFlag]                       NVARCHAR (MAX) NULL,
+    [esxsd:EffectiveDuration]                  NVARCHAR (MAX) NULL,
+    [esxsd:AverageLife]                        NVARCHAR (MAX) NULL,
+    [esxsd:WAC]                                NVARCHAR (MAX) NULL,
+    [esxsd:WAM]                                NVARCHAR (MAX) NULL,
+    [esxsd:BreakEvenFinanceRate]               NVARCHAR (MAX) NULL,
+    [esxsd:NetWire]                            NVARCHAR (MAX) NULL,
+    [esxsd:TurnPoolTicketNumber]               NVARCHAR (MAX) NULL,
+    [esxsd:ForwardTicketNumber]                NVARCHAR (MAX) NULL,
+    [esxsd:WALA]                               NVARCHAR (MAX) NULL,
+    [esxsd:TransactionType]                    NVARCHAR (MAX) NULL,
+    [esxsd:DelayedDeliveryDate]                NVARCHAR (MAX) NULL,
+    [CADIS_SYSTEM_INSERTED]                    DATETIME       CONSTRAINT [DF__T_BBAIM_X__CADIS__03E8D8B0] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]                     DATETIME       CONSTRAINT [DF__T_BBAIM_X__CADIS__04DCFCE9] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]                   NVARCHAR (50)  CONSTRAINT [DF__T_BBAIM_X__CADIS__05D12122] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]                    INT            CONSTRAINT [DF__T_BBAIM_X__CADIS__06C5455B] DEFAULT ((1)) NULL,
+    CONSTRAINT [PK_T_BBAIM_XML_esxsd_BatchFeed_esxsd_TradeFeed_esxsd_TBAFields_IN] PRIMARY KEY CLUSTERED ([CADIS_BATCH_ID] ASC, [CADIS_MSG_ID] ASC, [CADIS_PARENT_ID] ASC, [CADIS_ROW_ID] ASC) WITH (FILLFACTOR = 90)
+);
+

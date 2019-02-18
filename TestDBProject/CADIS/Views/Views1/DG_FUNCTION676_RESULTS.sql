@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION676_RESULTS" AS 
+SELECT ET."ChecklistID",ET."Name",ET."LegalEntityType",ET."IncorporationCountry",ET."JurisdictionCountry",ET."Status",ET."ReviewDate",ET."NextReviewDate",ET."IncorporationRiskScore",ET."JurisdictionRiskScore",ET."LegalEntityRiskScore",ET."PEPRiskScore",ET."TotalRiskScore",ET."TotalRiskRating",ET."ReviewedBy",ET."SubmittedBy",ET."IsActive",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Access.ManyWho"."Compliance_KYCChecklistReadOnlyVw" ET WITH (NOLOCK)

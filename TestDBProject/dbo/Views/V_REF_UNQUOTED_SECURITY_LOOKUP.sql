@@ -1,0 +1,11 @@
+﻿
+
+CREATE VIEW [dbo].[V_REF_UNQUOTED_SECURITY_LOOKUP] AS
+SELECT DISTINCT 
+  EDM_SEC_ID						as	NAME
+ ,CONCAT(SECURITY_NAME,' - ',SECURITY_ISO_CCY)				as VALUE
+ ,*
+ from T_MASTER_SEC
+ where SECURITY_TYPE  = 'Private Synthetic Equity Secur'
+
+

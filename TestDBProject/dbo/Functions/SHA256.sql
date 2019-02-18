@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [dbo].[SHA256]
+(@data NVARCHAR (MAX))
+RETURNS VARBINARY (8000)
+AS
+ EXTERNAL NAME [Wim.Database.Functions].[GalaCLR].[SHA256]
+

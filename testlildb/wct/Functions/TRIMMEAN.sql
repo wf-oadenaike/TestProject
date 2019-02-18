@@ -1,0 +1,4 @@
+﻿CREATE AGGREGATE [wct].[TRIMMEAN](@known_x FLOAT (53) NULL, @percent FLOAT (53) NULL)
+    RETURNS FLOAT (53)
+    EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.TRIMMEAN];
+

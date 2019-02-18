@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION302_RESULTS" AS 
+SELECT ET."TrailCommissionId",ET."MandateName",ET."Status",ET."ShareClass",ET."CommissionRate",ET."RegulatorName",ET."RegulatorNumber",ET."Decision",ET."Submitted By",ET."Reviewed By",ET."ReviewedDate",ET."DocumentationFolderLink",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY",ET."CADIS_SYSTEM_PRIORITY",ET."CADIS_SYSTEM_LASTMODIFIED",ET."CADIS_SYSTEM_TIMESTAMP" FROM "Access.ManyWho"."TrailCommissionRegisterReadOnlyVw" ET WITH (NOLOCK)

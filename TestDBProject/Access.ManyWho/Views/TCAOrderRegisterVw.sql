@@ -1,0 +1,191 @@
+﻿CREATE VIEW [Access.ManyWho].[TCAOrderRegisterVw]
+-------------------------------------------------------------------------------------- 
+-- Name:			[Access.ManyWho].[TCAOrderRegisterVw]
+-- 
+-- 
+-- Author:			
+-- Date:			
+-------------------------------------------------------------------------------------- 
+-- Description:		
+-- History:			
+-- Initial Write 
+-- 19-02-2018	W.Stubbs	Wrap in a subquery so as only to return one line per order
+-- 13-09-2018	R.Walker	DAP-2333 Correctly take the latest version of a duplicate order and not by Exception
+-------------------------------------------------------------------------------------- 
+AS
+
+SELECT 
+	[OrderId]
+      ,[SECURITY_NAME]
+      ,[SIDE]
+      ,[ORDERSHARES]
+      ,[IsOrderFilled]
+      ,[TOTAL_VALUE]
+      ,[TRADER]
+	  ,TraderName
+      ,[COUNTRY]
+	  ,[TCAException]
+      ,[DAYSTOCOMPLETION]
+      ,[FILLED_PERCENT_OF_INTERVAL_VOLUME]
+      ,[ORDER_PERCENT_OF_INTERVAL_VOLUME]
+      ,[PM_ORDER_TYPE]
+      ,[B1ORIGBENCHPRICE]
+      ,[B1PRETRADECOST]
+      ,[B2ORIGBENCHPRICE]
+      ,[B2PRETRADECOST]
+      ,[ORDER_START_DATE_TIME]
+      ,[ORDER_END_DATE_TIME]
+      ,[Brokers]
+      ,[Accounts]
+      ,[ORIG_PRICE]
+      ,[FILLED_PERCENT_OF_DAILY_VOLUME]
+      ,[B1REALISEDCOSTBPS]
+      ,[B1NETPCTCST]
+	  ,[B1NETREALDOLLAR]
+	  ,[B1TOTALDLRCOST]
+	  ,[B1MODELADJUSTEDARRIVAL]
+      ,[B2REALISEDCOSTBPS]
+      ,[B2NETPCTCST]
+	  ,[B2NETREALDOLLAR]
+	  ,[B2TOTALDLRCOST]
+      ,[B3REALISEDCOSTBPS]
+      ,[B3NETPCTCST]
+	  ,[B3MODELADJUSTEDARRIVAL]
+	  ,[B3NETREALDOLLAR]
+	  ,[B3TOTALDLRCOST]
+      ,[B4REALISEDCOSTBPS]
+      ,[B4NETPCTCST]
+	  ,[B4NETREALDOLLAR]
+	  ,[B4TOTALDLRCOST]	  
+      ,[B5REALISEDCOSTBPS]
+      ,[B5NETPCTCST]
+	  ,[B5NETREALDOLLAR]
+	  ,[B5TOTALDLRCOST]
+      ,[B6REALISEDCOSTBPS]
+      ,[B6NETPCTCST]
+	  ,[B6NETREALDOLLAR]
+	  ,[B6TOTALDLRCOST]
+      ,[B7REALISEDCOSTBPS]
+      ,[B7NETPCTCST]
+	  ,[B7NETREALDOLLAR]
+	  ,[B7TOTALDLRCOST]
+      ,[B8REALISEDCOSTBPS]
+      ,[B8NETPCTCST]
+	  ,[B8NETREALDOLLAR]
+	  ,[B8TOTALDLRCOST]
+      ,[B9REALISEDCOSTBPS]
+      ,[B9NETPCTCST]
+	  ,[B9NETREALDOLLAR]
+	  ,[B9TOTALDLRCOST]
+      ,[B10REALISEDCOSTBPS]
+      ,[B10NETPCTCST]
+	  ,[B10NETREALDOLLAR]
+	  ,[B10TOTALDLRCOST]
+	  ,PNL
+	  ,Performance
+      ,[ChannelName]
+      ,[ChannelId]
+	  ,[IsResolved]
+      ,[DocumentationFolderLink]
+      ,[JoinGUID]
+      ,[CADIS_SYSTEM_INSERTED]
+      ,[CADIS_SYSTEM_UPDATED]
+      ,[CADIS_SYSTEM_CHANGEDBY]
+      ,[CADIS_SYSTEM_PRIORITY]
+      ,[CADIS_SYSTEM_TIMESTAMP]
+      ,[CADIS_SYSTEM_LASTMODIFIED]
+ FROM
+(
+SELECT
+	   [OrderId]
+      ,[SECURITY_NAME]
+      ,[SIDE]
+      ,[ORDERSHARES]
+      ,[IsOrderFilled]
+      ,[TOTAL_VALUE]
+      ,[TRADER]
+	  ,p.PersonsName as TraderName
+      ,[COUNTRY]
+	  ,[TCAException]
+      ,[DAYSTOCOMPLETION]
+      ,[FILLED_PERCENT_OF_INTERVAL_VOLUME]
+      ,[ORDER_PERCENT_OF_INTERVAL_VOLUME]
+      ,[PM_ORDER_TYPE]
+      ,[B1ORIGBENCHPRICE]
+      ,[B1PRETRADECOST]
+      ,[B2ORIGBENCHPRICE]
+      ,[B2PRETRADECOST]
+      ,[ORDER_START_DATE_TIME]
+      ,[ORDER_END_DATE_TIME]
+      ,[Brokers]
+      ,[Accounts]
+      ,[ORIG_PRICE]
+      ,[FILLED_PERCENT_OF_DAILY_VOLUME]
+      ,[B1REALISEDCOSTBPS]
+      ,[B1NETPCTCST]
+	  ,[B1NETREALDOLLAR]
+	  ,[B1TOTALDLRCOST]
+	  ,[B1MODELADJUSTEDARRIVAL]
+      ,[B2REALISEDCOSTBPS]
+      ,[B2NETPCTCST]
+	  ,[B2NETREALDOLLAR]
+	  ,[B2TOTALDLRCOST]
+      ,[B3REALISEDCOSTBPS]
+      ,[B3NETPCTCST]
+	  ,[B3MODELADJUSTEDARRIVAL]
+	  ,[B3NETREALDOLLAR]
+	  ,[B3TOTALDLRCOST]
+      ,[B4REALISEDCOSTBPS]
+      ,[B4NETPCTCST]
+	  ,[B4NETREALDOLLAR]
+	  ,[B4TOTALDLRCOST]	  
+      ,[B5REALISEDCOSTBPS]
+      ,[B5NETPCTCST]
+	  ,[B5NETREALDOLLAR]
+	  ,[B5TOTALDLRCOST]
+      ,[B6REALISEDCOSTBPS]
+      ,[B6NETPCTCST]
+	  ,[B6NETREALDOLLAR]
+	  ,[B6TOTALDLRCOST]
+      ,[B7REALISEDCOSTBPS]
+      ,[B7NETPCTCST]
+	  ,[B7NETREALDOLLAR]
+	  ,[B7TOTALDLRCOST]
+      ,[B8REALISEDCOSTBPS]
+      ,[B8NETPCTCST]
+	  ,[B8NETREALDOLLAR]
+	  ,[B8TOTALDLRCOST]
+      ,[B9REALISEDCOSTBPS]
+      ,[B9NETPCTCST]
+	  ,[B9NETREALDOLLAR]
+	  ,[B9TOTALDLRCOST]
+      ,[B10REALISEDCOSTBPS]
+      ,[B10NETPCTCST]
+	  ,[B10NETREALDOLLAR]
+	  ,[B10TOTALDLRCOST]
+	  ,CASE WHEN COUNTRY='US' THEN B2NETREALDOLLAR
+	        ELSE B1NETREALDOLLAR
+	   END as PNL
+	  ,CASE WHEN COUNTRY='US' THEN B2NETPCTCST
+	        ELSE B1NETPCTCST
+	   END as Performance
+      ,[ChannelName]
+      ,[ChannelId]
+	  ,[IsResolved]
+      ,[DocumentationFolderLink]
+      ,[JoinGUID]
+      ,[CADIS_SYSTEM_INSERTED]
+      ,[CADIS_SYSTEM_UPDATED]
+      ,[CADIS_SYSTEM_CHANGEDBY]
+      ,[CADIS_SYSTEM_PRIORITY]
+      ,[CADIS_SYSTEM_TIMESTAMP]
+      ,[CADIS_SYSTEM_LASTMODIFIED]
+	  ,ROW_NUMBER() OVER (PARTITION BY OrderID ORDER BY [CADIS_SYSTEM_UPDATED] DESC, TCAException DESC)  AS Rrow
+  FROM [TCA].[TCAOrderRegister] tor
+  LEFT OUTER JOIN [Core].[Persons] p
+  ON p.PersonId = tor.TraderPersonId) x
+
+  WHERE x.Rrow = 1
+
+
+

@@ -1,0 +1,53 @@
+﻿CREATE TABLE [Investment].[FinPromsRegister] (
+    [FinPromRegisterId]           INT              IDENTITY (1, 1) NOT NULL,
+    [CommsNameBK]                 VARCHAR (128)    NOT NULL,
+    [FinPromType]                 VARCHAR (128)    NOT NULL,
+    [PromotionChannel]            VARCHAR (128)    NULL,
+    [ThirdPartyYesNo]             BIT              NOT NULL,
+    [IssueDueDate]                DATETIME         NULL,
+    [JIRAProjectInitiationDate]   DATETIME         NULL,
+    [RecurrenceFrequency]         VARCHAR (25)     NULL,
+    [ApprovalDate]                DATETIME         NULL,
+    [ComplianceComments]          VARCHAR (2048)   NULL,
+    [CompliancePersonId]          SMALLINT         NULL,
+    [ComplianceRoleId]            SMALLINT         NULL,
+    [FinPromStatus]               VARCHAR (128)    NOT NULL,
+    [JIRAEpicKey]                 VARCHAR (2000)   NULL,
+    [DocumentationFolderLink]     VARCHAR (2000)   NULL,
+    [Notes]                       VARCHAR (2000)   NULL,
+    [IsFinProm]                   BIT              NULL,
+    [IntendedAudienceDetails]     VARCHAR (128)    NULL,
+    [ExpiryDate]                  DATETIME         NULL,
+    [ReviewFrequency]             VARCHAR (25)     NULL,
+    [IssuedBy]                    VARCHAR (50)     NULL,
+    [IssuedDate]                  DATETIME         NULL,
+    [Author]                      VARCHAR (50)     NULL,
+    [MandateId]                   INT              NULL,
+    [SubmittedByPersonId]         SMALLINT         CONSTRAINT [DF_FPR_FPRSP] DEFAULT ((-1)) NOT NULL,
+    [JiraIssueKey]                VARCHAR (128)    NULL,
+    [ComplianceJiraKey]           VARCHAR (128)    NULL,
+    [Topic]                       NVARCHAR (255)   NULL,
+    [Purpose]                     NVARCHAR (MAX)   NULL,
+    [WorkflowVersionGUID]         UNIQUEIDENTIFIER NULL,
+    [JoinGUID]                    UNIQUEIDENTIFIER NOT NULL,
+    [FinPromCreationDatetime]     DATETIME         CONSTRAINT [DF_FPR_FPCDT] DEFAULT (getdate()) NOT NULL,
+    [FinPromLastModifiedDatetime] DATETIME         CONSTRAINT [DF_FPR_FPLMDT] DEFAULT (getdate()) NOT NULL,
+    [Outcome]                     NVARCHAR (MAX)   NULL,
+    [CADIS_SYSTEM_INSERTED]       DATETIME         CONSTRAINT [DF_FPR_CSI] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]        DATETIME         CONSTRAINT [DF_FPR_CSU] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY]      NVARCHAR (50)    CONSTRAINT [DF_FPR_CSCB] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]       INT              CONSTRAINT [DF_FPR_CSP] DEFAULT ((1)) NULL,
+    [CADIS_SYSTEM_TIMESTAMP]      ROWVERSION       NOT NULL,
+    [CADIS_SYSTEM_LASTMODIFIED]   DATETIME         CONSTRAINT [DF_FPR_CSL] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PKFinPromsRegister] PRIMARY KEY CLUSTERED ([FinPromRegisterId] ASC),
+    CONSTRAINT [FinPromsRegisterCompliancePersonId] FOREIGN KEY ([CompliancePersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    CONSTRAINT [FinPromsRegisterComplianceRoleId] FOREIGN KEY ([ComplianceRoleId]) REFERENCES [Core].[Roles] ([RoleId]),
+    CONSTRAINT [FinPromsRegisterMandateId] FOREIGN KEY ([MandateId]) REFERENCES [Investment].[Mandates] ([MandateId]),
+    CONSTRAINT [FinPromsRegisterSubmittedByPersonId] FOREIGN KEY ([SubmittedByPersonId]) REFERENCES [Core].[Persons] ([PersonId])
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [UXIFinPromsRegister]
+    ON [Investment].[FinPromsRegister]([CommsNameBK] ASC);
+

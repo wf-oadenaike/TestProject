@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Scheduler_Workflow_Launch_List" AS 
+SELECT V."WorkflowLaunchId" AS "Workflow Launch ID", J1.DF AS "Flow ID",V."LaunchDate" AS "Launch Date",V."LaunchRef" AS "Launch Ref",V."IsActive" AS "Is Active",V."JoinGUID" AS "Join GUID",V."CreatedDate" AS "Created Date" FROM "Scheduler"."WorkflowLaunchList" V LEFT OUTER JOIN (SELECT DISTINCT "FlowId" AS JF,"FlowName" AS DF FROM "Scheduler"."Workflows")  J1 ON  J1.JF=V."FlowId"

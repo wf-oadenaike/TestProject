@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION549_RESULTS" AS 
+SELECT ET."KPIName",ET."FrequencyName",ET."SubCategoryId",ET."RiskOwnerId",ET."KPIID",ET."KPIDescription",ET."RedThresholdValue",ET."AmberThresholdValue",ET."GreenThresholdValue",ET."TargetValue",ET."RiskSubCategory",ET."RiskCategoryId",ET."RiskCategory",ET."RiskOwner",ET."RiskAppetite" FROM "Access.ManyWho"."KPIRiskSubCategoriesVw" ET WITH (NOLOCK)

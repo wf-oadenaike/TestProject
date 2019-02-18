@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[MTRACEN]
+(@Matrix_TableName NVARCHAR (MAX) NULL, @Key1Columnname NVARCHAR (4000) NULL, @Key2ColumnName NVARCHAR (4000) NULL, @DataColumnName NVARCHAR (4000) NULL, @GroupedColumnName NVARCHAR (4000) NULL, @GroupedColumnValue SQL_VARIANT NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[MTRACEN]
+

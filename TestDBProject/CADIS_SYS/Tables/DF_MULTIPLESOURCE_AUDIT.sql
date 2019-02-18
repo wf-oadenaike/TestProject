@@ -1,0 +1,10 @@
+﻿CREATE TABLE [CADIS_SYS].[DF_MULTIPLESOURCE_AUDIT] (
+    [ID]          INT            IDENTITY (1, 1) NOT NULL,
+    [PROCESSNAME] NVARCHAR (100) NOT NULL,
+    [SOURCENAME]  VARCHAR (200)  NULL,
+    [RUNID]       INT            NULL,
+    [RUNTIME]     DATETIME       DEFAULT (getdate()) NULL,
+    [STATUS]      INT            NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+

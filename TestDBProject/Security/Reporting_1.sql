@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [Reporting]
+    WITH PASSWORD = N'Spv3y7gby{ozMmhqO|BepsoEmsFT7_&#$!~<q{tMz=6sfavz', SID = 0xCBF5EA526ACBC341BEDE3D961F0AF96C, DEFAULT_LANGUAGE = [us_english];
+

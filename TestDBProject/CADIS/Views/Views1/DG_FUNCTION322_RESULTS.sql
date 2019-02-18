@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION322_RESULTS" AS 
+SELECT ET."AccSalesforceId",ET."AccFcaId",ET."AccMatrixOutletId",ET."IsActive",ET."NewWaId",ET."NewAccName",ET."NewAccOwnerId",ET."NewAccOwnerName",ET."NewAccPostcode",ET."NewAddrStreet",ET."NewAddrCity",ET."NewAddrCountry",ET."OldWaId",ET."OldAccName",ET."OldAccOwnerId",ET."OldAccOwnerName",ET."OldAccPostcode",ET."OldAddrCity",ET."OldAddrStreet",ET."OldAddrCountry" FROM "Access.ManyWho"."AccountDataExceptionsReadOnlyVw" ET WITH (NOLOCK)

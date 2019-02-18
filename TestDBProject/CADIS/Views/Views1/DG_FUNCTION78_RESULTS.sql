@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION78_RESULTS" AS 
+SELECT ET."MonitoringRecordNoteId",ET."MonitoringThemeId",ET."RecordId",ET."SubmittedByPersonId",ET."SubmittedDate",ET."EventDetailsNote",ET."ComplianceConcernsNote",ET."FirstLineResponseNote",ET."GovernanceNote",ET."OccurrenceDate",ET."IsProcessed",ET."MonitoringRecordNotesCreationDatetime",ET."MonitoringRecordNotesLastModifiedDatetime",ET."MonitoringRecordNoteCollectionSeqId",ET."ActionRequired",ET."JoinGUID" FROM "Compliance"."MonitoringRecordNotes" ET WITH (NOLOCK)

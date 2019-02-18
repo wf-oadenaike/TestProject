@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION666_RESULTS" AS 
+SELECT ET."GDPRRequestID",ET."RelatedPersonName",ET."SubmittedByPersonID",ET."SubmittedBy",ET."Summary",ET."Description",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "Access.ManyWho"."GDPRRequestRegisterReadOnlyVw" ET WITH (NOLOCK)

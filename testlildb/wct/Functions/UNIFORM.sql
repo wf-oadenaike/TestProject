@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[UNIFORM]
+(@X FLOAT (53) NULL, @Min FLOAT (53) NULL, @Max FLOAT (53) NULL, @Cumulative BIT NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[UNIFORM]
+

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION587_RESULTS" AS 
+SELECT ET."OrderID",ET."ChildOrderID",ET."SecurityName",ET."Country",ET."NotionalValueGBP",ET."DecisionDateTimeGMT",ET."TraderDateTimeGMT",ET."DecisionToTraderElapsedTimeInMinutes",ET."ApprovalToTraderElapsedTimeInMinutes",ET."ActivatedByUserId",ET."ActivatedByUserName",ET."ActivatedByUserDepartment",ET."AsAtDate",ET."AsOfDate" FROM "Access.WebDev"."ufn_BERC_GetDecisionToTraderSlippage"(NULL, NULL, NULL, NULL) ET

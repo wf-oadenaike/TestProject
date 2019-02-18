@@ -1,0 +1,16 @@
+﻿CREATE TABLE [dbo].[T_TradeViolation_Violation_Test_IN] (
+    [CADIS_BATCH_ID]         INT            NOT NULL,
+    [CADIS_MSG_ID]           INT            CONSTRAINT [DF__T_TradeVi__CADIS__295CB686] DEFAULT ((1)) NOT NULL,
+    [CADIS_PARENT_ID]        INT            NOT NULL,
+    [CADIS_ROW_ID]           INT            NOT NULL,
+    [Test_CADIS_ROW_ID]      INT            NULL,
+    [Test_CurrTestVal]       NVARCHAR (100) NULL,
+    [Test_PrevTestVal]       NVARCHAR (100) NULL,
+    [Test_TestUnits]         NVARCHAR (100) NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME       CONSTRAINT [DF__T_TradeVi__CADIS__2A50DABF] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME       CONSTRAINT [DF__T_TradeVi__CADIS__2B44FEF8] DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50)  CONSTRAINT [DF__T_TradeVi__CADIS__2C392331] DEFAULT ('UNKNOWN') NULL,
+    [CADIS_SYSTEM_PRIORITY]  INT            CONSTRAINT [DF__T_TradeVi__CADIS__2D2D476A] DEFAULT ((1)) NULL,
+    CONSTRAINT [PK_T_TradeViolation_Violation_Test_IN] PRIMARY KEY CLUSTERED ([CADIS_BATCH_ID] ASC, [CADIS_MSG_ID] ASC, [CADIS_PARENT_ID] ASC, [CADIS_ROW_ID] ASC) WITH (FILLFACTOR = 90)
+);
+

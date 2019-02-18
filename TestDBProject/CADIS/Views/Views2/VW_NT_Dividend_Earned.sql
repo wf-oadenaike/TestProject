@@ -1,0 +1,14 @@
+﻿CREATE VIEW "CADIS"."VW_NT_Dividend_Earned"
+AS
+SELECT
+	T2.[TARGET_CODE] AS [FUND_SHORT_NAME],
+	T1.*
+FROM "dbo"."T_NT_EIARPT_PRE" T1
+	INNER JOIN "dbo"."T_REF_GENERAL_MAP" T2 ON T1.[ACCOUNT_NUMBER]  = T2.[SOURCE_CODE]
+		AND T2.[FIELD_NAME] = 'Account Number'
+		AND T2.[SOURCE] = 'NT_FA_Account_Number'
+
+
+
+
+

@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Organisation].[HuddleEvents] (
+    [EventId]                INT              IDENTITY (1, 1) NOT NULL,
+    [EventSummary]           NVARCHAR (MAX)   NOT NULL,
+    [EventDate]              DATETIME         NULL,
+    [DateIdentified]         DATETIME         NOT NULL,
+    [ReportedDate]           DATETIME         DEFAULT (getdate()) NOT NULL,
+    [JIRAKey]                NVARCHAR (50)    NULL,
+    [JoinGUID]               UNIQUEIDENTIFIER NOT NULL,
+    [SlackChannel]           NVARCHAR (21)    NULL,
+    [RecordedByPersonId]     SMALLINT         NOT NULL,
+    [ReportedByPersonId]     SMALLINT         NOT NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50)    DEFAULT ('UNKNOWN') NULL,
+    [EventName]              VARCHAR (100)    NULL,
+    [SubCategoryID]          SMALLINT         NOT NULL,
+    [PotentialLoss]          DECIMAL (18, 6)  NULL,
+    [IsActive]               BIT              NULL,
+    [WorstCaseScenario]      VARCHAR (MAX)    NULL,
+    [EventOwnerPersonId]     SMALLINT         NULL,
+    [ActualEvent]            BIT              DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [PK_Huddle_Events] PRIMARY KEY CLUSTERED ([EventId] ASC) WITH (FILLFACTOR = 90),
+    FOREIGN KEY ([RecordedByPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    FOREIGN KEY ([ReportedByPersonId]) REFERENCES [Core].[Persons] ([PersonId]),
+    FOREIGN KEY ([SubCategoryID]) REFERENCES [Risk].[SubCategories] ([SubCategoryId])
+);
+

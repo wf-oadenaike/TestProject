@@ -1,0 +1,27 @@
+﻿CREATE ROLE [MANY_WHO_USER]
+    AUTHORIZATION [dbo];
+
+
+GO
+ALTER ROLE [MANY_WHO_USER] ADD MEMBER [PavRamachandran];
+
+
+GO
+ALTER ROLE [MANY_WHO_USER] ADD MEMBER [DominicFernandes];
+
+
+GO
+ALTER ROLE [MANY_WHO_USER] ADD MEMBER [billkatsadoros];
+
+
+GO
+ALTER ROLE [MANY_WHO_USER] ADD MEMBER [GeorgeSabrakos];
+
+
+GO
+ALTER ROLE [MANY_WHO_USER] ADD MEMBER [josephbrennan];
+
+
+GO
+ALTER ROLE [MANY_WHO_USER] ADD MEMBER [ZakirHussain];
+

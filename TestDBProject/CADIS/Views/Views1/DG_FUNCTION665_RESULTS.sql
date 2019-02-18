@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION665_RESULTS" AS 
+SELECT ET."GDPRRequestID",ET."SubmittedByPersonID",ET."RelatedPersonName",ET."DateCreated",ET."NextReviewDate",ET."Summary",ET."Description",ET."JoinGUID",ET."CADIS_SYSTEM_INSERTED",ET."CADIS_SYSTEM_UPDATED",ET."CADIS_SYSTEM_CHANGEDBY" FROM "dbo"."HR_GDPRRequestRegister" ET WITH (NOLOCK)

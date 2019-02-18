@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[EASTER]
+(@Year INT NULL)
+RETURNS DATETIME
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[EASTER]
+

@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Risk_Register_Event_Types" AS 
+SELECT V."RiskEventTypeID" AS "Risk Event Type ID",V."RiskEventType" AS "Risk Event Type",V."RiskEventTypeCreationDate" AS "Risk Event Type Creation Date",V."CADIS_SYSTEM_INSERTED",V."CADIS_SYSTEM_UPDATED",V."CADIS_SYSTEM_CHANGEDBY",V."CADIS_SYSTEM_PRIORITY",V."CADIS_SYSTEM_TIMESTAMP",V."CADIS_SYSTEM_LASTMODIFIED" FROM "Risk"."RiskRegisterEventTypes" V

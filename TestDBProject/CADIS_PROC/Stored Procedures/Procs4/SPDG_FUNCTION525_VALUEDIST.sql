@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [CADIS_PROC].[SPDG_FUNCTION525_VALUEDIST]
+@FUND_SHORT_NAME VARCHAR (15), @WEEK_END_DATE DATETIME, @TOP_OR_BOTTOM VARCHAR (6), @WhereSQL NVARCHAR (MAX), @FieldName NVARCHAR (250), @SampleSize INT, @PercentageSample BIT, @MaxRows INT, @Username NVARCHAR (250)
+WITH ENCRYPTION
+AS
+BEGIN
+--The script body was encrypted and cannot be reproduced here.
+    RETURN
+END
+
+

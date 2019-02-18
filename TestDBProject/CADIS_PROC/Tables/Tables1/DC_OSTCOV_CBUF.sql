@@ -1,0 +1,5 @@
+﻿CREATE TABLE [CADIS_PROC].[DC_OSTCOV_CBUF] (
+    [sfContactId] VARCHAR (18) NOT NULL,
+    PRIMARY KEY CLUSTERED ([sfContactId] ASC)
+);
+

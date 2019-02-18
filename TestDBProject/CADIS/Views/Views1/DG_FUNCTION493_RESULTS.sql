@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION493_RESULTS" AS 
+SELECT ET."ROW_UNIQUE_ID",ET."EDM_SEC_ID",ET."SecurityName",ET."FundShortName",ET."ExDate",ET."DvdValue_ExDate",ET."Quantity_ExDate",ET."Quantity_LastDate",ET."Position_LastDate",ET."Quantity_FirstDate",ET."Position_FirstDate",ET."PrevQuantity",ET."SpecialCumTrades",ET."WithholdingTax",ET."DvdCCY",ET."Qtr",ET."Yr",ET."SpotRate",ET."Ticker",ET."optimisation_hint" FROM "Investment"."DVD_Calculation" ET WITH (NOLOCK)

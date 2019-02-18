@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."IL_Dividend_Projection" AS 
+SELECT V."Fund Short Name",V."EDM_SEC_ID",V."Security Name",V."Dvd CCY",V."Position",V."Price",V."Mkt Value",V."Dividend Declared",V."Q1 XD Date",V."Q1 Rate",V."Q1 Income",V."Q1 Yet To Go XD",V."Q2 XD Date",V."Q2 Rate",V."Q2 Income",V."Q2 Yet To Go XD",V."Q3 XD Date",V."Q3 Rate",V."Q3 Income",V."Q3 Yet To Go XD",V."Q4 XD Date",V."Q4 Rate",V."Q4 Income",V."Q4 Yet To Go XD" FROM "Investment"."VW_Dividend_Forecast" V

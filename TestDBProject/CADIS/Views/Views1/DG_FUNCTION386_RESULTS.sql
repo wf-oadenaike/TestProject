@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION386_RESULTS" AS 
+SELECT ET."KPIGroupId",ET."KPIID",ET."KPIGroupName",ET."KPIName",ET."KPIDescription",ET."IsPercentage",ET."KPIValue",ET."OwnerRoleName",ET."PercentageOverThresholdRed",ET."PercentageOverThresholdAmber",ET."PercentageOverThresholdGreen",ET."RedThresholdValue",ET."AmberThresholdValue",ET."GreenThresholdValue",ET."IsRed",ET."IsAmber",ET."IsGreen",ET."FrequencyName",ET."LastUpdatedDate",ET."RiskCategory",ET."RiskSubCategory",ET."MaxLastUpdatedDate" FROM "Access.WebDev"."ufn_KPIGroups"(NULL) ET

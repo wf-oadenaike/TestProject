@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [test]
+    WITH PASSWORD = N'pDsFvydby{ojGMzmOhoqS|epmsFT7_&#$!~<s7dn4oq1{!sx', SID = 0xF13D83C693ED974F9B555B979BCDF390, DEFAULT_LANGUAGE = [us_english];
+

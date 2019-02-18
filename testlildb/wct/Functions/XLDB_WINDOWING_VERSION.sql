@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[XLDB_WINDOWING_VERSION]
+(@InfoType NVARCHAR (4000) NULL)
+RETURNS NVARCHAR (4000)
+AS
+ EXTERNAL NAME [XLeratorDB_windowing].[XLeratorDB_windowing.UserDefinedFunctions].[XLDB_WINDOWING_VERSION]
+

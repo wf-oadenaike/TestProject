@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [wct].[SLN]
+(@Cost FLOAT (53) NULL, @Salvage FLOAT (53) NULL, @Life FLOAT (53) NULL)
+RETURNS FLOAT (53)
+AS
+ EXTERNAL NAME [XLeratorDB_suitePLUS2008].[XLeratorDB_suitePLUS2008.UserDefinedFunctions].[SLN]
+

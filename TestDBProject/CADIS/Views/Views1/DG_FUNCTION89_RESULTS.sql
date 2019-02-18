@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION89_RESULTS" AS 
+SELECT ET."MandateId",ET."PortfolioCode",ET."MandateName",ET."MandateDescription",ET."IsActive",ET."ClientId",ET."ClientName",ET."RelationshipManagerId",ET."RelationshipManager",ET."IsWoodfordMandate",ET."IsWeeklyValuationSignOff",ET."IsWeeklyReconciliation",ET."ReconciliationBoxFolderId",ET."ReconciliationEmailAddress",ET."JoinGUID",ET."MandateCreationDatetime",ET."MandateLastModifiedDatetime" FROM "Access.ManyWho"."MandatesReadOnlyVw" ET WITH (NOLOCK)

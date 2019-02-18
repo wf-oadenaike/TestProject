@@ -1,0 +1,2 @@
+﻿CREATE VIEW "CADIS"."DG_FUNCTION427_RESULTS" AS 
+SELECT ET."ICAAPChangeEventId",ET."ICAAPChangeId",ET."ICAAPChangeEventTypeId",ET."ICAAPChangeEventType",ET."RecordedByPersonId",ET."RecordedBy",ET."EventDetails",ET."EventDate",ET."EventTrueFalse",ET."DocumentationFolderLink",ET."JoinGUID",ET."ICAAPChangeEventCreationDatetime",ET."ICAAPChangeEventLastModifiedDatetime" FROM "Access.ManyWho"."ICAAPChangeEventsReadOnlyVw" ET WITH (NOLOCK)

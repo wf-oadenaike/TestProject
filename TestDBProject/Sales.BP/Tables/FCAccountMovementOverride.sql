@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Sales.BP].[FCAccountMovementOverride] (
+    [SfAccountId]            VARCHAR (18)     NOT NULL,
+    [Sector]                 VARCHAR (10)     NOT NULL,
+    [AccountName]            NVARCHAR (1000)  NULL,
+    [SalesforceHyperlink]    VARCHAR (100)    NULL,
+    [AccountOwnerId]         VARCHAR (18)     NULL,
+    [PostCode]               VARCHAR (20)     NULL,
+    [IsPriorityClient]       BIT              NULL,
+    [CurrOutletOwnSales]     DECIMAL (18, 2)  NULL,
+    [PrevOutletOwnSales]     DECIMAL (18, 2)  NULL,
+    [SalesMoveValue]         DECIMAL (19, 2)  NULL,
+    [CurrOutletMarketSales]  DECIMAL (18, 2)  NULL,
+    [PrevOutletMarketSales]  DECIMAL (18, 2)  NULL,
+    [CurrMktShare]           DECIMAL (38, 16) NULL,
+    [PrevMktShare]           DECIMAL (38, 16) NULL,
+    [MktShareMoveValue]      DECIMAL (38, 16) NOT NULL,
+    [SalesFromDate]          DATETIME         NULL,
+    [SalesToDate]            DATETIME         NULL,
+    [MakeContact]            BIT              NULL,
+    [OverrideStatus]         VARCHAR (10)     NULL,
+    [CADIS_SYSTEM_INSERTED]  DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_UPDATED]   DATETIME         DEFAULT (getdate()) NULL,
+    [CADIS_SYSTEM_CHANGEDBY] NVARCHAR (50)    DEFAULT ('UNKNOWN') NULL,
+    PRIMARY KEY CLUSTERED ([SfAccountId] ASC, [Sector] ASC)
+);
+
